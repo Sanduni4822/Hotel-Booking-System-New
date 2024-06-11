@@ -3,14 +3,38 @@ import { Link } from 'react-router-dom';
 
 const BaseLayout = () => {
   return (
-    <nav className="navbar">
-      <ul className="navbar-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/Rooms">Rooms</Link></li>
-        <li><Link to="/Activities">Activities</Link></li>
-        <li><Link to="/Services">Services</Link></li>
-        <li><Link to="/Facilities">Facilities</Link></li>
-        <li><Link to="/Contact">Contact</Link></li>
+    <nav className="bg-black p-4">
+      <ul className="flex space-x-4">
+        <li>
+          <Link to="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/rooms" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
+            Rooms
+          </Link>
+        </li>
+        <li>
+          <Link to="/activities" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
+            Activities
+          </Link>
+        </li>
+        <li>
+          <Link to="/services" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
+            Services
+          </Link>
+        </li>
+        <li>
+          <Link to="/facilities" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
+            Facilities
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
+            Contact
+          </Link>
+        </li>
       </ul>
     </nav>
   );
