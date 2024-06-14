@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ServicesPage = () => {
+const OffersPage = () => {
     return (
-      < div>explore services</div>
+      < div>offers and deals</div>
     )
   }
   
-  export default ServicesPage;
+  export default OffersPage;
