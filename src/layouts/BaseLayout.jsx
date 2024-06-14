@@ -23,8 +23,8 @@ const BaseLayout = () => {
             </Link>
           </li>
           <li>
-            <Link to="/services" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
-              Services
+            <Link to="/offers" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
+              Offers
             </Link>
           </li>
           <li>
