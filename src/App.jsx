@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import BaseLayout from "./layouts/BaseLayout"
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
-import OffersPage from "./pages/ServicesPage";
+import OffersPage from "./pages/OffersPage";
 import ContactUsPage from "./pages/ContactUsPage";
 
 
