@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import BaseLayout from "./layouts/BaseLayout"
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
-import ServicesPage from "./pages/ServicesPage";
+import Offers from "./pages/Offers";
 import ContactUsPage from "./pages/ContactUsPage";
 
 
@@ -41,12 +41,12 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/servies",
+    path: "/offers",
     element: <BaseLayout />,
     children: [
       {
         index: true,
-        element: <ServicesPage />,
+        element: <Offers />,
       },
     ],
   },
