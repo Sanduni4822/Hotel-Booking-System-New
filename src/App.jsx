@@ -52,7 +52,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/contact",
+    path: "/contactus",
     element: <BaseLayout />,
     children: [
       {
