@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link ,Outlet} from 'react-router-dom';
 import Footer from './Footer';
 
-const BaseLayout = ({children}) => {
+const BaseLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <nav className="bg-black p-4 flex justify-between items-center">
@@ -23,7 +23,7 @@ const BaseLayout = ({children}) => {
             </Link>
           </li>
           <li>
-            <Link to="/services" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
+            <Link to="/offers" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
               Offers
             </Link>
           </li>
@@ -33,7 +33,7 @@ const BaseLayout = ({children}) => {
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
+            <Link to="/contactus" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
               Contact
             </Link>
           </li>
@@ -58,7 +58,7 @@ const BaseLayout = ({children}) => {
       </nav>
 
       <main className="flex-grow">
-        {children}
+        <Outlet/>
       </main>
 
       <Footer />
