@@ -13,7 +13,13 @@ const ContactUsPage = () => {
       </div>
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div className="text-left">
-          <h1 className="text-4xl font-bold mb-2">WE LOVE TO<br />HEAR FROM YOU</h1>
+          <h1 className="text-4xl font-bold mb-6"> {/* Increased margin-bottom here */}
+            WE LOVE TO<br />
+            <span className="relative">
+              HEAR FROM YOU
+              <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black"></span>
+            </span>
+          </h1>
           <p className="mb-4">Your hospitality is our priority, Luxury at its finest.</p>
         </div>
         <div className="text-left text-justify">
