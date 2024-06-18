@@ -4,11 +4,11 @@ import Image from '../assets/contctimage/Image.jpg';
 const ContactUsPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="mb-8 w-full max-w-4l">
+      <div className="relative w-full">
         <img 
           src={Image}
           alt="Example" 
-          className="max-w-full h-auto rounded-lg shadow-lg mb-8"
+          className="w-full h-auto max-h-[400px] object-cover mb-8"
         />
       </div>
       <div className="text-center mb-8">
@@ -17,7 +17,7 @@ const ContactUsPage = () => {
       </div>
       <div className="max-w-4xl text-center">
         <p className="mb-4">
-          DONEC PEDE JUSTO, FRINGILLA VEL, ALIQUET NEC, VULPUTATE EGET, ARCU.
+          Your hospitality is our priority, Luxury at its finest.
         </p>
         <div className="grid grid-cols-2 gap-4 text-sm">
           <p>
@@ -28,7 +28,7 @@ const ContactUsPage = () => {
           </p>
         </div>
         <p className="mt-4">
-          We are grateful to you as our valuable guest if you could give reviews about our hotel then it will be really helpful for us.Also you can contact our hotel anytime for any information.
+          We are grateful to you as our valuable guest if you could give reviews about our hotel then it will be really helpful for us. Also, you can contact our hotel anytime for any information.
         </p>
       </div>
     </div>
