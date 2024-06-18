@@ -12,11 +12,11 @@ const ContactUsPage = () => {
         />
       </div>
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-        <div className="text-left md:text-left">
+        <div className="text-left">
           <h1 className="text-4xl font-bold mb-2">WE LOVE TO HEAR FROM YOU</h1>
           <p className="mb-4">Your hospitality is our priority, Luxury at its finest.</p>
         </div>
-        <div className="text-left md:text-left">
+        <div className="text-left text-justify">
           <p className="mb-4">
             Hotel La-Vila is a famous hotel and well-known hotel with the best hospitality in Waligama area. We expect to give our guests a better service, to accommodate more guests & give a lifetime experience as a rising hotel.
           </p>
