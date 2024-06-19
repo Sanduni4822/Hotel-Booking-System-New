@@ -12,7 +12,7 @@ const RatingComponent = () => {
 
   return (
     <div className="max-w-lg mx-auto p-6 bg-gray-100 shadow-md rounded-md mb-8">
-      <h2 className="text-lg font-bold mb-2">How would you rate your experience?</h2>
+      <h2 className="text-lg font-bold mb-2">HOW WOULD YOU RATE YOUR EXPERIENCE?</h2>
       <div className="flex mb-4">
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
@@ -34,29 +34,29 @@ const RatingComponent = () => {
         ))}
       </div>
       <div className="mb-4">
-        <label className="block mb-2 text-lg">When did you go?</label>
+        <label className="block mb-2 text-lg">WHEN DID YOU GO?</label>
         <select
           className="w-full p-2 border rounded-full"
           value={when}
           onChange={(e) => setWhen(e.target.value)}
         >
-          <option value="">Select one</option>
-          <option value="January">January</option>
-          <option value="February">February</option>
-          <option value="March">March</option>
-          <option value="April">April</option>
-          <option value="May">May</option>
-          <option value="June">June</option>
-          <option value="July">July</option>
-          <option value="August">August</option>
-          <option value="September">September</option>
-          <option value="October">October</option>
-          <option value="November">November</option>
-          <option value="December">December</option>
+          <option value="">SELECT ONE</option>
+          <option value="January">JANUARY</option>
+          <option value="February">FEBRUARY</option>
+          <option value="March">MARCH</option>
+          <option value="April">APRIL</option>
+          <option value="May">MAY</option>
+          <option value="June">JUNE</option>
+          <option value="July">JULY</option>
+          <option value="August">AUGUST</option>
+          <option value="September">SEPTEMBER</option>
+          <option value="October">OCTOBER</option>
+          <option value="November">NOVEMBER</option>
+          <option value="December">DECEMBER</option>
         </select>
       </div>
       <div className="mb-4">
-        <label className="block mb-2 text-lg">Who did you go with?</label>
+        <label className="block mb-2 text-lg">WHO DID YOU GO WITH?</label>
         <div className="flex flex-wrap gap-2">
           {['BUSINESS', 'COUPLES', 'FAMILY', 'FRIENDS', 'SOLO'].map((option) => (
             <button
