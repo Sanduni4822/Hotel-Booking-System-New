@@ -5,6 +5,8 @@ const RatingComponent = () => {
   const [rating, setRating] = useState(0);
   const [when, setWhen] = useState('');
   const [who, setWho] = useState('');
+  const [reviewTitle, setReviewTitle] = useState('');
+  const [reviewText, setReviewText] = useState('');
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -70,6 +72,24 @@ const RatingComponent = () => {
             </button>
           ))}
         </div>
+      </div>
+      <div className="mb-4">
+        <label className="block mb-2 text-lg">WRITE YOUR REVIEW</label>
+        <textarea
+          className="w-full p-2 border rounded-full"
+          value={reviewText}
+          onChange={(e) => setReviewText(e.target.value)}
+          rows="4"
+        ></textarea>
+      </div>
+      <div className="mb-4">
+        <label className="block mb-2 text-lg">TITLE YOUR REVIEW</label>
+        <input
+          type="text"
+          className="w-full p-2 border rounded-full"
+          value={reviewTitle}
+          onChange={(e) => setReviewTitle(e.target.value)}
+        />
       </div>
     </div>
   );
