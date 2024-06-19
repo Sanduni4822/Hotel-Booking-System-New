@@ -43,7 +43,15 @@ const RatingComponent = () => {
           <option value="January">January</option>
           <option value="February">February</option>
           <option value="March">March</option>
-          {/* Add more options as needed */}
+          <option value="April">March</option>
+          <option value="May">March</option>
+          <option value="June">March</option>
+          <option value="July">March</option>
+          <option value="August">March</option>
+          <option value="September">March</option>
+          <option value="October">March</option>
+          <option value="November">March</option>
+          <option value="December">March</option>
         </select>
       </div>
     </div>
