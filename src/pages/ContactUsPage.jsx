@@ -20,7 +20,7 @@ const ContactUsPage = () => {
               <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black"></span>
             </span>
           </h1>
-          <p className="mb-4">Your hospitality is our priority, Luxury at its finest.</p>
+          <p className="text-xl mb-4">Your hospitality is our priority, Luxury at its finest.</p> {/* Increased text size here */}
         </div>
         <div className="text-left text-justify">
           <p className="mb-4">
