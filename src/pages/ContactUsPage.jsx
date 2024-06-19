@@ -3,6 +3,7 @@ import Image from '../assets/contctimage/Image.jpg';
 
 const RatingComponent = () => {
   const [rating, setRating] = useState(0);
+  const [when, setWhen] = useState('');
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -30,6 +31,20 @@ const RatingComponent = () => {
             />
           </svg>
         ))}
+      </div>
+      <div className="mb-4">
+        <label className="block mb-2 text-lg">When did you go?</label>
+        <select
+          className="w-full p-2 border rounded-md"
+          value={when}
+          onChange={(e) => setWhen(e.target.value)}
+        >
+          <option value="">Select one</option>
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          {/* Add more options as needed */}
+        </select>
       </div>
     </div>
   );
