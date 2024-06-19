@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Image from '../assets/contctimage/Image.jpg'; 
+import Image from '../assets/contctimage/Image.jpg';
 
 const RatingComponent = () => {
   const [rating, setRating] = useState(0);
   const [when, setWhen] = useState('');
+  const [who, setWho] = useState('');
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -54,6 +55,22 @@ const RatingComponent = () => {
           <option value="December">December</option>
         </select>
       </div>
+      <div className="mb-4">
+        <label className="block mb-2 text-lg">Who did you go with?</label>
+        <div className="flex flex-wrap gap-2">
+          {['BUSINESS', 'COUPLES', 'FAMILY', 'FRIENDS', 'SOLO'].map((option) => (
+            <button
+              key={option}
+              className={`p-2 border rounded-full ${
+                who === option ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'
+              }`}
+              onClick={() => setWho(option)}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
@@ -77,7 +94,7 @@ const ContactUsPage = () => {
               <span className="absolute left-0 bottom-[-2px] w-full h-[2px] bg-black"></span>
             </span>
           </h1>
-          <p className="text-xl mb-4">Your hospitality is our priority, Luxury at its finest.</p>
+          <p className="text-xl mb-4">Your hospitality is our priority, Luxury at its finest.</p>
         </div>
         <div className="text-left text-justify">
           <p className="mb-4">
