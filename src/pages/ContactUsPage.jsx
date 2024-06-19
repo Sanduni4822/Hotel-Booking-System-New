@@ -35,7 +35,7 @@ const RatingComponent = () => {
       <div className="mb-4">
         <label className="block mb-2 text-lg">When did you go?</label>
         <select
-          className="w-full p-2 border rounded-md"
+          className="w-full p-2 border rounded-full"
           value={when}
           onChange={(e) => setWhen(e.target.value)}
         >
