@@ -32,27 +32,41 @@ const RatingComponent = () => {
             </svg>
           ))}
         </div>
-        <div className="mb-4">
+        <div className="mb-4 relative">
           <label className="block mb-2 text-lg font-bold">WHEN DID YOU GO?</label>
-          <select
-            className="w-full p-2 border rounded-full"
-            value={when}
-            onChange={(e) => setWhen(e.target.value)}
-          >
-            <option value="">SELECT ONE</option>
-            <option value="January">JANUARY</option>
-            <option value="February">FEBRUARY</option>
-            <option value="March">MARCH</option>
-            <option value="April">APRIL</option>
-            <option value="May">MAY</option>
-            <option value="June">JUNE</option>
-            <option value="July">JULY</option>
-            <option value="August">AUGUST</option>
-            <option value="September">SEPTEMBER</option>
-            <option value="October">OCTOBER</option>
-            <option value="November">NOVEMBER</option>
-            <option value="December">DECEMBER</option>
-          </select>
+          <div className="relative">
+            <select
+              className="w-full p-2 pr-8 border rounded-full appearance-none"
+              value={when}
+              onChange={(e) => setWhen(e.target.value)}
+            >
+              <option value="">SELECT ONE</option>
+              <option value="January">JANUARY</option>
+              <option value="February">FEBRUARY</option>
+              <option value="March">MARCH</option>
+              <option value="April">APRIL</option>
+              <option value="May">MAY</option>
+              <option value="June">JUNE</option>
+              <option value="July">JULY</option>
+              <option value="August">AUGUST</option>
+              <option value="September">SEPTEMBER</option>
+              <option value="October">OCTOBER</option>
+              <option value="November">NOVEMBER</option>
+              <option value="December">DECEMBER</option>
+            </select>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 absolute right-2 top-2 pointer-events-none"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 12a1 1 0 0 1-.707-.293l-4-4a1 1 0 0 1 1.414-1.414L10 9.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-.707.293z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
         </div>
         <div className="mb-4">
           <label className="block mb-2 text-lg font-bold">WHO DID YOU GO WITH?</label>
