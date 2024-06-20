@@ -76,7 +76,7 @@ const RatingComponent = () => {
       <div className="mb-4">
         <label className="block mb-2 text-lg">WRITE YOUR REVIEW</label>
         <textarea
-          className="w-full p-2 border rounded-full"
+          className="w-full p-2 border rounded-md"
           value={reviewText}
           onChange={(e) => setReviewText(e.target.value)}
           rows="4"
@@ -86,7 +86,7 @@ const RatingComponent = () => {
         <label className="block mb-2 text-lg">TITLE YOUR REVIEW</label>
         <input
           type="text"
-          className="w-full p-2 border rounded-full"
+          className="w-full p-2 border rounded-md"
           value={reviewTitle}
           onChange={(e) => setReviewTitle(e.target.value)}
         />
