@@ -21,17 +21,13 @@ const RatingComponent = () => {
             key={star}
             onClick={() => handleRating(star)}
             xmlns="http://www.w3.org/2000/svg"
-            fill={rating >= star ? 'currentColor' : 'none'}
             viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-8 h-8 text-yellow-500 cursor-pointer"
+            fill={rating >= star ? '#F59E0B' : 'none'}
+            stroke="#F59E0B"
+            strokeWidth="2"
+            className={`w-8 h-8 cursor-pointer ${star < 5 ? 'mr-2' : ''}`}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l2.072 6.334a1 1 0 00.95.69h6.555c.969 0 1.372 1.24.588 1.81l-5.316 3.88a1 1 0 00-.364 1.118l2.072 6.334c.3.921-.755 1.688-1.54 1.118l-5.316-3.88a1 1 0 00-1.176 0l-5.316 3.88c-.785.57-1.84-.197-1.54-1.118l2.072-6.334a1 1 0 00-.364-1.118l-5.316-3.88c-.784-.57-.38-1.81.588-1.81h6.555a1 1 0 00.95-.69l2.072-6.334z"
-            />
+            <path d="M12 .587l3.668 7.568L24 9.423l-6 5.843 1.417 8.23L12 18.897l-7.417 4.599L6 15.266.001 9.423l8.332-1.268L12 .587z" />
           </svg>
         ))}
       </div>
