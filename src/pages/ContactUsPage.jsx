@@ -108,7 +108,7 @@ const RatingComponent = () => {
             onChange={(e) => setReviewTitle(e.target.value)}
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4"  >
           <label className="block mb-2 text-lg font-bold">ADD SOME PHOTOS <span className="text-sm font-normal">(OPTIONAL)</span></label>
           <div className="border border-dashed border-gray-400 rounded-md p-4 text-center">
             <input
