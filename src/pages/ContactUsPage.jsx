@@ -33,7 +33,7 @@ const RatingComponent = () => {
           ))}
         </div>
         <div className="mb-4">
-          <label className="block mb-2 text-lg">WHEN DID YOU GO?</label>
+          <label className="block mb-2 text-lg font-bold">WHEN DID YOU GO?</label>
           <select
             className="w-full p-2 border rounded-full"
             value={when}
@@ -55,7 +55,7 @@ const RatingComponent = () => {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block mb-2 text-lg">WHO DID YOU GO WITH?</label>
+          <label className="block mb-2 text-lg font-bold">WHO DID YOU GO WITH?</label>
           <div className="flex flex-wrap gap-2">
             {['BUSINESS', 'COUPLES', 'FAMILY', 'FRIENDS', 'SOLO'].map((option) => (
               <button
@@ -71,7 +71,7 @@ const RatingComponent = () => {
       </div>
       <div>
         <div className="mb-4">
-          <label className="block mb-2 text-lg">WRITE YOUR REVIEW</label>
+          <label className="block mb-2 text-lg font-bold">WRITE YOUR REVIEW</label>
           <textarea
             className="w-full p-2 border rounded-md"
             value={reviewText}
@@ -80,7 +80,7 @@ const RatingComponent = () => {
           ></textarea>
         </div>
         <div className="mb-4">
-          <label className="block mb-2 text-lg">TITLE YOUR REVIEW</label>
+          <label className="block mb-2 text-lg font-bold">TITLE YOUR REVIEW</label>
           <input
             type="text"
             className="w-full p-2 border rounded-md"
