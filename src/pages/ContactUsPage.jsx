@@ -13,79 +13,81 @@ const RatingComponent = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-gray-100 shadow-md rounded-md mb-8">
-      <h2 className="text-lg font-bold mb-2">HOW WOULD YOU RATE YOUR EXPERIENCE?</h2>
-      <div className="flex mb-4">
-        {[1, 2, 3, 4, 5].map((star) => (
-          <svg
-            key={star}
-            onClick={() => handleRating(star)}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill={rating >= star ? '#F59E0B' : 'none'}
-            stroke="#F59E0B"
-            strokeWidth="2"
-            className={`w-8 h-8 cursor-pointer ${star < 5 ? 'mr-2' : ''}`}
-          >
-            <path d="M12 .587l3.668 7.568L24 9.423l-6 5.843 1.417 8.23L12 18.897l-7.417 4.599L6 15.266.001 9.423l8.332-1.268L12 .587z" />
-          </svg>
-        ))}
-      </div>
-      <div className="mb-4">
-        <label className="block mb-2 text-lg">WHEN DID YOU GO?</label>
-        <select
-          className="w-full p-2 border rounded-full"
-          value={when}
-          onChange={(e) => setWhen(e.target.value)}
-        >
-          <option value="">SELECT ONE</option>
-          <option value="January">JANUARY</option>
-          <option value="February">FEBRUARY</option>
-          <option value="March">MARCH</option>
-          <option value="April">APRIL</option>
-          <option value="May">MAY</option>
-          <option value="June">JUNE</option>
-          <option value="July">JULY</option>
-          <option value="August">AUGUST</option>
-          <option value="September">SEPTEMBER</option>
-          <option value="October">OCTOBER</option>
-          <option value="November">NOVEMBER</option>
-          <option value="December">DECEMBER</option>
-        </select>
-      </div>
-      <div className="mb-4">
-        <label className="block mb-2 text-lg">WHO DID YOU GO WITH?</label>
-        <div className="flex flex-wrap gap-2">
-          {['BUSINESS', 'COUPLES', 'FAMILY', 'FRIENDS', 'SOLO'].map((option) => (
-            <button
-              key={option}
-              className={`p-2 border rounded-full ${
-                who === option ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'
-              }`}
-              onClick={() => setWho(option)}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2 className="text-lg font-bold mb-2">HOW WOULD YOU RATE YOUR EXPERIENCE?</h2>
+        <div className="flex mb-4">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <svg
+              key={star}
+              onClick={() => handleRating(star)}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill={rating >= star ? '#F59E0B' : 'none'}
+              stroke="#F59E0B"
+              strokeWidth="2"
+              className={`w-8 h-8 cursor-pointer ${star < 5 ? 'mr-2' : ''}`}
             >
-              {option}
-            </button>
+              <path d="M12 .587l3.668 7.568L24 9.423l-6 5.843 1.417 8.23L12 18.897l-7.417 4.599L6 15.266.001 9.423l8.332-1.268L12 .587z" />
+            </svg>
           ))}
         </div>
+        <div className="mb-4">
+          <label className="block mb-2 text-lg">WHEN DID YOU GO?</label>
+          <select
+            className="w-full p-2 border rounded-full"
+            value={when}
+            onChange={(e) => setWhen(e.target.value)}
+          >
+            <option value="">SELECT ONE</option>
+            <option value="January">JANUARY</option>
+            <option value="February">FEBRUARY</option>
+            <option value="March">MARCH</option>
+            <option value="April">APRIL</option>
+            <option value="May">MAY</option>
+            <option value="June">JUNE</option>
+            <option value="July">JULY</option>
+            <option value="August">AUGUST</option>
+            <option value="September">SEPTEMBER</option>
+            <option value="October">OCTOBER</option>
+            <option value="November">NOVEMBER</option>
+            <option value="December">DECEMBER</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2 text-lg">WHO DID YOU GO WITH?</label>
+          <div className="flex flex-wrap gap-2">
+            {['BUSINESS', 'COUPLES', 'FAMILY', 'FRIENDS', 'SOLO'].map((option) => (
+              <button
+                key={option}
+                className={`p-2 border rounded-full ${who === option ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'}`}
+                onClick={() => setWho(option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="mb-4">
-        <label className="block mb-2 text-lg">WRITE YOUR REVIEW</label>
-        <textarea
-          className="w-full p-2 border rounded-md"
-          value={reviewText}
-          onChange={(e) => setReviewText(e.target.value)}
-          rows="4"
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label className="block mb-2 text-lg">TITLE YOUR REVIEW</label>
-        <input
-          type="text"
-          className="w-full p-2 border rounded-md"
-          value={reviewTitle}
-          onChange={(e) => setReviewTitle(e.target.value)}
-        />
+      <div>
+        <div className="mb-4">
+          <label className="block mb-2 text-lg">WRITE YOUR REVIEW</label>
+          <textarea
+            className="w-full p-2 border rounded-md"
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+            rows="4"
+          ></textarea>
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2 text-lg">TITLE YOUR REVIEW</label>
+          <input
+            type="text"
+            className="w-full p-2 border rounded-md"
+            value={reviewTitle}
+            onChange={(e) => setReviewTitle(e.target.value)}
+          />
+        </div>
       </div>
     </div>
   );
@@ -95,9 +97,9 @@ const ContactUsPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <div className="relative w-full">
-        <img 
+        <img
           src={Image}
-          alt="Example" 
+          alt="Example"
           className="w-full h-auto max-h-[400px] object-cover mb-8"
         />
       </div>
@@ -124,7 +126,9 @@ const ContactUsPage = () => {
           </p>
         </div>
       </div>
-      <RatingComponent />
+      <div className="w-full max-w-4xl mx-auto">
+        <RatingComponent />
+      </div>
     </div>
   );
 };
