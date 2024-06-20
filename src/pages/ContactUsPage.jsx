@@ -7,9 +7,15 @@ const RatingComponent = () => {
   const [who, setWho] = useState('');
   const [reviewTitle, setReviewTitle] = useState('');
   const [reviewText, setReviewText] = useState('');
+  const [photos, setPhotos] = useState([]);
+  const [isCertified, setIsCertified] = useState(false);
 
   const handleRating = (rate) => {
     setRating(rate);
+  };
+
+  const handlePhotoChange = (e) => {
+    setPhotos([...e.target.files]);
   };
 
   return (
@@ -36,7 +42,7 @@ const RatingComponent = () => {
           <label className="block mb-2 text-lg font-bold">WHEN DID YOU GO?</label>
           <div className="relative">
             <select
-              className="w-full p-2 pr-8 border rounded-full appearance-none"
+              className="w-full p-2 pr-10 border rounded-full appearance-none"
               value={when}
               onChange={(e) => setWhen(e.target.value)}
             >
@@ -56,7 +62,7 @@ const RatingComponent = () => {
             </select>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 absolute right-2 top-2 pointer-events-none"
+              className="h-5 w-5 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -101,6 +107,61 @@ const RatingComponent = () => {
             value={reviewTitle}
             onChange={(e) => setReviewTitle(e.target.value)}
           />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2 text-lg font-bold">ADD SOME PHOTOS <span className="text-sm font-normal">(OPTIONAL)</span></label>
+          <div className="border border-dashed border-gray-400 rounded-md p-4 text-center">
+            <input
+              type="file"
+              className="hidden"
+              id="photo-upload"
+              multiple
+              onChange={handlePhotoChange}
+            />
+            <label htmlFor="photo-upload" className="cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10 mx-auto mb-2 text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 5v14m7-7H5"
+                />
+              </svg>
+              <span className="text-gray-600">Click to add photos or drag and drop</span>
+            </label>
+          </div>
+        </div>
+        <div className="mb-4">
+          {photos.length > 0 && (
+            <div className="flex flex-wrap gap-4">
+              {photos.map((photo, index) => (
+                <img
+                  key={index}
+                  src={URL.createObjectURL(photo)}
+                  alt={`Upload ${index + 1}`}
+                  className="w-24 h-24 object-cover rounded-md"
+                />
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="mb-4">
+          <input
+            type="checkbox"
+            id="certify"
+            className="mr-2"
+            checked={isCertified}
+            onChange={(e) => setIsCertified(e.target.checked)}
+          />
+          <label htmlFor="certify" className="text-sm">
+            I certify that this review is based on my own experience and is my genuine opinion of this hotel, and that I have no personal or business relationship with this establishment, and have not been offered any incentive or payment originating from the establishment to write this review. I understand that Tripadvisor has a zero-tolerance policy on fake reviews.
+          </label>
         </div>
       </div>
     </div>
