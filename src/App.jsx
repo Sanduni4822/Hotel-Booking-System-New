@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/sign-up",
+    path: "/signup",
     element: <BaseLayout />,
     children: [
       {
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/contactus",
+    path: "/contact",
     element: <BaseLayout />,
     children: [
       {
