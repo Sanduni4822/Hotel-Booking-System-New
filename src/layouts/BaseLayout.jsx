@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,Outlet } from 'react-router-dom';
 import Footer from './Footer';
 
-const BaseLayout = ({children}) => {
+const BaseLayout = ( ) => {
   return (
     <div className="flex flex-col min-h-screen">
       <nav className="bg-black p-4 flex justify-between items-center">
@@ -58,7 +58,7 @@ const BaseLayout = ({children}) => {
       </nav>
 
       <main className="flex-grow">
-        {children}
+        <Outlet/>
       </main>
 
       <Footer />
