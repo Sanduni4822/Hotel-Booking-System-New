@@ -1,12 +1,12 @@
 import React from 'react';
-import Image from '../assets/rooms/room.jpg';
+import room from '../assets/rooms/room.jpg';
 
 const RoomsPage = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <img 
         src={room} 
-        alt="Example" 
+        alt="Room" 
         className="max-w-full h-auto rounded-lg shadow-lg"
       />
     </div>
