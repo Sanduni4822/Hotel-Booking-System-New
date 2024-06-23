@@ -17,6 +17,18 @@ const LoginPage = () => {
               //className={`w-full p-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded`}
             />
           </div>
+          <div className="mb-6">
+            <label htmlFor="password" className="block text-gray-700 mb-2">Password</label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              id="password"
+              //value={password}
+              //onChange={(e) => setPassword(e.target.value)}
+              //className={`w-full p-2 border ${errors.password ? 'border-red-500' : 'border-gray-300'} rounded`}
+            />
+          </div>
+
         </form>
       </div>
     </div>
