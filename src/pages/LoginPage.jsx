@@ -28,7 +28,9 @@ const LoginPage = () => {
               //className={`w-full p-2 border ${errors.password ? 'border-red-500' : 'border-gray-300'} rounded`}
             />
           </div>
-
+          <button type="submit" className="w-full bg-blue-500 text-white mb-2 p-2 rounded hover:bg-blue-600">
+            Log in
+          </button>
         </form>
       </div>
     </div>
