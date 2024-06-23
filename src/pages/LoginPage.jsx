@@ -33,9 +33,11 @@ const LoginPage = () => {
           <button type="submit" className="w-full bg-blue-500 text-white mb-2 p-2 rounded hover:bg-blue-600">
             Log in
           </button>
-          <Link to="/signup">
+          <div className="w-full bg-blue-300 text-white text-center mt-2 p-2 rounded hover:bg-blue-600">
+          <Link to="/sign-up"  >
             Create Account
           </Link>
+          </div> 
         </form>
       </div>
     </div>
