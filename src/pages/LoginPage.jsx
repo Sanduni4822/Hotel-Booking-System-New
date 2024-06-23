@@ -70,7 +70,7 @@ const LoginPage = () => {
             Log in
           </button>
           <div className="w-full bg-blue-300 text-white text-center mt-2 p-2 rounded hover:bg-blue-600">
-          <Link to="/sign-up"  >
+          <Link to="/signup"  >
             Create Account
           </Link>
           </div>
