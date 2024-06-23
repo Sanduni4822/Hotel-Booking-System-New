@@ -42,6 +42,19 @@ const SignUpPage = () => {
               placeholder="Enter your password"
             />
           </div>
+          <div className="mb-6">
+            <label htmlFor="confirmPassword" className="block text-gray-700 mb-2">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              //value={formData.confirmPassword}
+              //onChange={handleChange}
+              //className={`w-full p-2 border ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'} rounded`}
+              placeholder="Confirm your password"
+            />
+          </div>
+          
 
 
         </form>
