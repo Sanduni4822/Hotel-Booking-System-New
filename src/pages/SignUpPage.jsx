@@ -18,6 +18,20 @@ const SignUpPage = () => {
                placeholder="Enter your name"
             />
           </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              //value={formData.email}
+              //onChange={handleChange}
+              //className={`w-full p-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded`}
+              placeholder="Enter your email"
+            />
+          </div>
+          
+
         </form>
       </div>
     </div>
