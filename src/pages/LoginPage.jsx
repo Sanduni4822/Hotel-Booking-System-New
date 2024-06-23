@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import {Link} from "react-router-dom";
+
 
 const LoginPage = () => {
   return (
@@ -31,6 +33,9 @@ const LoginPage = () => {
           <button type="submit" className="w-full bg-blue-500 text-white mb-2 p-2 rounded hover:bg-blue-600">
             Log in
           </button>
+          <Link to="/signup">
+            Create Account
+          </Link>
         </form>
       </div>
     </div>
