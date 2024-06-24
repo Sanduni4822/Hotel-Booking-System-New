@@ -18,6 +18,19 @@ const RatingComponent = () => {
     setPhotos([...e.target.files]);
   };
 
+  const handleContinue = () => {
+    // Handle the continue button click event
+    console.log({
+      rating,
+      when,
+      who,
+      reviewTitle,
+      reviewText,
+      photos,
+      isCertified,
+    });
+  };
+
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -165,6 +178,14 @@ const RatingComponent = () => {
         <label htmlFor="certify" className="text-sm">
           I certify that this review is based on my own experience and is my genuine opinion of this hotel, and that I have no personal or business relationship with this establishment, and have not been offered any incentive or payment originating from the establishment to write this review. I understand that Tripadvisor has a zero-tolerance policy on fake reviews.
         </label>
+      </div>
+      <div className="flex justify-center">
+        <button
+          className="bg-blue-500 text-white p-2 rounded-full"
+          onClick={handleContinue}
+        >
+          Continue
+        </button>
       </div>
     </div>
   );
