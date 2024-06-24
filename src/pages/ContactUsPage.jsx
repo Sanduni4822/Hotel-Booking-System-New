@@ -9,6 +9,7 @@ const RatingComponent = () => {
   const [reviewText, setReviewText] = useState('');
   const [photos, setPhotos] = useState([]);
   const [isCertified, setIsCertified] = useState(false);
+  const [reviewError, setReviewError] = useState('');
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -19,6 +20,14 @@ const RatingComponent = () => {
   };
 
   const handleContinue = () => {
+    if (!reviewText) {
+      setReviewError('Review text is required.');
+      return;
+    }
+
+    // Reset the error if the review text is not empty
+    setReviewError('');
+
     // Handle the continue button click event
     console.log({
       rating,
@@ -112,6 +121,7 @@ const RatingComponent = () => {
               onChange={(e) => setReviewText(e.target.value)}
               rows="4"
             ></textarea>
+            {reviewError && <p className="text-red-500 text-sm mt-1">{reviewError}</p>}
           </div>
           <div className="mb-4">
             <label className="block mb-2 text-lg font-bold">TITLE YOUR REVIEW</label>
