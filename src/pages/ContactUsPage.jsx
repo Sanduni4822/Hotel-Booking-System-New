@@ -10,6 +10,7 @@ const RatingComponent = () => {
   const [photos, setPhotos] = useState([]);
   const [isCertified, setIsCertified] = useState(false);
   const [reviewError, setReviewError] = useState('');
+  const [titleError, setTitleError] = useState('');
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -20,13 +21,28 @@ const RatingComponent = () => {
   };
 
   const handleContinue = () => {
+    let hasError = false;
+
     if (!reviewText) {
       setReviewError('Review text is required.');
-      return;
+      hasError = true;
+    } else if (reviewText.length < 150) {
+      setReviewError('Review text must be at least 150 characters.');
+      hasError = true;
+    } else {
+      setReviewError('');
     }
 
-    // Reset the error if the review text is not empty
-    setReviewError('');
+    if (!reviewTitle) {
+      setTitleError('Review title is required.');
+      hasError = true;
+    } else {
+      setTitleError('');
+    }
+
+    if (hasError) {
+      return;
+    }
 
     // Handle the continue button click event
     console.log({
@@ -131,6 +147,7 @@ const RatingComponent = () => {
               value={reviewTitle}
               onChange={(e) => setReviewTitle(e.target.value)}
             />
+            {titleError && <p className="text-red-500 text-sm mt-1">{titleError}</p>}
           </div>
         </div>
       </div>
