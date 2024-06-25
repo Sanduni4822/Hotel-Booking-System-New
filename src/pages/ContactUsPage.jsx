@@ -220,7 +220,7 @@ const RatingComponent = () => {
       </div>
       <div className="flex justify-center">
         <button
-          className="bg-blue-500 text-white p-2 rounded-full"
+          className="bg-black text-white p-2 rounded-full"
           onClick={handleContinue}
         >
           Continue
