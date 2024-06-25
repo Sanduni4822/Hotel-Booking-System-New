@@ -68,7 +68,7 @@ const RatingComponent = () => {
   };
 
   return (
-    <div>
+    <div className="bg-white p-6 rounded-lg shadow-md">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h2 className="text-lg font-bold mb-2">HOW WOULD YOU RATE YOUR EXPERIENCE?</h2>
