@@ -52,6 +52,9 @@ const RatingComponent = () => {
       return;
     }
 
+    // Show alert when all fields are correctly filled out
+    alert('All fields are correctly filled out!');
+
     // Handle the continue button click event
     console.log({
       rating,
