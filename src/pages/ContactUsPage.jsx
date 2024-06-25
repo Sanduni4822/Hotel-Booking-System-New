@@ -11,6 +11,7 @@ const RatingComponent = () => {
   const [isCertified, setIsCertified] = useState(false);
   const [reviewError, setReviewError] = useState('');
   const [titleError, setTitleError] = useState('');
+  const [certifyError, setCertifyError] = useState('');
 
   const handleRating = (rate) => {
     setRating(rate);
@@ -41,8 +42,10 @@ const RatingComponent = () => {
     }
 
     if (!isCertified) {
-      alert('Please tick the certification checkbox.');
+      setCertifyError('Please tick the certification checkbox.');
       hasError = true;
+    } else {
+      setCertifyError('');
     }
 
     if (hasError) {
@@ -210,6 +213,7 @@ const RatingComponent = () => {
         <label htmlFor="certify" className="text-sm">
           I certify that this review is based on my own experience and is my genuine opinion of this hotel, and that I have no personal or business relationship with this establishment, and have not been offered any incentive or payment originating from the establishment to write this review. I understand that Tripadvisor has a zero-tolerance policy on fake reviews.
         </label>
+        {certifyError && <p className="text-red-500 text-sm mt-1">{certifyError}</p>}
       </div>
       <div className="flex justify-center">
         <button
