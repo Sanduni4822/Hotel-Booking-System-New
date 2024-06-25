@@ -40,6 +40,11 @@ const RatingComponent = () => {
       setTitleError('');
     }
 
+    if (!isCertified) {
+      alert('Please tick the certification checkbox.');
+      hasError = true;
+    }
+
     if (hasError) {
       return;
     }
