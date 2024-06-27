@@ -218,7 +218,7 @@ const RatingComponent = () => {
         </label>
         {certifyError && <p className="text-red-500 text-sm mt-1">{certifyError}</p>}
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-4">
         <button
           className="bg-black text-white p-2 rounded-full"
           onClick={handleContinue}
@@ -263,8 +263,19 @@ const ContactUsPage = () => {
           </p>
         </div>
       </div>
-      <div className="w-full max-w-4xl mx-auto">
+      <div className="w-full max-w-4xl mx-auto mb-8">
         <RatingComponent />
+      </div>
+      <div className="w-full">
+        <iframe
+          width="100%"
+          height="600"
+          frameBorder="0"
+          scrolling="no"
+          marginHeight="0"
+          marginWidth="0"
+          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=villa%20the%20leaf%20waligama+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        ></iframe>
       </div>
     </div>
   );
