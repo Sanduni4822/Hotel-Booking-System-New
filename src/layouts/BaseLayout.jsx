@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link,Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Footer from './Footer';
 
-const BaseLayout = ( ) => {
+const BaseLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <nav className="bg-black p-4 flex justify-between items-center">
+      <nav className="bg-black p-4 flex justify-between items-center sticky top-0 z-10">
         <ul className="flex space-x-4">
           <li>
             <Link to="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded">
