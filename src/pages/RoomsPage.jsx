@@ -67,6 +67,17 @@ const RoomsPage = () => {
             <img src={room.imgSrc} alt={room.name} className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-lg font-semibold">{room.name}</h3>
+              <ul className="flex flex-wrap mt-2">
+                {room.amenities.map((amenity, index) => (
+                  <li key={index} className="flex justify-center items-center m-1">
+                    <img 
+                      src={amenitiesWithIcons[amenity]} 
+                      alt={`${amenity} icon`} 
+                      className="w-5 h-5"
+                    />
+                  </li>
+                ))}
+              </ul>
               <div className="flex items-center mt-2">
                 <span className="text-yellow-500">
                   {'★'.repeat(room.rating)}
@@ -78,17 +89,6 @@ const RoomsPage = () => {
                 <span className="text-gray-600">1 King Bed</span>
                 <span className="text-gray-600">4 Guests</span>
               </div>
-              <ul className="mt-4 grid grid-cols-4 gap-4">
-                {room.amenities.map((amenity, index) => (
-                  <li key={index} className="flex justify-center items-center">
-                    <img 
-                      src={amenitiesWithIcons[amenity]} 
-                      alt={`${amenity} icon`} 
-                      className="w-10 h-10"
-                    />
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         ))}
