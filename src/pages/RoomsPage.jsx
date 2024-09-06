@@ -1,16 +1,23 @@
 import React from 'react';
 import room from '../assets/rooms/room.jpg';
+import LuxurySuite from '../assets/roomstypes/LuxurySuite.jpg';
+import Standard from '../assets/roomstypes/Standard.jpg';
+import Penthouse from '../assets/roomstypes/Penthouse.jpg';
+import GrandSuite from '../assets/roomstypes/GrandSuite.jpg';
+import JuniorSuite from '../assets/roomstypes/JuniorSuite.jpg';
+import FamilySpecial from '../assets/roomstypes/FamilySpecial.jpg';
+import PremiumRoom from '../assets/roomstypes/PremiumRoom.jpg';
+import DeluxeSuite from '../assets/roomstypes/DeluxeSuite.jpg';
 
 const rooms = [
-  { id: 1, name: 'Luxury Suite', imgSrc: '/images/luxury-suite.jpg', rating: 5, reviews: 1 },
-  { id: 2, name: 'Standard', imgSrc: '/images/standard.jpg', rating: 4, reviews: 1 },
-  { id: 3, name: 'The Penthouse', imgSrc: '/images/penthouse.jpg', rating: 5, reviews: 1 },
-  { id: 4, name: 'Grand Suite', imgSrc: '/images/grand-suite.jpg', rating: 5, reviews: 1 },
-  { id: 5, name: 'Junior Suite', imgSrc: '/images/junior-suite.jpg', rating: 4, reviews: 1 },
-  { id: 6, name: 'Standard', imgSrc: '/images/standard2.jpg', rating: 4, reviews: 1 },
-  { id: 7, name: 'Family Special', imgSrc: '/images/family-special.jpg', rating: 5, reviews: 1 },
-  { id: 8, name: 'Premium Room', imgSrc: '/images/premium-room.jpg', rating: 4, reviews: 1 },
-  { id: 9, name: 'Deluxe Suite', imgSrc: '/images/deluxe-suite.jpg', rating: 5, reviews: 1 },
+  { id: 1, name: 'Luxury Suite', imgSrc: LuxurySuite, rating: 5, reviews: 1 },
+  { id: 2, name: 'Standard', imgSrc: Standard, rating: 4, reviews: 1 },
+  { id: 3, name: 'The Penthouse', imgSrc: Penthouse, rating: 5, reviews: 1 },
+  { id: 4, name: 'Grand Suite', imgSrc: GrandSuite, rating: 5, reviews: 1 },
+  { id: 5, name: 'Junior Suite', imgSrc: JuniorSuite, rating: 4, reviews: 1 },
+  { id: 6, name: 'Family Special', imgSrc: FamilySpecial, rating: 5, reviews: 1 },
+  { id: 7, name: 'Premium Room', imgSrc: PremiumRoom, rating: 4, reviews: 1 },
+  { id: 8, name: 'Deluxe Suite', imgSrc: DeluxeSuite, rating: 5, reviews: 1 },
 ];
 
 const RoomsPage = () => {
