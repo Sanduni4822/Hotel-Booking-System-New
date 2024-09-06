@@ -9,15 +9,35 @@ import FamilySpecial from '../assets/roomstypes/FamilySpecial.jpg';
 import PremiumRoom from '../assets/roomstypes/PremiumRoom.jpg';
 import DeluxeSuite from '../assets/roomstypes/DeluxeSuite.jpg';
 
+import WifiIcon from '../assets/facilityicons/WifiIcon.png';
+import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
+import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
+import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
+import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
+import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
+import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
+import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+
+const amenitiesWithIcons = {
+  'Free wifi': WifiIcon,
+  'Cleaning': CleaningIcon,
+  'Air conditioner': AirConditionerIcon,
+  'Shower': ShowerIcon,
+  'Minibar': MinibarIcon,
+  'Safety locker': SafetyLockerIcon,
+  'Breakfast': BreakfastIcon,
+  'Towels': TowelsIcon,
+};
+
 const rooms = [
-  { id: 1, name: 'Luxury Suite', imgSrc: LuxurySuite, rating: 5, reviews: 1 },
-  { id: 2, name: 'Standard', imgSrc: Standard, rating: 4, reviews: 1 },
-  { id: 3, name: 'The Penthouse', imgSrc: Penthouse, rating: 5, reviews: 1 },
-  { id: 4, name: 'Grand Suite', imgSrc: GrandSuite, rating: 5, reviews: 1 },
-  { id: 5, name: 'Junior Suite', imgSrc: JuniorSuite, rating: 4, reviews: 1 },
-  { id: 6, name: 'Family Special', imgSrc: FamilySpecial, rating: 5, reviews: 1 },
-  { id: 7, name: 'Premium Room', imgSrc: PremiumRoom, rating: 4, reviews: 1 },
-  { id: 8, name: 'Deluxe Suite', imgSrc: DeluxeSuite, rating: 5, reviews: 1 },
+  { id: 1, name: 'Luxury Suite', imgSrc: LuxurySuite, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 2, name: 'Standard', imgSrc: Standard, rating: 4, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 3, name: 'The Penthouse', imgSrc: Penthouse, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 4, name: 'Grand Suite', imgSrc: GrandSuite, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 5, name: 'Junior Suite', imgSrc: JuniorSuite, rating: 4, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 6, name: 'Family Special', imgSrc: FamilySpecial, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 7, name: 'Premium Room', imgSrc: PremiumRoom, rating: 4, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 8, name: 'Deluxe Suite', imgSrc: DeluxeSuite, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
 ];
 
 const RoomsPage = () => {
@@ -58,6 +78,17 @@ const RoomsPage = () => {
                 <span className="text-gray-600">1 King Bed</span>
                 <span className="text-gray-600">4 Guests</span>
               </div>
+              <ul className="mt-4 grid grid-cols-4 gap-4">
+                {room.amenities.map((amenity, index) => (
+                  <li key={index} className="flex justify-center items-center">
+                    <img 
+                      src={amenitiesWithIcons[amenity]} 
+                      alt={`${amenity} icon`} 
+                      className="w-10 h-10"
+                    />
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         ))}
