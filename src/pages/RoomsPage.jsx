@@ -63,7 +63,7 @@ const RoomsPage = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 mt-8">
         {rooms.map((room) => (
-          <div key={room.id} className="border rounded-lg shadow-lg overflow-hidden">
+          <div key={room.id} className="relative border rounded-lg shadow-lg overflow-hidden">
             <img src={room.imgSrc} alt={room.name} className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-lg font-semibold">{room.name}</h3>
@@ -89,6 +89,12 @@ const RoomsPage = () => {
                 <span className="text-gray-600">1 King Bed</span>
                 <span className="text-gray-600">4 Guests</span>
               </div>
+            </div>
+            {/* "More" Button */}
+            <div className="absolute bottom-4 right-4">
+              <button className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700">
+                More
+              </button>
             </div>
           </div>
         ))}
