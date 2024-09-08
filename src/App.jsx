@@ -7,7 +7,16 @@ import SignUpPage from "./pages/SignUpPage";
 import OffersPage from "./pages/OffersPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import RoomsPage from "./pages/RoomsPage";
-
+import BookingLayout from "./layouts/BookingLayout";
+import DeluxeSuitePage from "./pages/DeluxeSuitePage";
+import FamilySpecialPage from "./pages/FamilySpecialPage";
+import GrandSuitePage from "./pages/GrandSuitePage";
+import JuniorSuitePage from "./pages/JuniorSuitePage";
+import LuxurySuitePage from "./pages/LuxurySuitePage";
+import PremiumRoomPage from "./pages/PremiumRoomPage";
+import StandardPage from "./pages/StandardPage";
+import ThePenthhousePage from "./pages/ThePenthousePage";
+import CheckAvailabilityNavbar from "./components/CheckAvailabilityNavbar";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +82,96 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: "/deluxesuite",
+    element: <BookingLayout />,
+    children: [
+      {
+        index: true,
+        element: <DeluxeSuitePage />,
+      },
+    ],
+  },
+
+  {
+    path: "/familyspecial",
+    element: <BookingLayout />,
+    children: [
+      {
+        index: true,
+        element: <FamilySpecialPage />,
+      },
+    ],
+  },
+
+  {
+    path: "/grandsuite",
+    element: <BookingLayout />,
+    children: [
+      {
+        index: true,
+        element: <GrandSuitePage />,
+      },
+    ],
+  },
+
+  {
+    path: "/juniorsuite",
+    element: <BookingLayout />,
+    children: [
+      {
+        index: true,
+        element: <JuniorSuitePage />,
+      },
+    ],
+  },
+
+  {
+    path: "/luxurysuite",
+    element: <BookingLayout />,
+    children: [
+      {
+        index: true,
+        element: <LuxurySuitePage />,
+      },
+    ],
+  },
+
+  {
+    path: "/premiumroom",
+    element: <BookingLayout />,
+    children: [
+      {
+        index: true,
+        element: <PremiumRoomPage />,
+      },
+    ],
+  },
+
+  {
+    path: "/standard",
+    element: <BookingLayout />,
+    children: [
+      {
+        index: true,
+        element: <StandardPage />,
+      },
+    ],
+  },
+
+  {
+    path: "/penthhouse",
+    element: <BookingLayout />,
+    children: [
+      {
+        index: true,
+        element: <ThePenthhousePage />,
+      },
+    ],
+  },
+
+
  
 ]);
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import room from '../assets/rooms/room.jpg';
 import LuxurySuite from '../assets/roomstypes/LuxurySuite.jpg';
 import Standard from '../assets/roomstypes/Standard.jpg';
@@ -30,17 +31,19 @@ const amenitiesWithIcons = {
 };
 
 const rooms = [
-  { id: 1, name: 'Luxury Suite', imgSrc: LuxurySuite, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
-  { id: 2, name: 'Standard', imgSrc: Standard, rating: 4, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
-  { id: 3, name: 'The Penthouse', imgSrc: Penthouse, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
-  { id: 4, name: 'Grand Suite', imgSrc: GrandSuite, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
-  { id: 5, name: 'Junior Suite', imgSrc: JuniorSuite, rating: 4, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
-  { id: 6, name: 'Family Special', imgSrc: FamilySpecial, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
-  { id: 7, name: 'Premium Room', imgSrc: PremiumRoom, rating: 4, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
-  { id: 8, name: 'Deluxe Suite', imgSrc: DeluxeSuite, rating: 5, reviews: 1, amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 1, name: 'Luxury Suite', imgSrc: LuxurySuite, rating: 5, reviews: 1, route: '/luxurysuite', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 2, name: 'Standard', imgSrc: Standard, rating: 4, reviews: 1, route: '/standard', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 3, name: 'The Penthouse', imgSrc: Penthouse, rating: 5, reviews: 1, route: '/penthhouse', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 4, name: 'Grand Suite', imgSrc: GrandSuite, rating: 5, reviews: 1, route: '/grandsuite', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 5, name: 'Junior Suite', imgSrc: JuniorSuite, rating: 4, reviews: 1, route: '/juniorsuite', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 6, name: 'Family Special', imgSrc: FamilySpecial, rating: 5, reviews: 1, route: '/familyspecial', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 7, name: 'Premium Room', imgSrc: PremiumRoom, rating: 4, reviews: 1, route: '/premiumroom', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 8, name: 'Deluxe Suite', imgSrc: DeluxeSuite, rating: 5, reviews: 1, route: '/deluxesuite', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
 ];
 
 const RoomsPage = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center">
       <div className="relative flex items-center justify-center w-full">
@@ -92,7 +95,10 @@ const RoomsPage = () => {
             </div>
             {/* "More" Button */}
             <div className="absolute bottom-4 right-4">
-              <button className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700">
+              <button 
+                className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700" 
+                onClick={() => navigate(room.route)} // Navigate to the room's details page
+              > 
                 More
               </button>
             </div>
