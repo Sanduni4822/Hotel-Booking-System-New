@@ -1,23 +1,49 @@
 import React from 'react';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import image1 from '../assets/Deluxesuite/image1.jpg'; 
+import image2 from '../assets/Deluxesuite/image2.jpg'; // Add more images
+import image3 from '../assets/Deluxesuite/image3.jpg'; 
+import image4 from '../assets/Deluxesuite/image4.jpg';
 
 const DeluxeSuitePage = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: true,
+  };
+
   return (
     <div className="p-6">
       {/* Two Columns Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        {/* Left Column (Title, Image, and Paragraph) */}
+        {/* Left Column (Title, Image Slider, and Paragraph) */}
         <div>
           <h1 className="text-3xl font-bold mb-4">Deluxe Suite</h1>
           
-          {/* Image Section */}
+          {/* Image Slider Section */}
           <div className="mb-6">
-            <img 
-              src={image1} 
-              alt="Deluxe Suite" 
-              className="w-full h-auto rounded-lg shadow-md"
-            />
+            <Slider {...settings}>
+              <div>
+                <img src={image1} alt="Deluxe Suite 1" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+              <div>
+                <img src={image2} alt="Deluxe Suite 2" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+              <div>
+                <img src={image3} alt="Deluxe Suite 3" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+              <div>
+                <img src={image4} alt="Deluxe Suite 3" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+            </Slider>
           </div>
 
           {/* Text Section */}
