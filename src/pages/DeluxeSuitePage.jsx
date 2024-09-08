@@ -3,9 +3,19 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import image1 from '../assets/Deluxesuite/image1.jpg'; 
-import image2 from '../assets/Deluxesuite/image2.jpg'; // Add more images
+import image2 from '../assets/Deluxesuite/image2.jpg'; 
 import image3 from '../assets/Deluxesuite/image3.jpg'; 
 import image4 from '../assets/Deluxesuite/image4.jpg';
+
+// Importing Icon Images
+import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
+import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
+import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
+import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
+import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
+import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
+import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
+import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
 
 const DeluxeSuitePage = () => {
   const settings = {
@@ -18,6 +28,17 @@ const DeluxeSuitePage = () => {
     autoplaySpeed: 3000,
     arrows: true,
   };
+
+  const amenities = [
+    { icon: WifiIcon, label: 'Free Wi-Fi' },
+    { icon: CleaningIcon, label: 'Daily Cleaning' },
+    { icon: AirConditionerIcon, label: 'Air Conditioner' },
+    { icon: ShowerIcon, label: 'Shower' },
+    { icon: MinibarIcon, label: 'Minibar' },
+    { icon: SafetyLockerIcon, label: 'Safety Locker' },
+    { icon: BreakfastIcon, label: 'Breakfast Included' },
+    { icon: TowelsIcon, label: 'Fresh Towels' },
+  ];
 
   return (
     <div className="p-6">
@@ -41,18 +62,31 @@ const DeluxeSuitePage = () => {
                 <img src={image3} alt="Deluxe Suite 3" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={image4} alt="Deluxe Suite 3" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={image4} alt="Deluxe Suite 4" className="w-full h-auto rounded-lg shadow-md" />
               </div>
             </Slider>
           </div>
 
           {/* Text Section */}
-          <p className="text-lg">
+          <p className="text-lg mb-6">
             The Deluxe Suite at our seaside hotel offers a luxurious escape with stunning ocean views and premium amenities designed for ultimate comfort. This spacious suite features a stylish, modern decor and comes equipped with free Wi-Fi, allowing you to stay connected effortlessly. Enjoy the convenience of an air conditioner to maintain the perfect temperature, and a refreshing shower to unwind after a day at the beach. The suite includes a well-stocked minibar, ensuring your favorite beverages are always within reach. For added security, a personal safety locker is provided to keep your valuables secure. Start your day right with a complimentary breakfast, featuring a variety of delicious options. Fresh towels are provided daily, and our dedicated cleaning service ensures the suite remains spotless throughout your stay.
           </p>
+
+          {/* Room services Section */}
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Room Services</h2>
+            <div className="grid grid-cols-2 gap-4">
+              {amenities.map((amenity, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <img src={amenity.icon} alt={amenity.label} className="w-6 h-6" />
+                  <span className="text-lg">{amenity.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Right Column (Empty) */}
+        {/* Right Column (Empty for now) */}
         <div></div>
         
       </div>
