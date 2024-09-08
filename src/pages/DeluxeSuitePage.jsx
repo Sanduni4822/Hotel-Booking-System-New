@@ -53,44 +53,8 @@ const DeluxeSuitePage = () => {
         <div>
           <h1 className="text-3xl font-bold mb-4">Deluxe Suite</h1>
           
-          {/* Image Slider Section */}
-          <div className="mb-6">
-            <Slider {...settings}>
-              <div>
-                <img src={image1} alt="Deluxe Suite 1" className="w-full h-auto rounded-lg shadow-md" />
-              </div>
-              <div>
-                <img src={image2} alt="Deluxe Suite 2" className="w-full h-auto rounded-lg shadow-md" />
-              </div>
-              <div>
-                <img src={image3} alt="Deluxe Suite 3" className="w-full h-auto rounded-lg shadow-md" />
-              </div>
-              <div>
-                <img src={image4} alt="Deluxe Suite 4" className="w-full h-auto rounded-lg shadow-md" />
-              </div>
-            </Slider>
-          </div>
-
-          {/* Text Section */}
-          <p className="text-lg mb-6">
-            The Deluxe Suite at our seaside hotel offers a luxurious escape with stunning ocean views and premium amenities designed for ultimate comfort. This spacious suite features a stylish, modern decor and comes equipped with free Wi-Fi, allowing you to stay connected effortlessly. Enjoy the convenience of an air conditioner to maintain the perfect temperature, and a refreshing shower to unwind after a day at the beach. The suite includes a well-stocked minibar, ensuring your favorite beverages are always within reach. For added security, a personal safety locker is provided to keep your valuables secure. Start your day right with a complimentary breakfast, featuring a variety of delicious options. Fresh towels are provided daily, and our dedicated cleaning service ensures the suite remains spotless throughout your stay.
-          </p>
-
-          {/* Room Services Section */}
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold mb-4">Room Services</h2>
-            <div className="grid grid-cols-2 gap-4">
-              {amenities.map((amenity, index) => (
-                <div key={index} className="flex items-center space-x-2">
-                  <img src={amenity.icon} alt={amenity.label} className="w-6 h-6" />
-                  <span className="text-lg">{amenity.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Additional Information Section (Max Guests, Bed Type, Area) */}
-          <div className="flex justify-between items-center space-x-4">
+          <div className="flex justify-between items-center space-x-4 mb-4">
             <div className="flex items-center space-x-1">
               <img src={maxguests} alt="Max Guests" className="w-6 h-6" />
               <div>
@@ -113,6 +77,42 @@ const DeluxeSuitePage = () => {
                 <h3 className="text-sm font-semibold">Area</h3>
                 <p className="text-sm">51.34 sq. m</p>
               </div>
+            </div>
+          </div>
+
+          {/* Image Slider Section */}
+          <div className="mb-6">
+            <Slider {...settings}>
+              <div>
+                <img src={image1} alt="Deluxe Suite 1" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+              <div>
+                <img src={image2} alt="Deluxe Suite 2" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+              <div>
+                <img src={image3} alt="Deluxe Suite 3" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+              <div>
+                <img src={image4} alt="Deluxe Suite 4" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+            </Slider>
+          </div>
+
+          {/* Text Section */}
+          <p className="text-sm mb-6">
+            The Deluxe Suite at our seaside hotel offers a luxurious escape with stunning ocean views and premium amenities designed for ultimate comfort. This spacious suite features a stylish, modern decor and comes equipped with free Wi-Fi, allowing you to stay connected effortlessly. Enjoy the convenience of an air conditioner to maintain the perfect temperature, and a refreshing shower to unwind after a day at the beach. The suite includes a well-stocked minibar, ensuring your favorite beverages are always within reach. For added security, a personal safety locker is provided to keep your valuables secure. Start your day right with a complimentary breakfast, featuring a variety of delicious options. Fresh towels are provided daily, and our dedicated cleaning service ensures the suite remains spotless throughout your stay.
+          </p>
+
+          {/* Room Services Section */}
+          <div className="mb-6">
+            <h2 className="text-xl font-semibold mb-4">Room Services</h2>
+            <div className="grid grid-cols-2 gap-4">
+              {amenities.map((amenity, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <img src={amenity.icon} alt={amenity.label} className="w-6 h-6" />
+                  <span className="text-sm">{amenity.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
