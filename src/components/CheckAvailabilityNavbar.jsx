@@ -1,31 +1,27 @@
-// src/components/CheckAvailabilityNavbar.jsx
-
 import React, { useState } from 'react';
 
 const CheckAvailabilityNavbar = () => {
-  const [hotel, setHotel] = useState('VILLA THE LEAF');
+  const [guests, setGuests] = useState(1);
 
-  const handleHotelChange = (event) => {
-    setHotel(event.target.value);
+  const handleGuestsChange = (event) => {
+    setGuests(event.target.value);
   };
 
   return (
     <div className="sticky top-0 bg-white shadow-md z-50">
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 p-4 rounded-md">
-        {/* Select a Hotel */}
+        {/* Guests */}
         <div className="flex flex-col">
-          <label className="text-gray-600 text-sm mb-1">Select a Hotel</label>
-          <select 
-            value={hotel}
-            onChange={handleHotelChange}
+          <label className="text-gray-600 text-sm mb-1">Guests</label>
+          <input 
+            type="number" 
+            value={guests}
+            onChange={handleGuestsChange}
+            min="1"
             className="p-2 border border-gray-300 rounded-md"
-          >
-            <option value="VILLA THE LEAF">VILLA THE LEAF</option>
-            <option value="ARALIYA GREEN HILLS">ARALIYA GREEN HILLS</option>
-            {/* Add more hotel options as needed */}
-          </select>
+          />
         </div>
-        
+
         {/* Check-In Date */}
         <div className="flex flex-col">
           <label className="text-gray-600 text-sm mb-1">Check-In Date</label>
