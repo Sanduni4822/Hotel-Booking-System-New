@@ -36,7 +36,7 @@ const CheckAvailabilityNavbar = () => {
             className="p-2 border border-gray-300 rounded-md cursor-pointer"
           />
           {showGuestOptions && (
-            <div className="absolute top-12 left-0 right-0 bg-white border border-gray-300 rounded-md shadow-lg p-4 z-10">
+            <div className="absolute top-full left-0 w-full bg-white border border-gray-300 rounded-md shadow-lg p-4 z-10">
               <div className="flex flex-col space-y-2">
                 <div className="flex items-center justify-between">
                   <label className="text-sm">Adults</label>
