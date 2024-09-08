@@ -1,25 +1,72 @@
 import React, { useState } from 'react';
 
 const CheckAvailabilityNavbar = () => {
-  const [guests, setGuests] = useState(1);
+  const [showGuestOptions, setShowGuestOptions] = useState(false);
+  const [adults, setAdults] = useState(1);
+  const [children, setChildren] = useState(0);
 
-  const handleGuestsChange = (event) => {
-    setGuests(event.target.value);
+  const toggleGuestOptions = () => {
+    setShowGuestOptions(!showGuestOptions);
+  };
+
+  const handleAdultsChange = (event) => {
+    setAdults(event.target.value);
+  };
+
+  const handleChildrenChange = (event) => {
+    setChildren(event.target.value);
+  };
+
+  const handleGuestSelection = () => {
+    setShowGuestOptions(false);
   };
 
   return (
     <div className="sticky top-0 bg-white shadow-md z-50">
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 p-4 rounded-md">
+        
         {/* Guests */}
-        <div className="flex flex-col">
+        <div className="relative flex flex-col w-full md:w-auto">
           <label className="text-gray-600 text-sm mb-1">Guests</label>
           <input 
-            type="number" 
-            value={guests}
-            onChange={handleGuestsChange}
-            min="1"
-            className="p-2 border border-gray-300 rounded-md"
+            type="text" 
+            value={`${adults} Adults, ${children} Children`}
+            onClick={toggleGuestOptions}
+            readOnly
+            className="p-2 border border-gray-300 rounded-md cursor-pointer"
           />
+          {showGuestOptions && (
+            <div className="absolute top-12 left-0 right-0 bg-white border border-gray-300 rounded-md shadow-lg p-4 z-10">
+              <div className="flex flex-col space-y-2">
+                <div className="flex items-center justify-between">
+                  <label className="text-sm">Adults</label>
+                  <input 
+                    type="number" 
+                    value={adults}
+                    onChange={handleAdultsChange}
+                    min="1"
+                    className="w-16 p-2 border border-gray-300 rounded-md"
+                  />
+                </div>
+                <div className="flex items-center justify-between">
+                  <label className="text-sm">Children</label>
+                  <input 
+                    type="number" 
+                    value={children}
+                    onChange={handleChildrenChange}
+                    min="0"
+                    className="w-16 p-2 border border-gray-300 rounded-md"
+                  />
+                </div>
+                <button 
+                  className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition"
+                  onClick={handleGuestSelection}
+                >
+                  Done
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Check-In Date */}
@@ -48,8 +95,8 @@ const CheckAvailabilityNavbar = () => {
           <select 
             className="p-2 border border-gray-300 rounded-md"
           >
-            <option value="NATIONALITY">NATIONALITY</option>
-            {/* Add more nationality options as needed */}
+            <option value="Non-resident">Non-resident</option>
+            <option value="Resident">Resident</option>
           </select>
         </div>
         
