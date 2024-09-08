@@ -17,6 +17,10 @@ import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
 
+import maxguests from '../assets/Icons/maxguests.png'; 
+import bedtype from '../assets/Icons/bedtype.png'; 
+import area from '../assets/Icons/area.png'; 
+
 const DeluxeSuitePage = () => {
   const settings = {
     dots: true,
@@ -45,7 +49,7 @@ const DeluxeSuitePage = () => {
       {/* Two Columns Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        {/* Left Column (Title, Image Slider, and Paragraph) */}
+        {/* Left Column (Title, Image Slider, Paragraph, and Additional Info) */}
         <div>
           <h1 className="text-3xl font-bold mb-4">Deluxe Suite</h1>
           
@@ -72,8 +76,8 @@ const DeluxeSuitePage = () => {
             The Deluxe Suite at our seaside hotel offers a luxurious escape with stunning ocean views and premium amenities designed for ultimate comfort. This spacious suite features a stylish, modern decor and comes equipped with free Wi-Fi, allowing you to stay connected effortlessly. Enjoy the convenience of an air conditioner to maintain the perfect temperature, and a refreshing shower to unwind after a day at the beach. The suite includes a well-stocked minibar, ensuring your favorite beverages are always within reach. For added security, a personal safety locker is provided to keep your valuables secure. Start your day right with a complimentary breakfast, featuring a variety of delicious options. Fresh towels are provided daily, and our dedicated cleaning service ensures the suite remains spotless throughout your stay.
           </p>
 
-          {/* Room services Section */}
-          <div>
+          {/* Room Services Section */}
+          <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-4">Room Services</h2>
             <div className="grid grid-cols-2 gap-4">
               {amenities.map((amenity, index) => (
@@ -84,11 +88,40 @@ const DeluxeSuitePage = () => {
               ))}
             </div>
           </div>
+
+          {/* Additional Information Section (Max Guests, Bed Type, Area) */}
+          <div className="flex justify-between items-center space-x-4">
+            <div className="flex items-center space-x-1">
+              <img src={maxguests} alt="Max Guests" className="w-6 h-6" />
+              <div>
+                <h3 className="text-sm font-semibold">Max. Guests</h3>
+                <p className="text-sm">2 Adults / 1 Child</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-1">
+              <img src={bedtype} alt="Bed Type" className="w-6 h-6" />
+              <div>
+                <h3 className="text-sm font-semibold">Bed Type</h3>
+                <p className="text-sm">Queen size</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-1">
+              <img src={area} alt="Room Area" className="w-6 h-6" />
+              <div>
+                <h3 className="text-sm font-semibold">Area</h3>
+                <p className="text-sm">51.34 sq. m</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Right Column (Empty for now) */}
-        <div></div>
-        
+        {/* Right Column (Leave empty or add more content later) */}
+        <div className="space-y-6">
+          {/* Additional content can go here if needed */}
+        </div>
+
       </div>
     </div>
   );
