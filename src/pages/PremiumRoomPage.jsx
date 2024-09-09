@@ -50,7 +50,7 @@ const PremiumRoomPage = () => {
         
         {/* Left Column (Title, Image Slider, Paragraph, and Additional Info) */}
         <div>
-          <h1 className="text-3xl font-bold mb-4">Premium room</h1>
+          <h1 className="text-3xl font-bold mb-4">Premium Room</h1>
           
           {/* Additional Information Section (Max Guests, Bed Type, Area) */}
           <div className="flex justify-between items-center space-x-4 mb-4">
@@ -74,7 +74,7 @@ const PremiumRoomPage = () => {
               <img src={area} alt="Room Area" className="w-6 h-6" />
               <div>
                 <h3 className="text-sm font-semibold">Area</h3>
-                <p className="text-sm">51.34 sq. m</p>
+                <p className="text-sm">52 sq. m</p>
               </div>
             </div>
           </div>
