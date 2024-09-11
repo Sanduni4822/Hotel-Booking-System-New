@@ -16,6 +16,9 @@ import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
 import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import EnsuitebathroomIcon from '../assets/facilityiconadditionalpenthouse/EnsuitebathroomIcon.png';
+import HotwatershowerIcon from '../assets/facilityiconadditionalpenthouse/HotwatershowerIcon.png';
+import LaundryIcon from '../assets/facilityiconadditionalpenthouse/LaundryIcon.png';
 
 import maxguests from '../assets/Icons/maxguests.png'; 
 import bedtype from '../assets/Icons/bedtype.png'; 
@@ -42,6 +45,9 @@ const ThePenthousePage = () => {
     { icon: SafetyLockerIcon, label: 'Safety Locker' },
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
+    { icon: EnsuitebathroomIcon, label: 'Ensuite Bathroom' },
+    { icon: HotwatershowerIcon, label: 'Hotwater Shower' },
+    { icon: LaundryIcon, label: 'Laundry' },
   ];
 
   return (

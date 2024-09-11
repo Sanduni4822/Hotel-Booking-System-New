@@ -17,6 +17,10 @@ import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
 import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import OpenterraceIcon from '../assets/facilityiconadditionalfamilyspecial/OpenterraceIcon.png';
+import PrivatebathroomIcon from '../assets/facilityiconadditionalfamilyspecial/PrivatebathroomIcon.png';
+
+
 
 import maxguests from '../assets/Icons/maxguests.png'; 
 import bedtype from '../assets/Icons/bedtype.png'; 
@@ -43,6 +47,8 @@ const FamilySpecialPage = () => {
     { icon: SafetyLockerIcon, label: 'Safety Locker' },
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
+    { icon: OpenterraceIcon, label: 'Open terrace' },
+    { icon: PrivatebathroomIcon, label: 'Private bathroom' },
   ];
 
   return (
