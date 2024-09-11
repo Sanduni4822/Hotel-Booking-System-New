@@ -19,6 +19,9 @@ import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
 import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import BluetoothspeakerIcon from '../assets/facilityiconadditionalstandard/BluetoothspeakerIcon.png';
+import CoffeeIcon from '../assets/facilityiconadditionalstandard/CoffeeIcon.png';
+import LaundryserviceIcon from '../assets/facilityiconadditionalstandard/LaundryserviceIcon.png';
 
 import maxguests from '../assets/Icons/maxguests.png'; 
 import bedtype from '../assets/Icons/bedtype.png'; 
@@ -45,6 +48,9 @@ const StandardPage = () => {
     { icon: SafetyLockerIcon, label: 'Safety Locker' },
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
+    { icon: BluetoothspeakerIcon, label: 'Bluetooth Speaker' },
+    { icon: CoffeeIcon, label: 'Coffee' },
+    { icon: LaundryserviceIcon, label: 'Laundry Service' },
   ];
 
   return (

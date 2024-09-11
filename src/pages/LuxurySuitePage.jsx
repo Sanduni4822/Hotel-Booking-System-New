@@ -17,6 +17,10 @@ import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
 import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import JacuzziIcon from '../assets/facilityiconadditionalluxurysuite/JacuzziIcon.png';
+import LivingroomIcon from '../assets/facilityiconadditionalluxurysuite/LivingroomIcon.png';
+import PrivatebalconyIcon from '../assets/facilityiconadditionalluxurysuite/PrivatebalconyIcon.png';
+
 
 import maxguests from '../assets/Icons/maxguests.png'; 
 import bedtype from '../assets/Icons/bedtype.png'; 
@@ -43,6 +47,10 @@ const LuxurySuitePage = () => {
     { icon: SafetyLockerIcon, label: 'Safety Locker' },
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
+    { icon: JacuzziIcon, label: 'Jacuzzi' },
+    { icon: LivingroomIcon, label: 'Living Room' },
+    { icon: PrivatebalconyIcon, label: 'Private Balcony' },
+
   ];
 
   return (
