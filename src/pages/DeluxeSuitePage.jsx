@@ -21,6 +21,8 @@ import maxguests from '../assets/Icons/maxguests.png';
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
+import RoomRate from '../components/RoomRateComponent/RoomRate';
+
 const DeluxeSuitePage = () => {
   const settings = {
     dots: true,
@@ -117,9 +119,10 @@ const DeluxeSuitePage = () => {
           </div>
         </div>
 
-        {/* Right Column (Leave empty or add more content later) */}
+        {/* Right Column */}
         <div className="space-y-6">
-          {/* Additional content can go here if needed */}
+          {/* RoomRate Component */}
+          <RoomRate/>
         </div>
 
       </div>
