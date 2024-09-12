@@ -1,24 +1,34 @@
 import React, { useState } from 'react';
+import ReservationSummary from '../components/SubmitButtonComponent/Reservationsummary'; // Fixed path
 
 const CheckAvailabilityNavbar = () => {
   const [showGuestOptions, setShowGuestOptions] = useState(false);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
+  const [checkInDate, setCheckInDate] = useState('2024-09-06');
+  const [checkOutDate, setCheckOutDate] = useState('2024-09-07');
+  const [nationality, setNationality] = useState('Non-resident');
+  const [promoCode, setPromoCode] = useState('');
+  const [showSummary, setShowSummary] = useState(false); // State for showing summary
 
   const toggleGuestOptions = () => {
     setShowGuestOptions(!showGuestOptions);
   };
 
   const handleAdultsChange = (event) => {
-    setAdults(event.target.value);
+    setAdults(parseInt(event.target.value, 10)); // Ensure value is a number
   };
 
   const handleChildrenChange = (event) => {
-    setChildren(event.target.value);
+    setChildren(parseInt(event.target.value, 10)); // Ensure value is a number
   };
 
   const handleGuestSelection = () => {
     setShowGuestOptions(false);
+  };
+
+  const handleSubmit = () => {
+    setShowSummary(true); // Show the reservation summary when submitting
   };
 
   return (
@@ -74,7 +84,8 @@ const CheckAvailabilityNavbar = () => {
           <label className="text-gray-600 text-sm mb-1">Check-In Date</label>
           <input 
             type="date" 
-            defaultValue="2024-09-06" 
+            value={checkInDate}
+            onChange={(e) => setCheckInDate(e.target.value)}
             className="p-2 border border-gray-300 rounded-md"
           />
         </div>
@@ -84,7 +95,8 @@ const CheckAvailabilityNavbar = () => {
           <label className="text-gray-600 text-sm mb-1">Check-Out Date</label>
           <input 
             type="date" 
-            defaultValue="2024-09-07" 
+            value={checkOutDate}
+            onChange={(e) => setCheckOutDate(e.target.value)}
             className="p-2 border border-gray-300 rounded-md"
           />
         </div>
@@ -93,6 +105,8 @@ const CheckAvailabilityNavbar = () => {
         <div className="flex flex-col">
           <label className="text-gray-600 text-sm mb-1">Nationality</label>
           <select 
+            value={nationality}
+            onChange={(e) => setNationality(e.target.value)}
             className="p-2 border border-gray-300 rounded-md"
           >
             <option value="Non-resident">Non-resident</option>
@@ -106,21 +120,26 @@ const CheckAvailabilityNavbar = () => {
           <input 
             type="text" 
             placeholder="Enter Promo Code" 
+            value={promoCode}
+            onChange={(e) => setPromoCode(e.target.value)}
             className="p-2 border border-gray-300 rounded-md"
           />
         </div>
 
         {/* Book Now Button */}
-        <div className="absolute bottom-4 right-4">
-          <button className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition">
+        <div className="flex flex-col justify-end md:justify-start">
+          <button 
+            className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition mt-4 md:mt-0"
+            onClick={handleSubmit} // Call handleSubmit on click
+          >
             SUBMIT
           </button>
         </div>
       </div>
+
+    
     </div>
   );
 };
 
 export default CheckAvailabilityNavbar;
-
-
