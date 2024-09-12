@@ -122,3 +122,5 @@ const CheckAvailabilityNavbar = () => {
 };
 
 export default CheckAvailabilityNavbar;
+
+
