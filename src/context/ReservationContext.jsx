@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Reservationsummary = ({ adults, children, checkInDate, checkOutDate, nationality, promoCode }) => {
+const ReservationSummary = ({ adults, children, checkInDate, checkOutDate, nationality, promoCode }) => {
   return (
     <div className="border border-gray-300 rounded-lg p-4 max-w-sm mx-auto shadow-md">
       <h2 className="text-lg font-semibold mb-4">Reservation Summary</h2>
@@ -50,4 +50,4 @@ const Reservationsummary = ({ adults, children, checkInDate, checkOutDate, natio
   );
 };
 
-export default Reservationsummary;
+export default ReservationSummary;

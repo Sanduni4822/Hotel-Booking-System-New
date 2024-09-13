@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReservationSummary from '../components/SubmitButtonComponent/Reservationsummary'; // Fixed path
 
 const CheckAvailabilityNavbar = () => {
   const [showGuestOptions, setShowGuestOptions] = useState(false);
@@ -9,7 +8,6 @@ const CheckAvailabilityNavbar = () => {
   const [checkOutDate, setCheckOutDate] = useState('2024-09-07');
   const [nationality, setNationality] = useState('Non-resident');
   const [promoCode, setPromoCode] = useState('');
-  const [showSummary, setShowSummary] = useState(false); // State for showing summary
 
   const toggleGuestOptions = () => {
     setShowGuestOptions(!showGuestOptions);
@@ -28,13 +26,12 @@ const CheckAvailabilityNavbar = () => {
   };
 
   const handleSubmit = () => {
-    setShowSummary(true); // Show the reservation summary when submitting
+    // Perform submit action here
   };
 
   return (
     <div className="sticky top-0 bg-white shadow-md z-50">
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 p-4 rounded-md relative">
-        
         {/* Guests */}
         <div className="relative flex flex-col w-full md:w-auto">
           <label className="text-gray-600 text-sm mb-1">Guests</label>
@@ -136,8 +133,6 @@ const CheckAvailabilityNavbar = () => {
           </button>
         </div>
       </div>
-
-    
     </div>
   );
 };

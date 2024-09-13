@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -24,6 +24,13 @@ import area from '../assets/Icons/area.png';
 import RoomRate from '../components/RoomRateComponent/RoomRate';
 
 const DeluxeSuitePage = () => {
+  const [adults, setAdults] = useState(2);  // Example default values
+  const [children, setChildren] = useState(1);
+  const [checkInDate, setCheckInDate] = useState('2024-09-06');
+  const [checkOutDate, setCheckOutDate] = useState('2024-09-07');
+  const [nationality, setNationality] = useState('Non-resident');
+  const [promoCode, setPromoCode] = useState('');
+
   const settings = {
     dots: true,
     infinite: true,
@@ -102,7 +109,7 @@ const DeluxeSuitePage = () => {
 
           {/* Text Section */}
           <p className="text-sm mb-6">
-            The Deluxe Suite at our seaside hotel offers a luxurious escape with stunning ocean views and premium amenities designed for ultimate comfort. This spacious suite features a stylish, modern decor and comes equipped with free Wi-Fi, allowing you to stay connected effortlessly. Enjoy the convenience of an air conditioner to maintain the perfect temperature, and a refreshing shower to unwind after a day at the beach. The suite includes a well-stocked minibar, ensuring your favorite beverages are always within reach. For added security, a personal safety locker is provided to keep your valuables secure. Start your day right with a complimentary breakfast, featuring a variety of delicious options. Fresh towels are provided daily, and our dedicated cleaning service ensures the suite remains spotless throughout your stay.
+            The Deluxe Suite at our seaside hotel offers a luxurious escape with stunning ocean views and premium amenities designed for ultimate comfort...
           </p>
 
           {/* Room Services Section */}
@@ -122,7 +129,7 @@ const DeluxeSuitePage = () => {
         {/* Right Column */}
         <div className="space-y-6">
           {/* RoomRate Component */}
-          <RoomRate/>
+          <RoomRate />
         </div>
 
       </div>
