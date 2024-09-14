@@ -137,4 +137,4 @@ const DeluxeSuitePage = () => {
   );
 };
 
-export default DeluxeSuitePage;
+export default DeluxeSuitePage; 

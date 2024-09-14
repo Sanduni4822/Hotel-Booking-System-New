@@ -1,13 +1,11 @@
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import BaseLayout from "./layouts/BaseLayout"
+import BaseLayout from "./layouts/BaseLayout";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import OffersPage from "./pages/OffersPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import RoomsPage from "./pages/RoomsPage";
-import BookingLayout from "./layouts/BookingLayout";
 import DeluxeSuitePage from "./pages/DeluxeSuitePage";
 import FamilySpecialPage from "./pages/FamilySpecialPage";
 import GrandSuitePage from "./pages/GrandSuitePage";
@@ -16,7 +14,6 @@ import LuxurySuitePage from "./pages/LuxurySuitePage";
 import PremiumRoomPage from "./pages/PremiumRoomPage";
 import StandardPage from "./pages/StandardPage";
 import ThePenthhousePage from "./pages/ThePenthousePage";
-import CheckAvailabilityNavbar from "./components/CheckAvailabilityNavbar";
 
 const router = createBrowserRouter([
   {
@@ -49,7 +46,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/offers",
     element: <BaseLayout />,
@@ -60,7 +56,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/rooms",
     element: <BaseLayout />,
@@ -71,7 +66,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/contact",
     element: <BaseLayout />,
@@ -82,10 +76,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/deluxesuite",
-    element: <BookingLayout />,
+    element: <BaseLayout />,
     children: [
       {
         index: true,
@@ -93,10 +86,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/familyspecial",
-    element: <BookingLayout />,
+    element: <BaseLayout />,
     children: [
       {
         index: true,
@@ -104,10 +96,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/grandsuite",
-    element: <BookingLayout />,
+    element: <BaseLayout />,
     children: [
       {
         index: true,
@@ -115,10 +106,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/juniorsuite",
-    element: <BookingLayout />,
+    element: <BaseLayout />,
     children: [
       {
         index: true,
@@ -126,10 +116,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/luxurysuite",
-    element: <BookingLayout />,
+    element: <BaseLayout />,
     children: [
       {
         index: true,
@@ -137,10 +126,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/premiumroom",
-    element: <BookingLayout />,
+    element: <BaseLayout />,
     children: [
       {
         index: true,
@@ -148,10 +136,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/standard",
-    element: <BookingLayout />,
+    element: <BaseLayout />,
     children: [
       {
         index: true,
@@ -159,10 +146,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/penthhouse",
-    element: <BookingLayout />,
+    element: <BaseLayout />,
     children: [
       {
         index: true,
@@ -170,15 +156,12 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-
- 
 ]);
 
 function App() {
   return (
     <div>
-        <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </div>
   );
 }
