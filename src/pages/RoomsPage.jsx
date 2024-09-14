@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-import room from '../assets/rooms/room.jpg';
 import LuxurySuite from '../assets/roomstypes/LuxurySuite.jpg';
 import Standard from '../assets/roomstypes/Standard.jpg';
 import Penthouse from '../assets/roomstypes/Penthouse.jpg';
@@ -46,22 +45,15 @@ const RoomsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center">
-      <div className="relative flex items-center justify-center w-full">
-        <img 
-          src={room} 
-          alt="Room" 
-          className="w-full h-auto"
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white text-6xl font-bold">
-            Rooms
-          </span>
-        </div>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="text-white text-6xl font-bold">
+          Rooms
+        </span>
       </div>
       <div className="flex justify-center items-center text-center mt-8">
         <p className="text-2xl">
           EXTERIOR AND INTERIOR 360 TOUR <br />
-          WITH 9 LOCATION
+          WITH 9 LOCATIONS
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 mt-8">
