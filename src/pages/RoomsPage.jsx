@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
 import LuxurySuite from '../assets/roomstypes/LuxurySuite.jpg';
 import Standard from '../assets/roomstypes/Standard.jpg';
 import Penthouse from '../assets/roomstypes/Penthouse.jpg';
@@ -18,7 +18,8 @@ import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
 
-import RoomImage from '../assets/roompageimage/room.jpg'; // Import your additional image here
+import RoomImage from '../assets/roompageimage/room.jpg'; // Additional image
+import BookingComponent from '../components/BookingComponent/BookingComponent'; // Correct import for BookingComponent
 
 const amenitiesWithIcons = {
   'Free wifi': WifiIcon,
@@ -43,40 +44,44 @@ const rooms = [
 ];
 
 const RoomsPage = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center relative">
       {/* Navigation bar placeholder */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-white text-6xl font-bold">
-          Rooms
-        </span>
+        <span className="text-white text-6xl font-bold">Rooms</span>
       </div>
-      {/* Additional image below navigation bar */}
-      <div className="mt-20">
+
+      {/* Room image with Booking component overlay */}
+      <div className="relative mt-20 w-full">
         <img src={RoomImage} alt="Additional Room" className="w-full h-auto object-cover" />
+
+        {/* Booking component overlay */}
+        <div className="absolute top-10 left-1/2 transform -translate-x-1/2 z-10">
+          <BookingComponent />
+        </div>
       </div>
+
+      {/* Description section */}
       <div className="flex justify-center items-center text-center mt-8">
         <p className="text-2xl">
           EXTERIOR AND INTERIOR 360 TOUR <br />
           WITH 9 LOCATIONS
         </p>
       </div>
+
+      {/* Rooms grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 mt-8">
         {rooms.map((room) => (
           <div key={room.id} className="relative border rounded-lg shadow-lg overflow-hidden">
-            <img src={room.imgSrc} alt={room.name} className="w-full h-48 object-cover"/>
+            <img src={room.imgSrc} alt={room.name} className="w-full h-48 object-cover" />
             <div className="p-4">
               <h3 className="text-lg font-semibold">{room.name}</h3>
               <ul className="flex flex-wrap mt-2">
                 {room.amenities.map((amenity, index) => (
                   <li key={index} className="flex justify-center items-center m-1">
-                    <img 
-                      src={amenitiesWithIcons[amenity]} 
-                      alt={`${amenity} icon`} 
-                      className="w-5 h-5"
-                    />
+                    <img src={amenitiesWithIcons[amenity]} alt={`${amenity} icon`} className="w-5 h-5" />
                   </li>
                 ))}
               </ul>
@@ -94,10 +99,10 @@ const RoomsPage = () => {
             </div>
             {/* "More" Button */}
             <div className="absolute bottom-4 right-4">
-              <button 
-                className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700" 
-                onClick={() => navigate(room.route)} // Navigate to the room's details page
-              > 
+              <button
+                className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700"
+                onClick={() => navigate(room.route)}
+              >
                 More
               </button>
             </div>
