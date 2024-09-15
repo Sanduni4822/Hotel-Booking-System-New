@@ -30,6 +30,11 @@ const BookingComponent = () => {
 
   return (
     <div className="sticky top-0 bg-white shadow-md z-50">
+      {/* Message Section */}
+      <div className="bg-yellow-100 text-center text-yellow-800 p-2 font-semibold">
+        <span>Book online - Get your guaranteed accommodation RIGHT NOW!</span>
+      </div>
+
       <div className="flex flex-col md:flex-row md:items-end space-y-4 md:space-y-0 md:space-x-4 p-4 rounded-md relative">
         {/* Flex container for inputs */}
         <div className="flex flex-grow space-x-4">
@@ -114,12 +119,12 @@ const BookingComponent = () => {
         </div>
 
         {/* Submit Button */}
-        <div className="flex w-full md:w-auto md:ml-auto">
+        <div className="flex w-full md:w-auto md:ml-auto mt-4 md:mt-0">
           <button 
             className="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition ml-auto"
             onClick={handleSubmit}
           >
-            SUBMIT
+            CHECK AVAILABILITY
           </button>
         </div>
       </div>
