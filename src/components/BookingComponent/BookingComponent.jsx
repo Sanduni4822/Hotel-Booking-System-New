@@ -7,7 +7,6 @@ const BookingComponent = () => {
   const [checkInDate, setCheckInDate] = useState('2024-09-06');
   const [checkOutDate, setCheckOutDate] = useState('2024-09-07');
   const [nationality, setNationality] = useState('Non-resident');
-  const [promoCode, setPromoCode] = useState('');
 
   const toggleGuestOptions = () => {
     setShowGuestOptions(!showGuestOptions);
@@ -111,18 +110,6 @@ const BookingComponent = () => {
               <option value="Non-resident">Non-resident</option>
               <option value="Resident">Resident</option>
             </select>
-          </div>
-          
-          {/* Promo Code */}
-          <div className="flex flex-col">
-            <label className="text-gray-600 text-sm mb-1">Promo Code</label>
-            <input 
-              type="text" 
-              placeholder="Enter Promo Code" 
-              value={promoCode}
-              onChange={(e) => setPromoCode(e.target.value)}
-              className="p-2 border border-gray-300 rounded-md"
-            />
           </div>
         </div>
 
