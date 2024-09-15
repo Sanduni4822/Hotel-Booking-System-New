@@ -48,17 +48,17 @@ const RoomsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center relative">
-      {/* Navigation bar placeholder */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-white text-6xl font-bold">Rooms</span>
+      {/* Title */}
+      <div className="w-full bg-blue-500 text-white text-3xl font-bold py-4 text-center">
+        Rooms
       </div>
 
       {/* Room image with Booking component overlay */}
-      <div className="relative mt-20 w-full">
+      <div className="relative w-full">
         <img src={RoomImage} alt="Additional Room" className="w-full h-auto object-cover" />
 
         {/* Booking component overlay */}
-        <div className="absolute top-10 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 z-10">
           <BookingComponent />
         </div>
       </div>
