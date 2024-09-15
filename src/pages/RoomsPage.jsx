@@ -18,6 +18,8 @@ import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
 
+import RoomImage from '../assets/roompageimage/room.jpg'; // Import your additional image here
+
 const amenitiesWithIcons = {
   'Free wifi': WifiIcon,
   'Cleaning': CleaningIcon,
@@ -45,10 +47,15 @@ const RoomsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center">
+      {/* Navigation bar placeholder */}
       <div className="absolute inset-0 flex items-center justify-center">
         <span className="text-white text-6xl font-bold">
           Rooms
         </span>
+      </div>
+      {/* Additional image below navigation bar */}
+      <div className="mt-20">
+        <img src={RoomImage} alt="Additional Room" className="w-full h-auto object-cover" />
       </div>
       <div className="flex justify-center items-center text-center mt-8">
         <p className="text-2xl">
