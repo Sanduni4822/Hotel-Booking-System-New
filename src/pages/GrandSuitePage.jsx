@@ -25,7 +25,7 @@ import GrandSuiteRoomRate from '../components/RoomRateComponent/GrandSuiteRoomRa
 import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
 import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
 
-const GRAND_SUITE_ROOM_RATE = 250; // Set room rate per night for Grand Suite
+const GRAND_SUITE_ROOM_RATE = 261; // Set room rate per night for Grand Suite
 
 const GrandSuitePage = () => {
   const [reservationDetails, setReservationDetails] = useState(null);
