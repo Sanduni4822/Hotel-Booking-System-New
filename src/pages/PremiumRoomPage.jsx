@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -22,8 +22,13 @@ import area from '../assets/Icons/area.png';
 
 import PremiumRoomRate from '../components/RoomRateComponent/PremiumRoomRate';
 import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+
+const PREMIUM_ROOM_RATE = 335; // Set room rate per night for Premium Room
 
 const PremiumRoomPage = () => {
+  const [reservationDetails, setReservationDetails] = useState(null);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -45,6 +50,30 @@ const PremiumRoomPage = () => {
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
   ];
+
+  // Handle form submission from ReserveRoomForm
+  const handleFormSubmit = (formData) => {
+    const checkInDate = new Date(formData.checkinDate);
+    const checkOutDate = new Date(formData.checkoutDate);
+
+    // Calculate number of days
+    const numberOfDays = Math.ceil(
+      (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
+    );
+
+    // Calculate total payment
+    const totalPayment = numberOfDays * PREMIUM_ROOM_RATE;
+
+    // Save reservation details in state
+    setReservationDetails({
+      checkInDate: formData.checkinDate,
+      checkOutDate: formData.checkoutDate,
+      numberOfDays,
+      adults: formData.adults,
+      children: formData.children,
+      totalPayment,
+    });
+  };
 
   return (
     <div className="p-6">
@@ -69,7 +98,7 @@ const PremiumRoomPage = () => {
               <img src={bedtype} alt="Bed Type" className="w-6 h-6" />
               <div>
                 <h3 className="text-sm font-semibold">Bed Type</h3>
-                <p className="text-sm">king size</p>
+                <p className="text-sm">King size</p>
               </div>
             </div>
 
@@ -86,13 +115,13 @@ const PremiumRoomPage = () => {
           <div className="mb-6">
             <Slider {...settings}>
               <div>
-                <img src={Image1} alt="Deluxe Suite 1" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image1} alt="Premium Room 1" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image2} alt="Deluxe Suite 2" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image2} alt="Premium Room 2" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image3} alt="Deluxe Suite 3" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image3} alt="Premium Room 3" className="w-full h-auto rounded-lg shadow-md" />
               </div>
             </Slider>
           </div>
@@ -116,13 +145,19 @@ const PremiumRoomPage = () => {
           </div>
         </div>
 
-        {/* Right Column (Leave empty or add more content later) */}
+        {/* Right Column */}
         <div className="space-y-6">
-          {/* Additional content can go here if needed */}
-          <PremiumRoomRate/>
-          <ReserveRoomForm/>
-        </div>
+          {/* PremiumRoomRate Component */}
+          <PremiumRoomRate />
 
+          {/* ReserveRoomForm Component */}
+          <ReserveRoomForm onSubmit={handleFormSubmit} />
+
+          {/* Conditionally Render Reservation Summary */}
+          {reservationDetails && (
+            <ReservationSummary reservation={reservationDetails} />
+          )}
+        </div>
       </div>
     </div>
   );
