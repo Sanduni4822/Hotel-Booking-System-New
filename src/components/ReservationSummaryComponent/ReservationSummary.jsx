@@ -11,7 +11,7 @@ const ReservationSummary = ({ reservation }) => {
   } = reservation;
 
   return (
-    <div className="max-w-xs p-4 bg-white border border-black">
+    <div className="max-w-xs ml-10 p-4 bg-white border border-black">
       <h2 className="text-lg font-bold mb-4">Reservation Summary</h2>
 
       {/* Check-in Date */}
