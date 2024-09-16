@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -7,8 +7,6 @@ import Image2 from '../assets/Standard/Image2.jpg';
 import Image3 from '../assets/Standard/Image3.jpg'; 
 import Image4 from '../assets/Standard/Image4.jpg'; 
 import Image5 from '../assets/Standard/Image5.jpg'; 
-
-
 
 // Importing Icon Images
 import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
@@ -29,8 +27,13 @@ import area from '../assets/Icons/area.png';
 
 import StandardRoomRate from '../components/RoomRateComponent/StandardRoomRate';
 import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary'; // Add ReservationSummary
+
+const STANDARD_ROOM_RATE = 234; // Set room rate per night for Standard Room
 
 const StandardPage = () => {
+  const [reservationDetails, setReservationDetails] = useState(null);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -56,6 +59,30 @@ const StandardPage = () => {
     { icon: LaundryserviceIcon, label: 'Laundry Service' },
   ];
 
+  // Handle form submission from ReserveRoomForm
+  const handleFormSubmit = (formData) => {
+    const checkInDate = new Date(formData.checkinDate);
+    const checkOutDate = new Date(formData.checkoutDate);
+
+    // Calculate number of days
+    const numberOfDays = Math.ceil(
+      (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
+    );
+
+    // Calculate total payment
+    const totalPayment = numberOfDays * STANDARD_ROOM_RATE;
+
+    // Save reservation details in state
+    setReservationDetails({
+      checkInDate: formData.checkinDate,
+      checkOutDate: formData.checkoutDate,
+      numberOfDays,
+      adults: formData.adults,
+      children: formData.children,
+      totalPayment,
+    });
+  };
+
   return (
     <div className="p-6">
       {/* Two Columns Layout */}
@@ -63,7 +90,7 @@ const StandardPage = () => {
         
         {/* Left Column (Title, Image Slider, Paragraph, and Additional Info) */}
         <div>
-          <h1 className="text-3xl font-bold mb-4">Standard</h1>
+          <h1 className="text-3xl font-bold mb-4">Standard Room</h1>
           
           {/* Additional Information Section (Max Guests, Bed Type, Area) */}
           <div className="flex justify-between items-center space-x-4 mb-4">
@@ -79,7 +106,7 @@ const StandardPage = () => {
               <img src={bedtype} alt="Bed Type" className="w-6 h-6" />
               <div>
                 <h3 className="text-sm font-semibold">Bed Type</h3>
-                <p className="text-sm">king size</p>
+                <p className="text-sm">King size</p>
               </div>
             </div>
 
@@ -96,26 +123,26 @@ const StandardPage = () => {
           <div className="mb-6">
             <Slider {...settings}>
               <div>
-                <img src={Image1} alt="Standard 1" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image1} alt="Standard Room 1" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image2} alt="Standard 2" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image2} alt="Standard Room 2" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image3} alt="Standard 3" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image3} alt="Standard Room 3" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image4} alt="Standard 4" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image4} alt="Standard Room 4" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image5} alt="Standard 5" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image5} alt="Standard Room 5" className="w-full h-auto rounded-lg shadow-md" />
               </div>
             </Slider>
           </div>
 
           {/* Text Section */}
           <p className="text-sm mb-6">
-          A standard room in a seaside hotel in Sri Lanka typically offers a cozy and comfortable stay with essential amenities. These rooms often feature a balcony or window with partial views of the ocean, air conditioning, a comfortable bed, and a private bathroom. The decor is usually inspired by the island's tropical vibe, with a touch of local charm. Guests can expect a relaxing environment perfect for unwinding after a day of exploring the beautiful beaches and vibrant culture of Sri Lanka.
+            A standard room in a seaside hotel in Sri Lanka typically offers a cozy and comfortable stay with essential amenities. These rooms often feature a balcony or window with partial views of the ocean, air conditioning, a comfortable bed, and a private bathroom. The decor is usually inspired by the island's tropical vibe, with a touch of local charm. Guests can expect a relaxing environment perfect for unwinding after a day of exploring the beautiful beaches and vibrant culture of Sri Lanka.
           </p>
 
           {/* Room Services Section */}
@@ -132,13 +159,19 @@ const StandardPage = () => {
           </div>
         </div>
 
-        {/* Right Column (Leave empty or add more content later) */}
+        {/* Right Column */}
         <div className="space-y-6">
-          {/* Additional content can go here if needed */}
-          <StandardRoomRate/>
-          <ReserveRoomForm/>
-        </div>
+          {/* RoomRate Component */}
+          <StandardRoomRate />
 
+          {/* ReserveRoomForm Component */}
+          <ReserveRoomForm onSubmit={handleFormSubmit} />
+
+          {/* Conditionally Render Reservation Summary */}
+          {reservationDetails && (
+            <ReservationSummary reservation={reservationDetails} />
+          )}
+        </div>
       </div>
     </div>
   );
