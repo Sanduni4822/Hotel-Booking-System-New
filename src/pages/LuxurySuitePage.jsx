@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +6,6 @@ import Image1 from '../assets/Luxurysuite/Image1.jpg';
 import Image2 from '../assets/Luxurysuite/Image2.jpg'; 
 import Image3 from '../assets/Luxurysuite/Image3.jpg'; 
 import Image4 from '../assets/Luxurysuite/Image4.jpg'; 
-
 
 // Importing Icon Images
 import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
@@ -21,15 +20,19 @@ import JacuzziIcon from '../assets/facilityiconadditionalluxurysuite/JacuzziIcon
 import LivingroomIcon from '../assets/facilityiconadditionalluxurysuite/LivingroomIcon.png';
 import PrivatebalconyIcon from '../assets/facilityiconadditionalluxurysuite/PrivatebalconyIcon.png';
 
-
 import maxguests from '../assets/Icons/maxguests.png'; 
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
 import LuxurySuiteRoomRate from '../components/RoomRateComponent/LuxurySuiteRoomRate';
 import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+
+const LUXURY_SUITE_ROOM_RATE = 247; // Set room rate per night for Luxury Suite
 
 const LuxurySuitePage = () => {
+  const [reservationDetails, setReservationDetails] = useState(null);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -53,8 +56,31 @@ const LuxurySuitePage = () => {
     { icon: JacuzziIcon, label: 'Jacuzzi' },
     { icon: LivingroomIcon, label: 'Living Room' },
     { icon: PrivatebalconyIcon, label: 'Private Balcony' },
-
   ];
+
+  // Handle form submission from ReserveRoomForm
+  const handleFormSubmit = (formData) => {
+    const checkInDate = new Date(formData.checkinDate);
+    const checkOutDate = new Date(formData.checkoutDate);
+
+    // Calculate number of days
+    const numberOfDays = Math.ceil(
+      (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
+    );
+
+    // Calculate total payment
+    const totalPayment = numberOfDays * LUXURY_SUITE_ROOM_RATE;
+
+    // Save reservation details in state
+    setReservationDetails({
+      checkInDate: formData.checkinDate,
+      checkOutDate: formData.checkoutDate,
+      numberOfDays,
+      adults: formData.adults,
+      children: formData.children,
+      totalPayment,
+    });
+  };
 
   return (
     <div className="p-6">
@@ -79,7 +105,7 @@ const LuxurySuitePage = () => {
               <img src={bedtype} alt="Bed Type" className="w-6 h-6" />
               <div>
                 <h3 className="text-sm font-semibold">Bed Type</h3>
-                <p className="text-sm">king size</p>
+                <p className="text-sm">King size</p>
               </div>
             </div>
 
@@ -112,7 +138,7 @@ const LuxurySuitePage = () => {
 
           {/* Text Section */}
           <p className="text-sm mb-6">
-          A luxury suite in a seaside hotel in Sri Lanka offers a serene escape with stunning ocean views. The suite features elegant decor, a spacious bedroom with a king-sized bed, a private balcony overlooking the sea, and a luxurious bathroom with a soaking tub. Guests can enjoy modern amenities like a flat-screen TV, high-speed Wi-Fi, and 24-hour room service. The suite also includes access to exclusive hotel facilities such as a private beach, infinity pool, and gourmet dining options, ensuring a perfect blend of comfort and opulence in a tropical paradise.
+            A luxury suite in a seaside hotel in Sri Lanka offers a serene escape with stunning ocean views. The suite features elegant decor, a spacious bedroom with a king-sized bed, a private balcony overlooking the sea, and a luxurious bathroom with a soaking tub. Guests can enjoy modern amenities like a flat-screen TV, high-speed Wi-Fi, and 24-hour room service. The suite also includes access to exclusive hotel facilities such as a private beach, infinity pool, and gourmet dining options, ensuring a perfect blend of comfort and opulence in a tropical paradise.
           </p>
 
           {/* Room Services Section */}
@@ -129,13 +155,19 @@ const LuxurySuitePage = () => {
           </div>
         </div>
 
-        {/* Right Column (Leave empty or add more content later) */}
+        {/* Right Column */}
         <div className="space-y-6">
-          {/* Additional content can go here if needed */}
-          <LuxurySuiteRoomRate/>
-          <ReserveRoomForm/>
-        </div>
+          {/* RoomRate Component */}
+          <LuxurySuiteRoomRate />
 
+          {/* ReserveRoomForm Component */}
+          <ReserveRoomForm onSubmit={handleFormSubmit} />
+
+          {/* Conditionally Render Reservation Summary */}
+          {reservationDetails && (
+            <ReservationSummary reservation={reservationDetails} />
+          )}
+        </div>
       </div>
     </div>
   );
