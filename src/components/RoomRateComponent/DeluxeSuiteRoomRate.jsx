@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RoomRate = () => {
+const DeluxeSuiteRoomRate = () => {
   return (
     <div className="p-6 bg-white space-y-4">
       <div className="border-b pb-4 mt-5">
@@ -38,4 +38,4 @@ const RoomRate = () => {
   );
 };
 
-export default RoomRate;
+export default DeluxeSuiteRoomRate;
