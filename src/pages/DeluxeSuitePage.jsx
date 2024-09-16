@@ -23,14 +23,12 @@ import area from '../assets/Icons/area.png';
 
 import DeluxeSuiteRoomRate from '../components/RoomRateComponent/DeluxeSuiteRoomRate';
 import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+
+const DELUXE_SUITE_ROOM_RATE = 185; // Room rate per night
 
 const DeluxeSuitePage = () => {
-  const [adults, setAdults] = useState(2);  // Example default values
-  const [children, setChildren] = useState(1);
-  const [checkInDate, setCheckInDate] = useState('2024-09-06');
-  const [checkOutDate, setCheckOutDate] = useState('2024-09-07');
-  const [nationality, setNationality] = useState('Non-resident');
-  const [promoCode, setPromoCode] = useState('');
+  const [reservationDetails, setReservationDetails] = useState(null);
 
   const settings = {
     dots: true,
@@ -53,6 +51,30 @@ const DeluxeSuitePage = () => {
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
   ];
+
+  // Handle form submission from the ReserveRoomForm component
+  const handleFormSubmit = (formData) => {
+    const checkInDate = new Date(formData.checkinDate);
+    const checkOutDate = new Date(formData.checkoutDate);
+
+    // Calculate the number of days between check-in and check-out
+    const numberOfDays = Math.ceil(
+      (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
+    );
+
+    // Calculate total payment based on the number of booked days and room rate
+    const totalPayment = numberOfDays * DELUXE_SUITE_ROOM_RATE;
+
+    // Save the reservation details in the state
+    setReservationDetails({
+      checkInDate: formData.checkinDate,
+      checkOutDate: formData.checkoutDate,
+      numberOfDays,
+      adults: formData.adults,
+      children: formData.children,
+      totalPayment,
+    });
+  };
 
   return (
     <div className="p-6">
@@ -131,7 +153,14 @@ const DeluxeSuitePage = () => {
         <div className="space-y-6">
           {/* RoomRate Component */}
           <DeluxeSuiteRoomRate />
-          <ReserveRoomForm/>
+          
+          {/* ReserveRoomForm Component */}
+          <ReserveRoomForm onSubmit={handleFormSubmit} />
+          
+          {/* Conditionally Render Reservation Summary */}
+          {reservationDetails && (
+            <ReservationSummary reservation={reservationDetails} />
+          )}
         </div>
 
       </div>
@@ -139,4 +168,4 @@ const DeluxeSuitePage = () => {
   );
 };
 
-export default DeluxeSuitePage; 
+export default DeluxeSuitePage;

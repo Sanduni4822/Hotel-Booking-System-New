@@ -11,40 +11,44 @@ const ReservationSummary = ({ reservation }) => {
   } = reservation;
 
   return (
-    <div className="max-w-sm p-4 bg-white shadow-md rounded-lg border border-gray-300">
-      <h2 className="text-lg font-bold mb-4">Reservation Summary</h2>
+    <div className="max-w-md p-6 bg-white shadow-lg rounded-lg border border-gray-200 mt-6">
+      <h2 className="text-2xl font-bold mb-6 text-center">Reservation Summary</h2>
 
       {/* Check-in Date */}
-      <div className="mb-2">
-        <span className="font-semibold">Check-in Date:</span> {checkInDate}
+      <div className="mb-4 flex justify-between">
+        <span className="font-semibold">Check-in Date:</span> 
+        <span>{checkInDate}</span>
       </div>
 
       {/* Check-out Date */}
-      <div className="mb-2">
-        <span className="font-semibold">Check-out Date:</span> {checkOutDate}
+      <div className="mb-4 flex justify-between">
+        <span className="font-semibold">Check-out Date:</span> 
+        <span>{checkOutDate}</span>
       </div>
 
       {/* Number of Days Booked */}
-      <div className="mb-2">
-        <span className="font-semibold">Number of Days Booked:</span> {numberOfDays}
+      <div className="mb-4 flex justify-between">
+        <span className="font-semibold">Number of Days:</span> 
+        <span>{numberOfDays}</span>
       </div>
 
       {/* Number of Guests */}
-      <div className="mb-2">
-        <span className="font-semibold">Number of Guests:</span>
-        <div>
-          Adults: {adults} <br />
-          Children: {children}
+      <div className="mb-4">
+        <span className="font-semibold">Guests:</span>
+        <div className="ml-4">
+          <p>Adults: {adults}</p>
+          <p>Children: {children}</p>
         </div>
       </div>
 
       {/* Total Payment */}
-      <div className="mb-4">
-        <span className="font-semibold">Total Payment:</span> ${totalPayment}
+      <div className="mb-6 flex justify-between">
+        <span className="font-semibold">Total Payment:</span> 
+        <span>${totalPayment.toFixed(2)}</span>
       </div>
 
       {/* Confirm Button */}
-      <button className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-200">
+      <button className="w-full bg-green-500 text-white py-3 px-4 font-semibold rounded-md hover:bg-green-600 transition-colors duration-200">
         Confirm Booking & Proceed to Payment
       </button>
     </div>
