@@ -22,6 +22,8 @@ import maxguests from '../assets/Icons/maxguests.png';
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
+import GrandSuiteRoomRate from '../components/RoomRateComponent/GrandSuiteRoomRate';
+
 const GrandSuitePage = () => {
   const settings = {
     dots: true,
@@ -118,6 +120,7 @@ const GrandSuitePage = () => {
         {/* Right Column (Leave empty or add more content later) */}
         <div className="space-y-6">
           {/* Additional content can go here if needed */}
+          <GrandSuiteRoomRate/>
         </div>
 
       </div>

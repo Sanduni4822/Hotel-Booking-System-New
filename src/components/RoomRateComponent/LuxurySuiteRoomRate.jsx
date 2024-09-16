@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FamilySpecialRoomRate = () => {
+const LuxurySuiteRoomRate = () => {
   return (
     <div className="p-6 bg-white space-y-4">
       <div className="border-b pb-4 mt-5">
@@ -10,7 +10,7 @@ const FamilySpecialRoomRate = () => {
       <div className="pt-4 space-y-2">
         <div className="flex items-center space-x-2 text-red-700">
           <span className="text-md font-bold">Minimum 3 Nights Stay Required:</span>
-          <span className="text-sm text-gray-600">10% Off Saving on Family Special</span>
+          <span className="text-sm text-gray-600">10% Off Saving on Luxury Suite</span>
         </div>
         <p className="text-sm text-blue-800 mt-3">Wi-Fi, Gym, Parking</p>
       </div>
@@ -25,10 +25,10 @@ const FamilySpecialRoomRate = () => {
 
         <div className="text-right">
           <div className="flex flex-col items-center"> {/* Changed to flex-col */}
-            <span className="text-sm line-through text-gray-500 ml-10">$275</span> {/* Original price above */}
+            <span className="text-sm line-through text-gray-500 ml-10">$265</span> {/* Original price above */}
             <div className="flex items-center space-x-2">
               <span className="bg-red-700 text-white text-xs font-semibold px-2 py-1 rounded">Sale</span>
-              <span className="text-2xl font-bold text-red-700">$248</span> {/* Discounted price below */}
+              <span className="text-2xl font-bold text-red-700">$247</span> {/* Discounted price below */}
             </div>
           </div>
           <p className="text-sm text-gray-600">Avg. per night</p>
@@ -38,4 +38,4 @@ const FamilySpecialRoomRate = () => {
   );
 };
 
-export default FamilySpecialRoomRate;
+export default LuxurySuiteRoomRate;

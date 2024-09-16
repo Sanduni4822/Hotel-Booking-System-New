@@ -20,6 +20,8 @@ import maxguests from '../assets/Icons/maxguests.png';
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
+import PremiumRoomRate from '../components/RoomRateComponent/PremiumRoomRate';
+
 const PremiumRoomPage = () => {
   const settings = {
     dots: true,
@@ -116,6 +118,7 @@ const PremiumRoomPage = () => {
         {/* Right Column (Leave empty or add more content later) */}
         <div className="space-y-6">
           {/* Additional content can go here if needed */}
+          <PremiumRoomRate/>
         </div>
 
       </div>

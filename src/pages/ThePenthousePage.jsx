@@ -24,6 +24,8 @@ import maxguests from '../assets/Icons/maxguests.png';
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
+import ThePenthouseRoomRate from '../components/RoomRateComponent/ThePenthouseRoomRate';
+
 const ThePenthousePage = () => {
   const settings = {
     dots: true,
@@ -126,6 +128,7 @@ const ThePenthousePage = () => {
         {/* Right Column (Leave empty or add more content later) */}
         <div className="space-y-6">
           {/* Additional content can go here if needed */}
+          <ThePenthouseRoomRate/>
         </div>
 
       </div>
