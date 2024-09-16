@@ -21,6 +21,7 @@ import bedtype from '../assets/Icons/bedtype.png';
 import area from '../assets/Icons/area.png'; 
 
 import PremiumRoomRate from '../components/RoomRateComponent/PremiumRoomRate';
+import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
 
 const PremiumRoomPage = () => {
   const settings = {
@@ -119,6 +120,7 @@ const PremiumRoomPage = () => {
         <div className="space-y-6">
           {/* Additional content can go here if needed */}
           <PremiumRoomRate/>
+          <ReserveRoomForm/>
         </div>
 
       </div>

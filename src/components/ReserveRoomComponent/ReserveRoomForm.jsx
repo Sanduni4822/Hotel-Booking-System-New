@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 
 const ReserveRoomForm = () => {
   const [formData, setFormData] = useState({
-    fullname: '',
-    email: '',
+    
     checkinDate: '',
     checkoutDate: '',
     adults: 0,

@@ -27,6 +27,7 @@ import bedtype from '../assets/Icons/bedtype.png';
 import area from '../assets/Icons/area.png'; 
 
 import LuxurySuiteRoomRate from '../components/RoomRateComponent/LuxurySuiteRoomRate';
+import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
 
 const LuxurySuitePage = () => {
   const settings = {
@@ -132,6 +133,7 @@ const LuxurySuitePage = () => {
         <div className="space-y-6">
           {/* Additional content can go here if needed */}
           <LuxurySuiteRoomRate/>
+          <ReserveRoomForm/>
         </div>
 
       </div>

@@ -25,6 +25,7 @@ import bedtype from '../assets/Icons/bedtype.png';
 import area from '../assets/Icons/area.png'; 
 
 import ThePenthouseRoomRate from '../components/RoomRateComponent/ThePenthouseRoomRate';
+import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
 
 const ThePenthousePage = () => {
   const settings = {
@@ -129,6 +130,7 @@ const ThePenthousePage = () => {
         <div className="space-y-6">
           {/* Additional content can go here if needed */}
           <ThePenthouseRoomRate/>
+          <ReserveRoomForm/>
         </div>
 
       </div>

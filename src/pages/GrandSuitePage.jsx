@@ -23,6 +23,7 @@ import bedtype from '../assets/Icons/bedtype.png';
 import area from '../assets/Icons/area.png'; 
 
 import GrandSuiteRoomRate from '../components/RoomRateComponent/GrandSuiteRoomRate';
+import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
 
 const GrandSuitePage = () => {
   const settings = {
@@ -121,6 +122,7 @@ const GrandSuitePage = () => {
         <div className="space-y-6">
           {/* Additional content can go here if needed */}
           <GrandSuiteRoomRate/>
+          <ReserveRoomForm/>
         </div>
 
       </div>

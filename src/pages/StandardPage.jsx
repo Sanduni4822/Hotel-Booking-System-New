@@ -28,6 +28,7 @@ import bedtype from '../assets/Icons/bedtype.png';
 import area from '../assets/Icons/area.png'; 
 
 import StandardRoomRate from '../components/RoomRateComponent/StandardRoomRate';
+import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
 
 const StandardPage = () => {
   const settings = {
@@ -135,6 +136,7 @@ const StandardPage = () => {
         <div className="space-y-6">
           {/* Additional content can go here if needed */}
           <StandardRoomRate/>
+          <ReserveRoomForm/>
         </div>
 
       </div>
