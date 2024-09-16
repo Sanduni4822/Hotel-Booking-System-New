@@ -24,44 +24,17 @@ const ReserveRoomForm = () => {
     // Add form submission logic here
   };
 
+  // Calculate total guests
+  const totalGuests = parseInt(formData.adults, 10) + parseInt(formData.children, 10);
+
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+    <div className="max-w-md mx-auto p-6"> {/* Removed bg-white, rounded-md, and shadow-md */}
       <h2 className="text-2xl font-bold mb-6">Reserve Room</h2>
       <form onSubmit={handleSubmit}>
 
-        {/* Fullname */}
-        <div className="mb-4">
-          <label htmlFor="fullname" className="block text-gray-700">Fullname</label>
-          <input
-            type="text"
-            id="fullname"
-            name="fullname"
-            value={formData.fullname}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
-            placeholder="Enter your fullname"
-            required
-          />
-        </div>
-
-        {/* Email */}
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
-            placeholder="Enter your email"
-            required
-          />
-        </div>
-
         {/* Lodging Period */}
         <div className="mb-4">
-          <label className="block text-gray-700">Lodging Period</label>
+          <label className="block text-gray-700">Booking Period</label>
           <div className="flex space-x-4">
             <input
               type="date"
@@ -69,7 +42,7 @@ const ReserveRoomForm = () => {
               name="checkinDate"
               value={formData.checkinDate}
               onChange={handleChange}
-              className="w-1/2 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+              className="w-1/2 px-3 py-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               required
             />
             <input
@@ -78,7 +51,7 @@ const ReserveRoomForm = () => {
               name="checkoutDate"
               value={formData.checkoutDate}
               onChange={handleChange}
-              className="w-1/2 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+              className="w-1/2 px-3 py-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               required
             />
           </div>
@@ -95,7 +68,7 @@ const ReserveRoomForm = () => {
               value={formData.adults}
               onChange={handleChange}
               min="0"
-              className="w-1/2 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+              className="w-1/2 px-3 py-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               placeholder="0"
               required
             />
@@ -106,11 +79,16 @@ const ReserveRoomForm = () => {
               value={formData.children}
               onChange={handleChange}
               min="0"
-              className="w-1/2 px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+              className="w-1/2 px-3 py-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               placeholder="0"
               required
             />
           </div>
+        </div>
+
+        {/* Total Number of Guests */}
+        <div className="mb-4">
+          <label className="block text-gray-700 font-semibold">Total Guests: {totalGuests}</label>
         </div>
 
         {/* Submit Button */}

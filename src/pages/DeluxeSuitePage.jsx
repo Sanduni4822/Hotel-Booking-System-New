@@ -22,6 +22,7 @@ import bedtype from '../assets/Icons/bedtype.png';
 import area from '../assets/Icons/area.png'; 
 
 import DeluxeSuiteRoomRate from '../components/RoomRateComponent/DeluxeSuiteRoomRate';
+import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
 
 const DeluxeSuitePage = () => {
   const [adults, setAdults] = useState(2);  // Example default values
@@ -130,6 +131,7 @@ const DeluxeSuitePage = () => {
         <div className="space-y-6">
           {/* RoomRate Component */}
           <DeluxeSuiteRoomRate />
+          <ReserveRoomForm/>
         </div>
 
       </div>
