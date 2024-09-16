@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Image1 from '../assets/Grandsuite/Image1.webp'; 
 import Image2 from '../assets/Grandsuite/Image2.webp'; 
 import Image3 from '../assets/Grandsuite/Image3.webp'; 
-import Image4 from '../assets/Grandsuite/Image4.webp'; 
-
+import Image4 from '../assets/Grandsuite/Image4.webp';
 
 // Importing Icon Images
 import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
@@ -24,8 +23,13 @@ import area from '../assets/Icons/area.png';
 
 import GrandSuiteRoomRate from '../components/RoomRateComponent/GrandSuiteRoomRate';
 import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+
+const GRAND_SUITE_ROOM_RATE = 250; // Set room rate per night for Grand Suite
 
 const GrandSuitePage = () => {
+  const [reservationDetails, setReservationDetails] = useState(null);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -47,6 +51,30 @@ const GrandSuitePage = () => {
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
   ];
+
+  // Handle form submission from the ReserveRoomForm component
+  const handleFormSubmit = (formData) => {
+    const checkInDate = new Date(formData.checkinDate);
+    const checkOutDate = new Date(formData.checkoutDate);
+
+    // Calculate the number of days between check-in and check-out
+    const numberOfDays = Math.ceil(
+      (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
+    );
+
+    // Calculate total payment based on the number of booked days and room rate
+    const totalPayment = numberOfDays * GRAND_SUITE_ROOM_RATE;
+
+    // Save the reservation details in the state
+    setReservationDetails({
+      checkInDate: formData.checkinDate,
+      checkOutDate: formData.checkoutDate,
+      numberOfDays,
+      adults: formData.adults,
+      children: formData.children,
+      totalPayment,
+    });
+  };
 
   return (
     <div className="p-6">
@@ -71,7 +99,7 @@ const GrandSuitePage = () => {
               <img src={bedtype} alt="Bed Type" className="w-6 h-6" />
               <div>
                 <h3 className="text-sm font-semibold">Bed Type</h3>
-                <p className="text-sm">king size</p>
+                <p className="text-sm">King size</p>
               </div>
             </div>
 
@@ -94,14 +122,17 @@ const GrandSuitePage = () => {
                 <img src={Image2} alt="Grand Suite 2" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image4} alt="Grand Suite 3" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image3} alt="Grand Suite 3" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+              <div>
+                <img src={Image4} alt="Grand Suite 4" className="w-full h-auto rounded-lg shadow-md" />
               </div>
             </Slider>
           </div>
 
           {/* Text Section */}
           <p className="text-sm mb-6">
-          The Grand Suite at a seaside hotel in Sri Lanka offers luxurious comfort with stunning ocean views. This spacious suite features a king-sized bed, elegant furnishings, and a private balcony overlooking the pristine beach. The room is designed with modern amenities, including a lavish bathroom with a soaking tub, a living area, and a mini-bar. Guests can enjoy direct access to the beach and exclusive services, making it an ideal retreat for relaxation and indulgence.
+            The Grand Suite at a seaside hotel in Sri Lanka offers luxurious comfort with stunning ocean views. This spacious suite features a king-sized bed, elegant furnishings, and a private balcony overlooking the pristine beach. The room is designed with modern amenities, including a lavish bathroom with a soaking tub, a living area, and a mini-bar. Guests can enjoy direct access to the beach and exclusive services, making it an ideal retreat for relaxation and indulgence.
           </p>
 
           {/* Room Services Section */}
@@ -118,13 +149,19 @@ const GrandSuitePage = () => {
           </div>
         </div>
 
-        {/* Right Column (Leave empty or add more content later) */}
+        {/* Right Column */}
         <div className="space-y-6">
-          {/* Additional content can go here if needed */}
-          <GrandSuiteRoomRate/>
-          <ReserveRoomForm/>
+          {/* RoomRate Component */}
+          <GrandSuiteRoomRate />
+          
+          {/* ReserveRoomForm Component */}
+          <ReserveRoomForm onSubmit={handleFormSubmit} />
+          
+          {/* Conditionally Render Reservation Summary */}
+          {reservationDetails && (
+            <ReservationSummary reservation={reservationDetails} />
+          )}
         </div>
-
       </div>
     </div>
   );
