@@ -21,7 +21,7 @@ import maxguests from '../assets/Icons/maxguests.png';
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
-import RoomRate from '../components/RoomRateComponent/RoomRate';
+import DeluxeSuiteRoomRate from '../components/RoomRateComponent/DeluxeSuiteRoomRate';
 
 const DeluxeSuitePage = () => {
   const [adults, setAdults] = useState(2);  // Example default values
@@ -129,7 +129,7 @@ const DeluxeSuitePage = () => {
         {/* Right Column */}
         <div className="space-y-6">
           {/* RoomRate Component */}
-          <RoomRate />
+          <DeluxeSuiteRoomRate />
         </div>
 
       </div>
