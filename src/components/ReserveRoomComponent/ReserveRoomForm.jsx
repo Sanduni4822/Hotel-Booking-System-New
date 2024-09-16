@@ -28,7 +28,7 @@ const ReserveRoomForm = () => {
   const totalGuests = parseInt(formData.adults, 10) + parseInt(formData.children, 10);
 
   return (
-    <div className="max-w-md mx-auto p-6"> {/* Removed bg-white, rounded-md, and shadow-md */}
+    <div className="max-w-md mx-auto p-6 border border-black"> {/* Added black border to the container */}
       <h2 className="text-2xl font-bold mb-6">Reserve Room</h2>
       <form onSubmit={handleSubmit}>
 
@@ -42,7 +42,7 @@ const ReserveRoomForm = () => {
               name="checkinDate"
               value={formData.checkinDate}
               onChange={handleChange}
-              className="w-1/2 px-3 py-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+              className="w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               required
             />
             <input
@@ -51,7 +51,7 @@ const ReserveRoomForm = () => {
               name="checkoutDate"
               value={formData.checkoutDate}
               onChange={handleChange}
-              className="w-1/2 px-3 py-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+              className="w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               required
             />
           </div>
@@ -68,7 +68,7 @@ const ReserveRoomForm = () => {
               value={formData.adults}
               onChange={handleChange}
               min="0"
-              className="w-1/2 px-3 py-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+              className="w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               placeholder="0"
               required
             />
@@ -79,7 +79,7 @@ const ReserveRoomForm = () => {
               value={formData.children}
               onChange={handleChange}
               min="0"
-              className="w-1/2 px-3 py-2 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
+              className="w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-200"
               placeholder="0"
               required
             />
