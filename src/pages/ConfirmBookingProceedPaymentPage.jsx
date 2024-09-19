@@ -58,7 +58,7 @@ const ConfirmBookingProceedPaymentPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-4 flex justify-center items-start">
       {/* Parent container for both forms */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl mt-1">
         
         {/* Left side: Confirm Booking Form */}
         <div className="bg-white p-6 border border-gray-400">

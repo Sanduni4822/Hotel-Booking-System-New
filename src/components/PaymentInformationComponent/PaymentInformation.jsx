@@ -2,14 +2,54 @@ import React, { useState } from 'react';
 
 const PaymentInformation = () => {
   const [paymentMethod, setPaymentMethod] = useState('creditCard');
+  const [formData, setFormData] = useState({
+    cardType: '',
+    cardNumber: '',
+  });
+  const [formErrors, setFormErrors] = useState({});
 
   const handlePaymentMethodChange = (e) => {
     setPaymentMethod(e.target.value);
   };
 
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({
+      ...formData,
+      [id]: value,
+    });
+  };
+
+  const validateForm = () => {
+    const errors = {};
+    const cardNumberRegex = /^\d{16}$/;
+
+    if (!formData.cardType.trim()) {
+      errors.cardType = 'Card type is required';
+    }
+    if (!cardNumberRegex.test(formData.cardNumber)) {
+      errors.cardNumber = 'Card number must be 16 digits';
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log('Form is valid:', formData);
+    } else {
+      console.log('Form contains errors');
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form className="bg-white p-6 rounded-lg shadow-md w-full max-w-xl">
+      <form
+        className="bg-white p-6 rounded-lg shadow-md w-full max-w-xl"
+        onSubmit={handleSubmit}
+      >
         
         {/* Section Title with Icon */}
         <div className="flex items-center mb-6">
@@ -30,7 +70,12 @@ const PaymentInformation = () => {
               type="text"
               placeholder="Enter card type"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              value={formData.cardType}
+              onChange={handleInputChange}
             />
+            {formErrors.cardType && (
+              <p className="text-red-500">{formErrors.cardType}</p>
+            )}
           </div>
 
           <div>
@@ -42,7 +87,12 @@ const PaymentInformation = () => {
               type="text"
               placeholder="Enter card number"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              value={formData.cardNumber}
+              onChange={handleInputChange}
             />
+            {formErrors.cardNumber && (
+              <p className="text-red-500">{formErrors.cardNumber}</p>
+            )}
           </div>
         </div>
 
