@@ -89,7 +89,7 @@ const PaymentInformation = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <form
-        className="bg-white p-6 rounded-lg shadow-md w-full max-w-xl"
+        className="bg-white p-6  w-full max-w-xl border border-gray-400"
         onSubmit={handleSubmit}
       >
         
