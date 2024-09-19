@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const ReservationSummary = ({ reservation }) => {
   const {
@@ -9,6 +10,12 @@ const ReservationSummary = ({ reservation }) => {
     children,
     totalPayment,
   } = reservation;
+
+  const navigate = useNavigate(); // Use navigate hook
+
+  const handleConfirmBooking = () => {
+    navigate('/confirm-booking'); // Navigate to the Confirm Booking Page
+  };
 
   return (
     <div className="max-w-xs ml-10 p-4 bg-white border border-black">
@@ -44,7 +51,10 @@ const ReservationSummary = ({ reservation }) => {
       </div>
 
       {/* Confirm Button */}
-      <button className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-200">
+      <button
+        onClick={handleConfirmBooking} // Add onClick to navigate
+        className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-200"
+      >
         Confirm Booking & Proceed to Payment
       </button>
     </div>
