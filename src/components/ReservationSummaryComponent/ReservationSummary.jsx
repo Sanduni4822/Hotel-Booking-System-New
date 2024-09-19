@@ -53,7 +53,7 @@ const ReservationSummary = ({ reservation }) => {
       {/* Confirm Button */}
       <button
         onClick={handleConfirmBooking} // Add onClick to navigate
-        className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors duration-200"
+        className="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 transition-colors duration-200"
       >
         Confirm Booking & Proceed to Payment
       </button>
