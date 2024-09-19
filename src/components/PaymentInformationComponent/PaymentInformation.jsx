@@ -5,6 +5,8 @@ const PaymentInformation = () => {
   const [formData, setFormData] = useState({
     cardType: '',
     cardNumber: '',
+    cardHolder: '',
+    cvc: '',
   });
   const [formErrors, setFormErrors] = useState({});
 
@@ -23,12 +25,19 @@ const PaymentInformation = () => {
   const validateForm = () => {
     const errors = {};
     const cardNumberRegex = /^\d{16}$/;
+    const cvcRegex = /^\d{3,4}$/;
 
     if (!formData.cardType.trim()) {
       errors.cardType = 'Card type is required';
     }
     if (!cardNumberRegex.test(formData.cardNumber)) {
       errors.cardNumber = 'Card number must be 16 digits';
+    }
+    if (!formData.cardHolder.trim()) {
+      errors.cardHolder = 'Card holder name is required';
+    }
+    if (!cvcRegex.test(formData.cvc)) {
+      errors.cvc = 'CVC must be 3 or 4 digits';
     }
 
     setFormErrors(errors);
@@ -107,7 +116,12 @@ const PaymentInformation = () => {
               type="text"
               placeholder="Enter card holder name"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              value={formData.cardHolder}
+              onChange={handleInputChange}
             />
+            {formErrors.cardHolder && (
+              <p className="text-red-500">{formErrors.cardHolder}</p>
+            )}
           </div>
 
           <div>
@@ -119,7 +133,12 @@ const PaymentInformation = () => {
               type="text"
               placeholder="Enter CVC"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              value={formData.cvc}
+              onChange={handleInputChange}
             />
+            {formErrors.cvc && (
+              <p className="text-red-500">{formErrors.cvc}</p>
+            )}
           </div>
         </div>
 
