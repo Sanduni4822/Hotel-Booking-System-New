@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ConfirmBookingProceedPaymentPage = () => {
+  const [confirmViaPhone, setConfirmViaPhone] = useState(false);
+  const [receiveOffers, setReceiveOffers] = useState(true);
+
+  const handleCheckboxChange = (setter) => {
+    setter((prev) => !prev);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <form className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
@@ -126,6 +133,35 @@ const ConfirmBookingProceedPaymentPage = () => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
             rows="4"
           ></textarea>
+        </div>
+
+        {/* Checkbox Section */}
+        <div className="mb-4">
+          <div className="flex items-center p-1 bg-gray-100 border rounded-md mb-2">
+            <input
+              id="confirmViaPhone"
+              type="checkbox"
+              checked={confirmViaPhone}
+              onChange={() => handleCheckboxChange(setConfirmViaPhone)}
+              className="mr-2"
+            />
+            <label htmlFor="confirmViaPhone" className="text-gray-700">
+              I want to have the booking confirmation sent to my phone
+            </label>
+          </div>
+
+          <div className="flex items-center p-1 bg-gray-100 border rounded-md">
+            <input
+              id="receiveOffers"
+              type="checkbox"
+              checked={receiveOffers}
+              onChange={() => handleCheckboxChange(setReceiveOffers)}
+              className="mr-2"
+            />
+            <label htmlFor="receiveOffers" className="text-gray-700">
+              I want to receive news and information about special offers
+            </label>
+          </div>
         </div>
 
         <button
