@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PaymentInformation from '../components/PaymentInformationComponent/PaymentInformation'; // Import Payment Information component
 
 const ConfirmBookingProceedPaymentPage = () => {
   const [formData, setFormData] = useState({
@@ -42,13 +43,12 @@ const ConfirmBookingProceedPaymentPage = () => {
 
     setErrors(formErrors);
 
-    return Object.keys(formErrors).length === 0; // Returns true if no errors
+    return Object.keys(formErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Proceed with form submission
       console.log('Form submitted:', formData);
     } else {
       console.log('Form has errors:', errors);
@@ -56,194 +56,206 @@ const ConfirmBookingProceedPaymentPage = () => {
   };
 
   return (
-    <div className="min-h-screen ml-2 mt-2 flex items-center bg-gray-100">
-      <form className="bg-white p-6 shadow-md w-full max-w-xl border border-gray-600" onSubmit={handleSubmit}>
+    <div className="min-h-screen bg-gray-100 p-4 flex justify-center items-start">
+      {/* Parent container for both forms */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
         
-        {/* Section Title */}
-        <h2 className="text-2xl font-bold text-gray-700 mb-6">Your Information</h2>
-        
-        {/* First Name and Last Name as two columns */}
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div>
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="firstName">
-              First Name <span className="text-red-500"></span>
-            </label>
-            <input
-              id="firstName"
-              type="text"
-              placeholder="Enter your first name"
-              value={formData.firstName}
-              onChange={handleChange}
-              className={`w-full px-3 py-2 border ${errors.firstName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
-            />
-            {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
-          </div>
+        {/* Left side: Confirm Booking Form */}
+        <div className="bg-white p-6 shadow-md rounded-lg border border-gray-300">
+          <form onSubmit={handleSubmit} className="w-full">
+            {/* Section Title */}
+            <h2 className="text-2xl font-bold text-gray-700 mb-6">Your Information</h2>
 
-          <div>
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="lastName">
-              Last Name <span className="text-red-500"></span>
-            </label>
-            <input
-              id="lastName"
-              type="text"
-              placeholder="Enter your last name"
-              value={formData.lastName}
-              onChange={handleChange}
-              className={`w-full px-3 py-2 border ${errors.lastName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
-            />
-            {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
-          </div>
+            {/* First Name and Last Name */}
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="firstName">
+                  First Name
+                </label>
+                <input
+                  id="firstName"
+                  type="text"
+                  placeholder="Enter your first name"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  className={`w-full px-3 py-2 border ${errors.firstName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
+                />
+                {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
+              </div>
+
+              <div>
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="lastName">
+                  Last Name
+                </label>
+                <input
+                  id="lastName"
+                  type="text"
+                  placeholder="Enter your last name"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  className={`w-full px-3 py-2 border ${errors.lastName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
+                />
+                {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
+              </div>
+            </div>
+
+            {/* Email and Phone */}
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`w-full px-3 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
+                />
+                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+              </div>
+
+              <div>
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
+                  Phone
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className={`w-full px-3 py-2 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
+                />
+                {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+              </div>
+            </div>
+
+            {/* Address */}
+            <div className="mb-4">
+              <label className="block text-gray-700 font-bold mb-2" htmlFor="address">
+                Address
+              </label>
+              <input
+                id="address"
+                type="text"
+                placeholder="Enter your address"
+                value={formData.address}
+                onChange={handleChange}
+                className={`w-full px-3 py-2 border ${errors.address ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
+              />
+              {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address}</p>}
+            </div>
+
+            {/* City and State */}
+            <div className="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="city">
+                  City
+                </label>
+                <input
+                  id="city"
+                  type="text"
+                  placeholder="Enter your city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  className={`w-full px-3 py-2 border ${errors.city ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
+                />
+                {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city}</p>}
+              </div>
+
+              <div>
+                <label className="block text-gray-700 font-bold mb-2" htmlFor="state">
+                  State/Country
+                </label>
+                <input
+                  id="state"
+                  type="text"
+                  placeholder="Enter your state or country"
+                  value={formData.state}
+                  onChange={handleChange}
+                  className={`w-full px-3 py-2 border ${errors.state ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
+                />
+                {errors.state && <p className="text-red-500 text-xs mt-1">{errors.state}</p>}
+              </div>
+            </div>
+
+            {/* Postcode */}
+            <div className="mb-4">
+              <label className="block text-gray-700 font-bold mb-2" htmlFor="postcode">
+                Postcode
+              </label>
+              <input
+                id="postcode"
+                type="text"
+                placeholder="Enter your postcode"
+                value={formData.postcode}
+                onChange={handleChange}
+                className={`w-full px-3 py-2 border ${errors.postcode ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
+              />
+              {errors.postcode && <p className="text-red-500 text-xs mt-1">{errors.postcode}</p>}
+            </div>
+
+            {/* Notes */}
+            <div className="mb-4">
+              <label className="block text-gray-700 font-bold mb-2" htmlFor="notes">
+                Notes
+              </label>
+              <textarea
+                id="notes"
+                placeholder="Enter any additional notes"
+                value={formData.notes}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+                rows="4"
+              ></textarea>
+            </div>
+
+            {/* Checkbox Section */}
+            <div className="mb-4">
+              <div className="flex items-center p-1 bg-gray-100 border rounded-md mb-2">
+                <input
+                  id="confirmViaPhone"
+                  type="checkbox"
+                  checked={confirmViaPhone}
+                  onChange={() => handleCheckboxChange(setConfirmViaPhone)}
+                  className="mr-2"
+                />
+                <label htmlFor="confirmViaPhone" className="text-gray-700">
+                  I want to have the booking confirmation sent to my phone
+                </label>
+              </div>
+
+              <div className="flex items-center p-1 bg-gray-100 border rounded-md">
+                <input
+                  id="receiveOffers"
+                  type="checkbox"
+                  checked={receiveOffers}
+                  onChange={() => handleCheckboxChange(setReceiveOffers)}
+                  className="mr-2"
+                />
+                <label htmlFor="receiveOffers" className="text-gray-700">
+                  I want to receive news and information about special offers
+                </label>
+              </div>
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring"
+            >
+              Submit
+            </button>
+          </form>
         </div>
 
-        {/* Email and Phone as two columns */}
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div>
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-              Email <span className="text-red-500"></span>
-            </label>
-            <input
-              id="email"
-              type="email"
-              placeholder="Enter your email"
-              value={formData.email}
-              onChange={handleChange}
-              className={`w-full px-3 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
-            />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
-          </div>
-
-          <div>
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
-              Phone <span className="text-red-500"></span>
-            </label>
-            <input
-              id="phone"
-              type="tel"
-              placeholder="Enter your phone number"
-              value={formData.phone}
-              onChange={handleChange}
-              className={`w-full px-3 py-2 border ${errors.phone ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
-            />
-            {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
-          </div>
+        {/* Right side: Payment Information */}
+        <div>
+          <PaymentInformation />
         </div>
-
-        {/* Address Section */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="address">
-            Address <span className="text-red-500"></span>
-          </label>
-          <input
-            id="address"
-            type="text"
-            placeholder="Enter your address"
-            value={formData.address}
-            onChange={handleChange}
-            className={`w-full px-3 py-2 border ${errors.address ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
-          />
-          {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address}</p>}
-        </div>
-
-        {/* City and State/Country as two columns */}
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div>
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="city">
-              City <span className="text-red-500"></span>
-            </label>
-            <input
-              id="city"
-              type="text"
-              placeholder="Enter your city"
-              value={formData.city}
-              onChange={handleChange}
-              className={`w-full px-3 py-2 border ${errors.city ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
-            />
-            {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city}</p>}
-          </div>
-
-          <div>
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="state">
-              State/Country <span className="text-red-500"></span>
-            </label>
-            <input
-              id="state"
-              type="text"
-              placeholder="Enter your state or country"
-              value={formData.state}
-              onChange={handleChange}
-              className={`w-full px-3 py-2 border ${errors.state ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
-            />
-            {errors.state && <p className="text-red-500 text-xs mt-1">{errors.state}</p>}
-          </div>
-        </div>
-
-        {/* Postcode Section */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="postcode">
-            Postcode <span className="text-red-500"></span>
-          </label>
-          <input
-            id="postcode"
-            type="text"
-            placeholder="Enter your postcode"
-            value={formData.postcode}
-            onChange={handleChange}
-            className={`w-full px-3 py-2 border ${errors.postcode ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring focus:border-blue-500`}
-          />
-          {errors.postcode && <p className="text-red-500 text-xs mt-1">{errors.postcode}</p>}
-        </div>
-
-        {/* Notes Section */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="notes">
-            Notes
-          </label>
-          <textarea
-            id="notes"
-            placeholder="Enter any additional notes"
-            value={formData.notes}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-            rows="4"
-          ></textarea>
-        </div>
-
-        {/* Checkbox Section */}
-        <div className="mb-4">
-          <div className="flex items-center p-1 bg-gray-100 border rounded-md mb-2">
-            <input
-              id="confirmViaPhone"
-              type="checkbox"
-              checked={confirmViaPhone}
-              onChange={() => handleCheckboxChange(setConfirmViaPhone)}
-              className="mr-2"
-            />
-            <label htmlFor="confirmViaPhone" className="text-gray-700">
-              I want to have the booking confirmation sent to my phone
-            </label>
-          </div>
-
-          <div className="flex items-center p-1 bg-gray-100 border rounded-md">
-            <input
-              id="receiveOffers"
-              type="checkbox"
-              checked={receiveOffers}
-              onChange={() => handleCheckboxChange(setReceiveOffers)}
-              className="mr-2"
-            />
-            <label htmlFor="receiveOffers" className="text-gray-700">
-              I want to receive news and information about special offers
-            </label>
-          </div>
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring"
-        >
-          Submit
-        </button>
-      </form>
+      </div>
     </div>
   );
 };
