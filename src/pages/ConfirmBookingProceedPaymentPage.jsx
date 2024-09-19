@@ -66,7 +66,7 @@ const ConfirmBookingProceedPaymentPage = () => {
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
             <label className="block text-gray-700 font-bold mb-2" htmlFor="firstName">
-              First Name <span className="text-red-500">*</span>
+              First Name <span className="text-red-500"></span>
             </label>
             <input
               id="firstName"
@@ -81,7 +81,7 @@ const ConfirmBookingProceedPaymentPage = () => {
 
           <div>
             <label className="block text-gray-700 font-bold mb-2" htmlFor="lastName">
-              Last Name <span className="text-red-500">*</span>
+              Last Name <span className="text-red-500"></span>
             </label>
             <input
               id="lastName"
@@ -99,7 +99,7 @@ const ConfirmBookingProceedPaymentPage = () => {
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
             <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-              Email <span className="text-red-500">*</span>
+              Email <span className="text-red-500"></span>
             </label>
             <input
               id="email"
@@ -114,7 +114,7 @@ const ConfirmBookingProceedPaymentPage = () => {
 
           <div>
             <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
-              Phone <span className="text-red-500">*</span>
+              Phone <span className="text-red-500"></span>
             </label>
             <input
               id="phone"
@@ -131,7 +131,7 @@ const ConfirmBookingProceedPaymentPage = () => {
         {/* Address Section */}
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="address">
-            Address <span className="text-red-500">*</span>
+            Address <span className="text-red-500"></span>
           </label>
           <input
             id="address"
@@ -148,7 +148,7 @@ const ConfirmBookingProceedPaymentPage = () => {
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
             <label className="block text-gray-700 font-bold mb-2" htmlFor="city">
-              City <span className="text-red-500">*</span>
+              City <span className="text-red-500"></span>
             </label>
             <input
               id="city"
@@ -163,7 +163,7 @@ const ConfirmBookingProceedPaymentPage = () => {
 
           <div>
             <label className="block text-gray-700 font-bold mb-2" htmlFor="state">
-              State/Country <span className="text-red-500">*</span>
+              State/Country <span className="text-red-500"></span>
             </label>
             <input
               id="state"
@@ -180,7 +180,7 @@ const ConfirmBookingProceedPaymentPage = () => {
         {/* Postcode Section */}
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="postcode">
-            Postcode <span className="text-red-500">*</span>
+            Postcode <span className="text-red-500"></span>
           </label>
           <input
             id="postcode"
