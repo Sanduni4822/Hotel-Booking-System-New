@@ -56,8 +56,8 @@ const ConfirmBookingProceedPaymentPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form className="bg-white p-6 rounded-lg shadow-md w-full max-w-md" onSubmit={handleSubmit}>
+    <div className="min-h-screen flex items-center bg-gray-100">
+      <form className="bg-white p-6 rounded-lg shadow-md w-full max-w-xl" onSubmit={handleSubmit}>
         
         {/* Section Title */}
         <h2 className="text-2xl font-bold text-gray-700 mb-6">Your Information</h2>
