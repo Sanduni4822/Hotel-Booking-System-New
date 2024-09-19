@@ -13,7 +13,9 @@ import JuniorSuitePage from "./pages/JuniorSuitePage";
 import LuxurySuitePage from "./pages/LuxurySuitePage";
 import PremiumRoomPage from "./pages/PremiumRoomPage";
 import StandardPage from "./pages/StandardPage";
-import ThePenthhousePage from "./pages/ThePenthousePage";
+import ThePenthousePage from "./pages/ThePenthousePage"; // Fixed path typo
+import ReservationSummary from "./components/ReservationSummaryComponent/ReservationSummary"; // Correct import path
+import ConfirmBookingProceedPaymentPage from "./pages/ConfirmBookingProceedPaymentPage"; // Import Payment Page
 
 const router = createBrowserRouter([
   {
@@ -147,14 +149,22 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/penthhouse",
+    path: "/penthouse", // Fixed typo here
     element: <BaseLayout />,
     children: [
       {
         index: true,
-        element: <ThePenthhousePage />,
+        element: <ThePenthousePage />, // Updated element to match the corrected typo
       },
     ],
+  },
+  {
+    path: "/reservation-summary",
+    element: <ReservationSummary reservation={{ /* mock data */ }} />, // Add a placeholder reservation prop for now
+  },
+  {
+    path: "/confirm-booking",
+    element: <ConfirmBookingProceedPaymentPage />,
   },
 ]);
 
