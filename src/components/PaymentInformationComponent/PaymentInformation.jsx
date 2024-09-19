@@ -7,6 +7,8 @@ const PaymentInformation = () => {
     cardNumber: '',
     cardHolder: '',
     cvc: '',
+    expiryMonth: '',
+    expiryYear: '',
   });
   const [formErrors, setFormErrors] = useState({});
 
@@ -26,18 +28,39 @@ const PaymentInformation = () => {
     const errors = {};
     const cardNumberRegex = /^\d{16}$/;
     const cvcRegex = /^\d{3,4}$/;
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth() + 1; // Months are 0-based, so +1 to get current month
 
+    // Card Type validation
     if (!formData.cardType.trim()) {
       errors.cardType = 'Card type is required';
     }
+
+    // Card Number validation
     if (!cardNumberRegex.test(formData.cardNumber)) {
       errors.cardNumber = 'Card number must be 16 digits';
     }
+
+    // Card Holder validation
     if (!formData.cardHolder.trim()) {
       errors.cardHolder = 'Card holder name is required';
     }
+
+    // CVC validation
     if (!cvcRegex.test(formData.cvc)) {
       errors.cvc = 'CVC must be 3 or 4 digits';
+    }
+
+    // Expiry Month validation
+    const expiryMonth = parseInt(formData.expiryMonth, 10);
+    if (!expiryMonth || expiryMonth < 1 || expiryMonth > 12) {
+      errors.expiryMonth = 'Expiry month must be valid';
+    }
+
+    // Expiry Year validation
+    const expiryYear = parseInt(formData.expiryYear, 10);
+    if (!expiryYear || expiryYear < currentYear || (expiryYear === currentYear && expiryMonth < currentMonth)) {
+      errors.expiryYear = 'Expiry year must must be valid';
     }
 
     setFormErrors(errors);
@@ -153,7 +176,12 @@ const PaymentInformation = () => {
               type="text"
               placeholder="MM"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              value={formData.expiryMonth}
+              onChange={handleInputChange}
             />
+            {formErrors.expiryMonth && (
+              <p className="text-red-500">{formErrors.expiryMonth}</p>
+            )}
           </div>
 
           <div>
@@ -165,7 +193,12 @@ const PaymentInformation = () => {
               type="text"
               placeholder="YYYY"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              value={formData.expiryYear}
+              onChange={handleInputChange}
             />
+            {formErrors.expiryYear && (
+              <p className="text-red-500">{formErrors.expiryYear}</p>
+            )}
           </div>
         </div>
 
