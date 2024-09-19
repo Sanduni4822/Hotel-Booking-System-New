@@ -10,6 +10,7 @@ const PaymentInformation = () => {
     expiryMonth: '',
     expiryYear: '',
   });
+  const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [formErrors, setFormErrors] = useState({});
 
   const handlePaymentMethodChange = (e) => {
@@ -17,11 +18,15 @@ const PaymentInformation = () => {
   };
 
   const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({
-      ...formData,
-      [id]: value,
-    });
+    const { id, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setAgreeToTerms(checked);
+    } else {
+      setFormData({
+        ...formData,
+        [id]: value,
+      });
+    }
   };
 
   const validateForm = () => {
@@ -60,7 +65,12 @@ const PaymentInformation = () => {
     // Expiry Year validation
     const expiryYear = parseInt(formData.expiryYear, 10);
     if (!expiryYear || expiryYear < currentYear || (expiryYear === currentYear && expiryMonth < currentMonth)) {
-      errors.expiryYear = 'Expiry year must must be valid';
+      errors.expiryYear = 'Expiry year must be valid';
+    }
+
+    // Terms and Conditions validation
+    if (!agreeToTerms) {
+      errors.agreeToTerms = 'Tick this';
     }
 
     setFormErrors(errors);
@@ -233,10 +243,19 @@ const PaymentInformation = () => {
 
         {/* Terms and Conditions */}
         <div className="mb-4 flex items-center">
-          <input type="checkbox" id="terms" className="mr-2" />
+          <input
+            type="checkbox"
+            id="terms"
+            checked={agreeToTerms}
+            onChange={handleInputChange}
+            className="mr-2"
+          />
           <label htmlFor="terms" className="text-gray-700">
             I agree to the Terms and Conditions
           </label>
+          {formErrors.agreeToTerms && (
+            <p className="text-red-500 ml-4">{formErrors.agreeToTerms}</p>
+          )}
         </div>
 
         {/* Confirm Booking Button */}
