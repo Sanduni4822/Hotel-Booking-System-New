@@ -6,7 +6,7 @@ const ConfirmBookingProceedPaymentPage = () => {
       <form className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
         
         {/* Section Title */}
-        <h2 className="text-2xl font-bold text-gray-700 mb-6 text-center">Your Information</h2>
+        <h2 className="text-2xl font-bold text-gray-700 mb-6">Your Information</h2>
         
         {/* First Name and Last Name as two columns */}
         <div className="grid grid-cols-2 gap-4 mb-4">
