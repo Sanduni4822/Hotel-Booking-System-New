@@ -13,7 +13,7 @@ const ConfirmBookingProceedPaymentPage = () => {
     postcode: '',
     notes: '',
   });
-  
+
   const [errors, setErrors] = useState({});
   const [confirmViaPhone, setConfirmViaPhone] = useState(false);
   const [receiveOffers, setReceiveOffers] = useState(true);
@@ -61,10 +61,15 @@ const ConfirmBookingProceedPaymentPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
         
         {/* Left side: Confirm Booking Form */}
-        <div className="bg-white p-6 shadow-md rounded-lg border border-gray-300">
+        <div className="bg-white p-6 border border-gray-400">
           <form onSubmit={handleSubmit} className="w-full">
             {/* Section Title */}
-            <h2 className="text-2xl font-bold text-gray-700 mb-6">Your Information</h2>
+            <div className="flex items-center mb-6">
+              <div className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center mr-2">
+                1
+              </div>
+              <h2 className="text-2xl font-bold text-gray-700">Your Information</h2>
+            </div>
 
             {/* First Name and Last Name */}
             <div className="grid grid-cols-2 gap-4 mb-4">
