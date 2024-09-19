@@ -6,7 +6,7 @@ const ConfirmBookingProceedPaymentPage = () => {
       <form className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="firstName">
-            First Name <span className="text-red-500">*</span>
+            First Name <span className="text-red-500"></span>
           </label>
           <input
             id="firstName"
@@ -18,7 +18,7 @@ const ConfirmBookingProceedPaymentPage = () => {
 
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="lastName">
-            Last Name <span className="text-red-500">*</span>
+            Last Name <span className="text-red-500"></span>
           </label>
           <input
             id="lastName"
@@ -26,6 +26,46 @@ const ConfirmBookingProceedPaymentPage = () => {
             placeholder="Enter your last name"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
           />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
+            Email <span className="text-red-500"></span>
+          </label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
+            Phone <span className="text-red-500"></span>
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            placeholder="Enter your phone number"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="country">
+            Country of Residence <span className="text-red-500"></span>
+          </label>
+          <select
+            id="country"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+          >
+            <option value="">Select your country</option>
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+            <option value="uk">United Kingdom</option>
+            {/* Add more countries as needed */}
+          </select>
         </div>
 
         <button
