@@ -4,28 +4,32 @@ const ConfirmBookingProceedPaymentPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <form className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="firstName">
-            First Name <span className="text-red-500"></span>
-          </label>
-          <input
-            id="firstName"
-            type="text"
-            placeholder="Enter your first name"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-          />
-        </div>
+        
+        {/* First Name and Last Name as two columns */}
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label className="block text-gray-700 font-bold mb-2" htmlFor="firstName">
+              First Name <span className="text-red-500"></span>
+            </label>
+            <input
+              id="firstName"
+              type="text"
+              placeholder="Enter your first name"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+            />
+          </div>
 
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="lastName">
-            Last Name <span className="text-red-500"></span>
-          </label>
-          <input
-            id="lastName"
-            type="text"
-            placeholder="Enter your last name"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-          />
+          <div>
+            <label className="block text-gray-700 font-bold mb-2" htmlFor="lastName">
+              Last Name <span className="text-red-500"></span>
+            </label>
+            <input
+              id="lastName"
+              type="text"
+              placeholder="Enter your last name"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+            />
+          </div>
         </div>
 
         <div className="mb-4">
@@ -64,6 +68,7 @@ const ConfirmBookingProceedPaymentPage = () => {
             <option value="us">United States</option>
             <option value="ca">Canada</option>
             <option value="uk">United Kingdom</option>
+            <option value="sl">Sri Lanka</option>
             {/* Add more countries as needed */}
           </select>
         </div>
