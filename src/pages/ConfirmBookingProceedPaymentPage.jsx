@@ -32,28 +32,31 @@ const ConfirmBookingProceedPaymentPage = () => {
           </div>
         </div>
 
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-            Email <span className="text-red-500"></span>
-          </label>
-          <input
-            id="email"
-            type="email"
-            placeholder="Enter your email"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-          />
-        </div>
+        {/* Email and Phone as two columns */}
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
+              Email <span className="text-red-500"></span>
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+            />
+          </div>
 
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
-            Phone <span className="text-red-500"></span>
-          </label>
-          <input
-            id="phone"
-            type="tel"
-            placeholder="Enter your phone number"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
-          />
+          <div>
+            <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
+              Phone <span className="text-red-500"></span>
+            </label>
+            <input
+              id="phone"
+              type="tel"
+              placeholder="Enter your phone number"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+            />
+          </div>
         </div>
 
         <div className="mb-4">
