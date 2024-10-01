@@ -36,16 +36,51 @@ const SignUpPage = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  //ORIGINAL 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const validationErrors = validateForm();
+  //   if (Object.keys(validationErrors).length === 0) {
+  //     console.log('Form submitted:', formData);
+  //     navigate('/login'); 
+  //   } else {
+  //     setErrors(validationErrors);
+  //   }
+  // };
+
+  //NEW
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
-      console.log('Form submitted:', formData);
-      navigate('/login'); // Example: navigate to login page after successful sign-up
+      try {
+        const response = await fetch('http://localhost:8080/api/users/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password,
+            fullname: formData.name,
+          }),
+        });
+        
+        if (response.ok) {
+          console.log('User registered successfully');
+          navigate('/login'); 
+        } else {
+          const errorText = await response.text();
+          console.error('Error:', errorText);
+        }
+      } catch (error) {
+        console.error('Error during registration:', error);
+      }
     } else {
       setErrors(validationErrors);
     }
   };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -142,3 +177,4 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
+

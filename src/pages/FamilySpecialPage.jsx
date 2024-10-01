@@ -95,7 +95,7 @@ const FamilySpecialPage = () => {
               <img src={maxguests} alt="Max Guests" className="w-6 h-6" />
               <div>
                 <h3 className="text-sm font-semibold">Max. Guests</h3>
-                <p className="text-sm">2 Adults / 1 Child</p>
+                <p className="text-sm">4 Adults / 2 Child</p>
               </div>
             </div>
             
