@@ -25,9 +25,9 @@ import maxguests from '../assets/Icons/maxguests.png';
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
-import StandardRoomRate from '../components/RoomRateComponent/StandardRoomRate';
-import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
-import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary'; // Add ReservationSummary
+import StandardRoomRate from '../../components/RoomRateComponent/StandardRoomRate';
+import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../../components/ReservationSummaryComponent/ReservationSummary'; // Add ReservationSummary
 
 const STANDARD_ROOM_RATE = 234; // Set room rate per night for Standard Room
 

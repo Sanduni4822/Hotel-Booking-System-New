@@ -1,21 +1,21 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage from "../pages/Home/HomePage";
 import BaseLayout from "./layouts/BaseLayout";
-import LoginPage from "./pages/LoginPage";
-import SignUpPage from "./pages/SignUpPage";
+import LoginPage from "../pages/LoginSignup/LoginPage";
+import SignUpPage from "../pages/LoginSignup/SignUpPage";
 import OffersPage from "./pages/OffersPage";
-import ContactUsPage from "./pages/ContactUsPage";
-import RoomsPage from "./pages/RoomsPage";
-import DeluxeSuitePage from "./pages/DeluxeSuitePage";
-import FamilySpecialPage from "./pages/FamilySpecialPage";
-import GrandSuitePage from "./pages/GrandSuitePage";
-import JuniorSuitePage from "./pages/JuniorSuitePage";
-import LuxurySuitePage from "./pages/LuxurySuitePage";
-import PremiumRoomPage from "./pages/PremiumRoomPage";
-import StandardPage from "./pages/StandardPage";
-import ThePenthousePage from "./pages/ThePenthousePage"; // Fixed path typo
-import ReservationSummary from "./components/ReservationSummaryComponent/ReservationSummary"; // Correct import path
-import ConfirmBookingProceedPaymentPage from "./pages/ConfirmBookingProceedPaymentPage"; // Import Payment Page
+import ContactUsPage from "../pages/ContactUs/ContactUsPage";
+import RoomsPage from "../pages/Rooms/RoomsPage";
+import DeluxeSuitePage from "../pages/Rooms/DeluxeSuitePage";
+import FamilySpecialPage from "../pages/Rooms/FamilySpecialPage";
+import GrandSuitePage from "../pages/Rooms/GrandSuitePage";
+import JuniorSuitePage from "../pages/Rooms/JuniorSuitePage";
+import LuxurySuitePage from "../pages/Rooms/LuxurySuitePage";
+import PremiumRoomPage from "../pages/Rooms/PremiumRoomPage";
+import StandardPage from "../pages/Rooms/StandardPage";
+import ThePenthousePage from "../pages/Rooms/ThePenthousePage"; // Fixed path typo
+import ReservationSummary from "../components/ReservationSummaryComponent/ReservationSummary"; // Correct import path
+import ConfirmBookingProceedPaymentPage from "../pages/Rooms/ConfirmBookingProceedPaymentPage"; // Import Payment Page
 
 const router = createBrowserRouter([
   {

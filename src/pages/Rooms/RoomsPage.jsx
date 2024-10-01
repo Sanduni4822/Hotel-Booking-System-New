@@ -19,7 +19,7 @@ import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
 
 import RoomImage from '../assets/roompageimage/room.jpg'; // Additional image
-import BookingComponent from '../components/BookingComponent/BookingComponent'; // Correct import for BookingComponent
+import BookingComponent from '../../components/BookingComponent/BookingComponent'; // Correct import for BookingComponent
 
 const amenitiesWithIcons = {
   'Free wifi': WifiIcon,

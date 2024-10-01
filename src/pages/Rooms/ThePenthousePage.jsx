@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Image1 from '../assets/Grandsuite/Image1.webp'; 
-import Image2 from '../assets/Grandsuite/Image2.webp'; 
-import Image3 from '../assets/Grandsuite/Image3.webp'; 
-import Image4 from '../assets/Grandsuite/Image4.webp';
+import Image1 from '../assets/Penthouse/Image1.jpg'; 
+import Image2 from '../assets/Penthouse/Image2.jpg'; 
+import Image3 from '../assets/Penthouse/Image3.jpg';
+import Image4 from '../assets/Penthouse/Image4.jpg';
 
 // Importing Icon Images
 import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
@@ -16,18 +16,21 @@ import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
 import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import EnsuitebathroomIcon from '../assets/facilityiconadditionalpenthouse/EnsuitebathroomIcon.png';
+import HotwatershowerIcon from '../assets/facilityiconadditionalpenthouse/HotwatershowerIcon.png';
+import LaundryIcon from '../assets/facilityiconadditionalpenthouse/LaundryIcon.png';
 
 import maxguests from '../assets/Icons/maxguests.png'; 
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
-import GrandSuiteRoomRate from '../components/RoomRateComponent/GrandSuiteRoomRate';
-import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
-import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+import ThePenthouseRoomRate from '../../components/RoomRateComponent/ThePenthouseRoomRate';
+import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../../components/ReservationSummaryComponent/ReservationSummary';
 
-const GRAND_SUITE_ROOM_RATE = 261; // Set room rate per night for Grand Suite
+const PENTHOUSE_ROOM_RATE = 189; // Room rate per night
 
-const GrandSuitePage = () => {
+const ThePenthousePage = () => {
   const [reservationDetails, setReservationDetails] = useState(null);
 
   const settings = {
@@ -50,6 +53,9 @@ const GrandSuitePage = () => {
     { icon: SafetyLockerIcon, label: 'Safety Locker' },
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
+    { icon: EnsuitebathroomIcon, label: 'Ensuite Bathroom' },
+    { icon: HotwatershowerIcon, label: 'Hotwater Shower' },
+    { icon: LaundryIcon, label: 'Laundry' },
   ];
 
   // Handle form submission from the ReserveRoomForm component
@@ -63,7 +69,7 @@ const GrandSuitePage = () => {
     );
 
     // Calculate total payment based on the number of booked days and room rate
-    const totalPayment = numberOfDays * GRAND_SUITE_ROOM_RATE;
+    const totalPayment = numberOfDays * PENTHOUSE_ROOM_RATE;
 
     // Save the reservation details in the state
     setReservationDetails({
@@ -83,7 +89,7 @@ const GrandSuitePage = () => {
         
         {/* Left Column (Title, Image Slider, Paragraph, and Additional Info) */}
         <div>
-          <h1 className="text-3xl font-bold mb-4">Grand Suite</h1>
+          <h1 className="text-3xl font-bold mb-4">Penthouse</h1>
           
           {/* Additional Information Section (Max Guests, Bed Type, Area) */}
           <div className="flex justify-between items-center space-x-4 mb-4">
@@ -116,23 +122,23 @@ const GrandSuitePage = () => {
           <div className="mb-6">
             <Slider {...settings}>
               <div>
-                <img src={Image1} alt="Grand Suite 1" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image1} alt="Penthouse 1" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image2} alt="Grand Suite 2" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image2} alt="Penthouse 2" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image3} alt="Grand Suite 3" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image3} alt="Penthouse 3" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image4} alt="Grand Suite 4" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image4} alt="Penthouse 4" className="w-full h-auto rounded-lg shadow-md" />
               </div>
             </Slider>
           </div>
 
           {/* Text Section */}
           <p className="text-sm mb-6">
-            The Grand Suite at a seaside hotel in Sri Lanka offers luxurious comfort with stunning ocean views. This spacious suite features a king-sized bed, elegant furnishings, and a private balcony overlooking the pristine beach. The room is designed with modern amenities, including a lavish bathroom with a soaking tub, a living area, and a mini-bar. Guests can enjoy direct access to the beach and exclusive services, making it an ideal retreat for relaxation and indulgence.
+            A penthouse room in a seaside hotel in Sri Lanka offers a luxurious escape with breathtaking ocean views. Perched at the highest level, this spacious suite features elegant interiors, a private balcony, and modern amenities. Guests can enjoy the tranquil ambiance, listen to the soothing waves, and experience stunning sunsets over the Indian Ocean, making it an ideal retreat for relaxation and indulgence.
           </p>
 
           {/* Room Services Section */}
@@ -152,7 +158,7 @@ const GrandSuitePage = () => {
         {/* Right Column */}
         <div className="space-y-6">
           {/* RoomRate Component */}
-          <GrandSuiteRoomRate />
+          <ThePenthouseRoomRate />
           
           {/* ReserveRoomForm Component */}
           <ReserveRoomForm onSubmit={handleFormSubmit} />
@@ -162,9 +168,10 @@ const GrandSuitePage = () => {
             <ReservationSummary reservation={reservationDetails} />
           )}
         </div>
+
       </div>
     </div>
   );
 };
 
-export default GrandSuitePage;
+export default ThePenthousePage;

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image1 from '../assets/Premiumroom/Image1.jpg'; 
-import Image2 from '../assets/Premiumroom/Image2.jpg'; 
-import Image3 from '../assets/Premiumroom/Image3.jpg'; 
+import Image1 from '../assets/Familyspecial/Image1.webp';
+import Image2 from '../assets/Familyspecial/Image2.webp';
+import Image3 from '../assets/Familyspecial/Image3.webp';
+import Image4 from '../assets/Familyspecial/Image4.webp';
 
 // Importing Icon Images
-import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
+import WifiIcon from '../assets/facilityicons/WifiIcon.png';
 import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
 import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
 import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
@@ -15,18 +16,20 @@ import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
 import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import OpenterraceIcon from '../assets/facilityiconadditionalfamilyspecial/OpenterraceIcon.png';
+import PrivatebathroomIcon from '../assets/facilityiconadditionalfamilyspecial/PrivatebathroomIcon.png';
 
-import maxguests from '../assets/Icons/maxguests.png'; 
-import bedtype from '../assets/Icons/bedtype.png'; 
-import area from '../assets/Icons/area.png'; 
+import maxguests from '../assets/Icons/maxguests.png';
+import bedtype from '../assets/Icons/bedtype.png';
+import area from '../assets/Icons/area.png';
 
-import PremiumRoomRate from '../components/RoomRateComponent/PremiumRoomRate';
-import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
-import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+import FamilySpecialRoomRate from '../../components/RoomRateComponent/FamilySpecialRoomRate';
+import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../../components/ReservationSummaryComponent/ReservationSummary';
 
-const PREMIUM_ROOM_RATE = 335; // Set room rate per night for Premium Room
+const FAMILY_SPECIAL_ROOM_RATE = 248; // Room rate per night
 
-const PremiumRoomPage = () => {
+const FamilySpecialPage = () => {
   const [reservationDetails, setReservationDetails] = useState(null);
 
   const settings = {
@@ -49,22 +52,24 @@ const PremiumRoomPage = () => {
     { icon: SafetyLockerIcon, label: 'Safety Locker' },
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
+    { icon: OpenterraceIcon, label: 'Open Terrace' },
+    { icon: PrivatebathroomIcon, label: 'Private Bathroom' },
   ];
 
-  // Handle form submission from ReserveRoomForm
+  // Handle form submission from the ReserveRoomForm component
   const handleFormSubmit = (formData) => {
     const checkInDate = new Date(formData.checkinDate);
     const checkOutDate = new Date(formData.checkoutDate);
 
-    // Calculate number of days
+    // Calculate the number of days between check-in and check-out
     const numberOfDays = Math.ceil(
       (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
     );
 
-    // Calculate total payment
-    const totalPayment = numberOfDays * PREMIUM_ROOM_RATE;
+    // Calculate total payment based on the number of booked days and room rate
+    const totalPayment = numberOfDays * FAMILY_SPECIAL_ROOM_RATE;
 
-    // Save reservation details in state
+    // Save the reservation details in the state
     setReservationDetails({
       checkInDate: formData.checkinDate,
       checkOutDate: formData.checkoutDate,
@@ -82,7 +87,7 @@ const PremiumRoomPage = () => {
         
         {/* Left Column (Title, Image Slider, Paragraph, and Additional Info) */}
         <div>
-          <h1 className="text-3xl font-bold mb-4">Premium Room</h1>
+          <h1 className="text-3xl font-bold mb-4">Family Special</h1>
           
           {/* Additional Information Section (Max Guests, Bed Type, Area) */}
           <div className="flex justify-between items-center space-x-4 mb-4">
@@ -115,20 +120,23 @@ const PremiumRoomPage = () => {
           <div className="mb-6">
             <Slider {...settings}>
               <div>
-                <img src={Image1} alt="Premium Room 1" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image1} alt="Family special 1" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image2} alt="Premium Room 2" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image2} alt="Family special 2" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image3} alt="Premium Room 3" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image3} alt="Family special 3" className="w-full h-auto rounded-lg shadow-md" />
+              </div>
+              <div>
+                <img src={Image4} alt="Family special 4" className="w-full h-auto rounded-lg shadow-md" />
               </div>
             </Slider>
           </div>
 
           {/* Text Section */}
           <p className="text-sm mb-6">
-          A premium room in a seaside hotel in Sri Lanka offers a luxurious and serene experience with stunning ocean views. The room features elegant decor, a comfortable king-sized bed, modern amenities, and a private balcony where you can enjoy the soothing sound of the waves. Perfect for relaxation, the room also includes a spacious bathroom with premium toiletries, air conditioning, a flat-screen TV, and complimentary Wi-Fi. The hotel's prime location allows easy access to the beach, ensuring a memorable stay surrounded by natural beauty.
+            A Family Special Room at a seaside hotel in Sri Lanka offers a spacious and comfortable retreat, perfect for families. Located just steps away from the beach, this room features modern amenities and a cozy ambiance, with stunning ocean views. It includes multiple beds, a private balcony, and thoughtful touches like a mini-fridge and entertainment options. The room is designed to accommodate both adults and children, ensuring a relaxing and enjoyable stay for the whole family, surrounded by the natural beauty of Sri Lanka's coastline.
           </p>
 
           {/* Room Services Section */}
@@ -147,12 +155,12 @@ const PremiumRoomPage = () => {
 
         {/* Right Column */}
         <div className="space-y-6">
-          {/* PremiumRoomRate Component */}
-          <PremiumRoomRate />
-
+          {/* FamilySpecialRoomRate Component */}
+          <FamilySpecialRoomRate />
+          
           {/* ReserveRoomForm Component */}
           <ReserveRoomForm onSubmit={handleFormSubmit} />
-
+          
           {/* Conditionally Render Reservation Summary */}
           {reservationDetails && (
             <ReservationSummary reservation={reservationDetails} />
@@ -163,4 +171,4 @@ const PremiumRoomPage = () => {
   );
 };
 
-export default PremiumRoomPage;
+export default FamilySpecialPage;

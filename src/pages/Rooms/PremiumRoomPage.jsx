@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Image1 from '../assets/Luxurysuite/Image1.jpg'; 
-import Image2 from '../assets/Luxurysuite/Image2.jpg'; 
-import Image3 from '../assets/Luxurysuite/Image3.jpg'; 
-import Image4 from '../assets/Luxurysuite/Image4.jpg'; 
+import Image1 from '../assets/Premiumroom/Image1.jpg'; 
+import Image2 from '../assets/Premiumroom/Image2.jpg'; 
+import Image3 from '../assets/Premiumroom/Image3.jpg'; 
 
 // Importing Icon Images
 import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
@@ -16,21 +15,18 @@ import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
 import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
-import JacuzziIcon from '../assets/facilityiconadditionalluxurysuite/JacuzziIcon.png';
-import LivingroomIcon from '../assets/facilityiconadditionalluxurysuite/LivingroomIcon.png';
-import PrivatebalconyIcon from '../assets/facilityiconadditionalluxurysuite/PrivatebalconyIcon.png';
 
 import maxguests from '../assets/Icons/maxguests.png'; 
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
-import LuxurySuiteRoomRate from '../components/RoomRateComponent/LuxurySuiteRoomRate';
-import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
-import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+import PremiumRoomRate from '../../components/RoomRateComponent/PremiumRoomRate';
+import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../../components/ReservationSummaryComponent/ReservationSummary';
 
-const LUXURY_SUITE_ROOM_RATE = 247; // Set room rate per night for Luxury Suite
+const PREMIUM_ROOM_RATE = 335; // Set room rate per night for Premium Room
 
-const LuxurySuitePage = () => {
+const PremiumRoomPage = () => {
   const [reservationDetails, setReservationDetails] = useState(null);
 
   const settings = {
@@ -53,9 +49,6 @@ const LuxurySuitePage = () => {
     { icon: SafetyLockerIcon, label: 'Safety Locker' },
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
-    { icon: JacuzziIcon, label: 'Jacuzzi' },
-    { icon: LivingroomIcon, label: 'Living Room' },
-    { icon: PrivatebalconyIcon, label: 'Private Balcony' },
   ];
 
   // Handle form submission from ReserveRoomForm
@@ -69,7 +62,7 @@ const LuxurySuitePage = () => {
     );
 
     // Calculate total payment
-    const totalPayment = numberOfDays * LUXURY_SUITE_ROOM_RATE;
+    const totalPayment = numberOfDays * PREMIUM_ROOM_RATE;
 
     // Save reservation details in state
     setReservationDetails({
@@ -89,7 +82,7 @@ const LuxurySuitePage = () => {
         
         {/* Left Column (Title, Image Slider, Paragraph, and Additional Info) */}
         <div>
-          <h1 className="text-3xl font-bold mb-4">Luxury Suite</h1>
+          <h1 className="text-3xl font-bold mb-4">Premium Room</h1>
           
           {/* Additional Information Section (Max Guests, Bed Type, Area) */}
           <div className="flex justify-between items-center space-x-4 mb-4">
@@ -122,23 +115,20 @@ const LuxurySuitePage = () => {
           <div className="mb-6">
             <Slider {...settings}>
               <div>
-                <img src={Image1} alt="Luxury Suite 1" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image1} alt="Premium Room 1" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image2} alt="Luxury Suite 2" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image2} alt="Premium Room 2" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image3} alt="Luxury Suite 3" className="w-full h-auto rounded-lg shadow-md" />
-              </div>
-              <div>
-                <img src={Image4} alt="Luxury Suite 4" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image3} alt="Premium Room 3" className="w-full h-auto rounded-lg shadow-md" />
               </div>
             </Slider>
           </div>
 
           {/* Text Section */}
           <p className="text-sm mb-6">
-            A luxury suite in a seaside hotel in Sri Lanka offers a serene escape with stunning ocean views. The suite features elegant decor, a spacious bedroom with a king-sized bed, a private balcony overlooking the sea, and a luxurious bathroom with a soaking tub. Guests can enjoy modern amenities like a flat-screen TV, high-speed Wi-Fi, and 24-hour room service. The suite also includes access to exclusive hotel facilities such as a private beach, infinity pool, and gourmet dining options, ensuring a perfect blend of comfort and opulence in a tropical paradise.
+          A premium room in a seaside hotel in Sri Lanka offers a luxurious and serene experience with stunning ocean views. The room features elegant decor, a comfortable king-sized bed, modern amenities, and a private balcony where you can enjoy the soothing sound of the waves. Perfect for relaxation, the room also includes a spacious bathroom with premium toiletries, air conditioning, a flat-screen TV, and complimentary Wi-Fi. The hotel's prime location allows easy access to the beach, ensuring a memorable stay surrounded by natural beauty.
           </p>
 
           {/* Room Services Section */}
@@ -157,8 +147,8 @@ const LuxurySuitePage = () => {
 
         {/* Right Column */}
         <div className="space-y-6">
-          {/* RoomRate Component */}
-          <LuxurySuiteRoomRate />
+          {/* PremiumRoomRate Component */}
+          <PremiumRoomRate />
 
           {/* ReserveRoomForm Component */}
           <ReserveRoomForm onSubmit={handleFormSubmit} />
@@ -173,4 +163,4 @@ const LuxurySuitePage = () => {
   );
 };
 
-export default LuxurySuitePage;
+export default PremiumRoomPage;

@@ -21,9 +21,9 @@ import maxguests from '../assets/Icons/maxguests.png';
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
-import DeluxeSuiteRoomRate from '../components/RoomRateComponent/DeluxeSuiteRoomRate';
-import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
-import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+import DeluxeSuiteRoomRate from '../../components/RoomRateComponent/DeluxeSuiteRoomRate';
+import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../../components/ReservationSummaryComponent/ReservationSummary';
 
 const DELUXE_SUITE_ROOM_RATE = 185; // Room rate per night
 

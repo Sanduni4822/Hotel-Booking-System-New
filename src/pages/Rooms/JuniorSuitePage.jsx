@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Image1 from '../assets/Familyspecial/Image1.webp';
-import Image2 from '../assets/Familyspecial/Image2.webp';
-import Image3 from '../assets/Familyspecial/Image3.webp';
-import Image4 from '../assets/Familyspecial/Image4.webp';
+import Image1 from '../assets/Juniorsuite/Image1.webp'; 
+import Image2 from '../assets/Juniorsuite/Image2.webp'; 
+import Image3 from '../assets/Juniorsuite/Image3.webp'; 
+import Image4 from '../assets/Juniorsuite/Image4.webp'; 
 
 // Importing Icon Images
-import WifiIcon from '../assets/facilityicons/WifiIcon.png';
+import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
 import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
 import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
 import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
@@ -16,20 +16,18 @@ import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
 import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
-import OpenterraceIcon from '../assets/facilityiconadditionalfamilyspecial/OpenterraceIcon.png';
-import PrivatebathroomIcon from '../assets/facilityiconadditionalfamilyspecial/PrivatebathroomIcon.png';
 
-import maxguests from '../assets/Icons/maxguests.png';
-import bedtype from '../assets/Icons/bedtype.png';
-import area from '../assets/Icons/area.png';
+import maxguests from '../assets/Icons/maxguests.png'; 
+import bedtype from '../assets/Icons/bedtype.png'; 
+import area from '../assets/Icons/area.png'; 
 
-import FamilySpecialRoomRate from '../components/RoomRateComponent/FamilySpecialRoomRate';
-import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
-import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+import JuniorSuiteRoomRate from '../../components/RoomRateComponent/JuniorSuiteRoomRate';
+import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../../components/ReservationSummaryComponent/ReservationSummary';
 
-const FAMILY_SPECIAL_ROOM_RATE = 248; // Room rate per night
+const JUNIOR_SUITE_ROOM_RATE = 289; // Set room rate per night for Junior Suite
 
-const FamilySpecialPage = () => {
+const JuniorSuitePage = () => {
   const [reservationDetails, setReservationDetails] = useState(null);
 
   const settings = {
@@ -52,8 +50,6 @@ const FamilySpecialPage = () => {
     { icon: SafetyLockerIcon, label: 'Safety Locker' },
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
-    { icon: OpenterraceIcon, label: 'Open Terrace' },
-    { icon: PrivatebathroomIcon, label: 'Private Bathroom' },
   ];
 
   // Handle form submission from the ReserveRoomForm component
@@ -67,7 +63,7 @@ const FamilySpecialPage = () => {
     );
 
     // Calculate total payment based on the number of booked days and room rate
-    const totalPayment = numberOfDays * FAMILY_SPECIAL_ROOM_RATE;
+    const totalPayment = numberOfDays * JUNIOR_SUITE_ROOM_RATE;
 
     // Save the reservation details in the state
     setReservationDetails({
@@ -87,7 +83,7 @@ const FamilySpecialPage = () => {
         
         {/* Left Column (Title, Image Slider, Paragraph, and Additional Info) */}
         <div>
-          <h1 className="text-3xl font-bold mb-4">Family Special</h1>
+          <h1 className="text-3xl font-bold mb-4">Junior Suite</h1>
           
           {/* Additional Information Section (Max Guests, Bed Type, Area) */}
           <div className="flex justify-between items-center space-x-4 mb-4">
@@ -120,23 +116,23 @@ const FamilySpecialPage = () => {
           <div className="mb-6">
             <Slider {...settings}>
               <div>
-                <img src={Image1} alt="Family special 1" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image1} alt="Junior Suite 1" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image2} alt="Family special 2" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image2} alt="Junior Suite 2" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image3} alt="Family special 3" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image3} alt="Junior Suite 3" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image4} alt="Family special 4" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image4} alt="Junior Suite 4" className="w-full h-auto rounded-lg shadow-md" />
               </div>
             </Slider>
           </div>
 
           {/* Text Section */}
           <p className="text-sm mb-6">
-            A Family Special Room at a seaside hotel in Sri Lanka offers a spacious and comfortable retreat, perfect for families. Located just steps away from the beach, this room features modern amenities and a cozy ambiance, with stunning ocean views. It includes multiple beds, a private balcony, and thoughtful touches like a mini-fridge and entertainment options. The room is designed to accommodate both adults and children, ensuring a relaxing and enjoyable stay for the whole family, surrounded by the natural beauty of Sri Lanka's coastline.
+            A Junior Suite in a seaside hotel in Sri Lanka offers a luxurious and spacious retreat with stunning ocean views. This elegantly designed room features a comfortable seating area, a plush king-sized bed, and modern amenities. Guests can enjoy a private balcony or terrace overlooking the beach, perfect for relaxing and soaking in the serene coastal atmosphere. The suite combines contemporary decor with local touches, ensuring a tranquil and stylish stay by the sea.
           </p>
 
           {/* Room Services Section */}
@@ -155,12 +151,12 @@ const FamilySpecialPage = () => {
 
         {/* Right Column */}
         <div className="space-y-6">
-          {/* FamilySpecialRoomRate Component */}
-          <FamilySpecialRoomRate />
-          
+          {/* RoomRate Component */}
+          <JuniorSuiteRoomRate />
+
           {/* ReserveRoomForm Component */}
           <ReserveRoomForm onSubmit={handleFormSubmit} />
-          
+
           {/* Conditionally Render Reservation Summary */}
           {reservationDetails && (
             <ReservationSummary reservation={reservationDetails} />
@@ -171,4 +167,4 @@ const FamilySpecialPage = () => {
   );
 };
 
-export default FamilySpecialPage;
+export default JuniorSuitePage;

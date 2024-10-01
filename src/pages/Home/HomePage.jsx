@@ -8,7 +8,7 @@ import image3 from '../assets/homepage/slideshow3.jpg';
 import image4 from '../assets/homepage/slideshow4.jpg';
 import image5 from '../assets/homepage/slideshow5.jpg';
 
-const Slideshow = () => {
+const SlideShow = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -49,4 +49,4 @@ const Slideshow = () => {
   );
 };
 
-export default Slideshow;
+export default SlideShow;

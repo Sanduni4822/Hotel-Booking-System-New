@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PaymentInformation from '../components/PaymentInformationComponent/PaymentInformation'; // Import Payment Information component
+import PaymentInformation from '../../components/PaymentInformationComponent/PaymentInformation'; // Import Payment Information component
 
 const ConfirmBookingProceedPaymentPage = () => {
   const [formData, setFormData] = useState({

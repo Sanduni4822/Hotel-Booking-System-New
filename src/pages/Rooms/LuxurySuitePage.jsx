@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Image1 from '../assets/Juniorsuite/Image1.webp'; 
-import Image2 from '../assets/Juniorsuite/Image2.webp'; 
-import Image3 from '../assets/Juniorsuite/Image3.webp'; 
-import Image4 from '../assets/Juniorsuite/Image4.webp'; 
+import Image1 from '../assets/Luxurysuite/Image1.jpg'; 
+import Image2 from '../assets/Luxurysuite/Image2.jpg'; 
+import Image3 from '../assets/Luxurysuite/Image3.jpg'; 
+import Image4 from '../assets/Luxurysuite/Image4.jpg'; 
 
 // Importing Icon Images
 import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
@@ -16,18 +16,21 @@ import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
 import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
 import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
 import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import JacuzziIcon from '../assets/facilityiconadditionalluxurysuite/JacuzziIcon.png';
+import LivingroomIcon from '../assets/facilityiconadditionalluxurysuite/LivingroomIcon.png';
+import PrivatebalconyIcon from '../assets/facilityiconadditionalluxurysuite/PrivatebalconyIcon.png';
 
 import maxguests from '../assets/Icons/maxguests.png'; 
 import bedtype from '../assets/Icons/bedtype.png'; 
 import area from '../assets/Icons/area.png'; 
 
-import JuniorSuiteRoomRate from '../components/RoomRateComponent/JuniorSuiteRoomRate';
-import ReserveRoomForm from '../components/ReserveRoomComponent/ReserveRoomForm';
-import ReservationSummary from '../components/ReservationSummaryComponent/ReservationSummary';
+import LuxurySuiteRoomRate from '../../components/RoomRateComponent/LuxurySuiteRoomRate';
+import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';
+import ReservationSummary from '../../components/ReservationSummaryComponent/ReservationSummary';
 
-const JUNIOR_SUITE_ROOM_RATE = 289; // Set room rate per night for Junior Suite
+const LUXURY_SUITE_ROOM_RATE = 247; // Set room rate per night for Luxury Suite
 
-const JuniorSuitePage = () => {
+const LuxurySuitePage = () => {
   const [reservationDetails, setReservationDetails] = useState(null);
 
   const settings = {
@@ -50,22 +53,25 @@ const JuniorSuitePage = () => {
     { icon: SafetyLockerIcon, label: 'Safety Locker' },
     { icon: BreakfastIcon, label: 'Breakfast Included' },
     { icon: TowelsIcon, label: 'Fresh Towels' },
+    { icon: JacuzziIcon, label: 'Jacuzzi' },
+    { icon: LivingroomIcon, label: 'Living Room' },
+    { icon: PrivatebalconyIcon, label: 'Private Balcony' },
   ];
 
-  // Handle form submission from the ReserveRoomForm component
+  // Handle form submission from ReserveRoomForm
   const handleFormSubmit = (formData) => {
     const checkInDate = new Date(formData.checkinDate);
     const checkOutDate = new Date(formData.checkoutDate);
 
-    // Calculate the number of days between check-in and check-out
+    // Calculate number of days
     const numberOfDays = Math.ceil(
       (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
     );
 
-    // Calculate total payment based on the number of booked days and room rate
-    const totalPayment = numberOfDays * JUNIOR_SUITE_ROOM_RATE;
+    // Calculate total payment
+    const totalPayment = numberOfDays * LUXURY_SUITE_ROOM_RATE;
 
-    // Save the reservation details in the state
+    // Save reservation details in state
     setReservationDetails({
       checkInDate: formData.checkinDate,
       checkOutDate: formData.checkoutDate,
@@ -83,7 +89,7 @@ const JuniorSuitePage = () => {
         
         {/* Left Column (Title, Image Slider, Paragraph, and Additional Info) */}
         <div>
-          <h1 className="text-3xl font-bold mb-4">Junior Suite</h1>
+          <h1 className="text-3xl font-bold mb-4">Luxury Suite</h1>
           
           {/* Additional Information Section (Max Guests, Bed Type, Area) */}
           <div className="flex justify-between items-center space-x-4 mb-4">
@@ -116,23 +122,23 @@ const JuniorSuitePage = () => {
           <div className="mb-6">
             <Slider {...settings}>
               <div>
-                <img src={Image1} alt="Junior Suite 1" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image1} alt="Luxury Suite 1" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image2} alt="Junior Suite 2" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image2} alt="Luxury Suite 2" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image3} alt="Junior Suite 3" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image3} alt="Luxury Suite 3" className="w-full h-auto rounded-lg shadow-md" />
               </div>
               <div>
-                <img src={Image4} alt="Junior Suite 4" className="w-full h-auto rounded-lg shadow-md" />
+                <img src={Image4} alt="Luxury Suite 4" className="w-full h-auto rounded-lg shadow-md" />
               </div>
             </Slider>
           </div>
 
           {/* Text Section */}
           <p className="text-sm mb-6">
-            A Junior Suite in a seaside hotel in Sri Lanka offers a luxurious and spacious retreat with stunning ocean views. This elegantly designed room features a comfortable seating area, a plush king-sized bed, and modern amenities. Guests can enjoy a private balcony or terrace overlooking the beach, perfect for relaxing and soaking in the serene coastal atmosphere. The suite combines contemporary decor with local touches, ensuring a tranquil and stylish stay by the sea.
+            A luxury suite in a seaside hotel in Sri Lanka offers a serene escape with stunning ocean views. The suite features elegant decor, a spacious bedroom with a king-sized bed, a private balcony overlooking the sea, and a luxurious bathroom with a soaking tub. Guests can enjoy modern amenities like a flat-screen TV, high-speed Wi-Fi, and 24-hour room service. The suite also includes access to exclusive hotel facilities such as a private beach, infinity pool, and gourmet dining options, ensuring a perfect blend of comfort and opulence in a tropical paradise.
           </p>
 
           {/* Room Services Section */}
@@ -152,7 +158,7 @@ const JuniorSuitePage = () => {
         {/* Right Column */}
         <div className="space-y-6">
           {/* RoomRate Component */}
-          <JuniorSuiteRoomRate />
+          <LuxurySuiteRoomRate />
 
           {/* ReserveRoomForm Component */}
           <ReserveRoomForm onSubmit={handleFormSubmit} />
@@ -167,4 +173,4 @@ const JuniorSuitePage = () => {
   );
 };
 
-export default JuniorSuitePage;
+export default LuxurySuitePage;
