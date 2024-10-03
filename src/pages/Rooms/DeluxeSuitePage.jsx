@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import image1 from '../assets/Deluxesuite/image1.jpg'; 
-import image2 from '../assets/Deluxesuite/image2.jpg'; 
-import image3 from '../assets/Deluxesuite/image3.jpg'; 
-import image4 from '../assets/Deluxesuite/image4.jpg';
+import image1 from '../../assets/Deluxesuite/image1.jpg'; 
+import image2 from '../../assets/Deluxesuite/image2.jpg'; 
+import image3 from '../../assets/Deluxesuite/image3.jpg'; 
+import image4 from '../../assets/Deluxesuite/image4.jpg';
 
 // Importing Icon Images
-import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
-import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
-import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
-import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
-import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
-import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
-import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
-import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import WifiIcon from '../../assets/facilityicons/WifiIcon.png'; 
+import CleaningIcon from '../../assets/facilityicons/CleaningIcon.png';
+import AirConditionerIcon from '../../assets/facilityicons/AirConditionerIcon.png';
+import ShowerIcon from '../../assets/facilityicons/ShowerIcon.jpg';
+import MinibarIcon from '../../assets/facilityicons/MinibarIcon.png';
+import SafetyLockerIcon from '../../assets/facilityicons/SafetyLockerIcon.png';
+import BreakfastIcon from '../../assets/facilityicons/BreakfastIcon.png';
+import TowelsIcon from '../../assets/facilityicons/TowelsIcon.jpg';
 
-import maxguests from '../assets/Icons/maxguests.png'; 
-import bedtype from '../assets/Icons/bedtype.png'; 
-import area from '../assets/Icons/area.png'; 
+import maxguests from '../../assets/Icons/maxguests.png'; 
+import bedtype from '../../assets/Icons/bedtype.png'; 
+import area from '../../assets/Icons/area.png'; 
 
 import DeluxeSuiteRoomRate from '../../components/RoomRateComponent/DeluxeSuiteRoomRate';
 import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';

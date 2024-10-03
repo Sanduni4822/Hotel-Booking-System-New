@@ -2,27 +2,27 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Image1 from '../assets/Penthouse/Image1.jpg'; 
-import Image2 from '../assets/Penthouse/Image2.jpg'; 
-import Image3 from '../assets/Penthouse/Image3.jpg';
-import Image4 from '../assets/Penthouse/Image4.jpg';
+import Image1 from '../../assets/Penthouse/Image1.jpg'; 
+import Image2 from '../../assets/Penthouse/Image2.jpg'; 
+import Image3 from '../../assets/Penthouse/Image3.jpg';
+import Image4 from '../../assets/Penthouse/Image4.jpg';
 
 // Importing Icon Images
-import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
-import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
-import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
-import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
-import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
-import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
-import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
-import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
-import EnsuitebathroomIcon from '../assets/facilityiconadditionalpenthouse/EnsuitebathroomIcon.png';
-import HotwatershowerIcon from '../assets/facilityiconadditionalpenthouse/HotwatershowerIcon.png';
-import LaundryIcon from '../assets/facilityiconadditionalpenthouse/LaundryIcon.png';
+import WifiIcon from '../../assets/facilityicons/WifiIcon.png'; 
+import CleaningIcon from '../../assets/facilityicons/CleaningIcon.png';
+import AirConditionerIcon from '../../assets/facilityicons/AirConditionerIcon.png';
+import ShowerIcon from '../../assets/facilityicons/ShowerIcon.jpg';
+import MinibarIcon from '../../assets/facilityicons/MinibarIcon.png';
+import SafetyLockerIcon from '../../assets/facilityicons/SafetyLockerIcon.png';
+import BreakfastIcon from '../../assets/facilityicons/BreakfastIcon.png';
+import TowelsIcon from '../../assets/facilityicons/TowelsIcon.jpg';
+import EnsuitebathroomIcon from '../../assets/facilityiconadditionalpenthouse/EnsuitebathroomIcon.png';
+import HotwatershowerIcon from '../../assets/facilityiconadditionalpenthouse/HotwatershowerIcon.png';
+import LaundryIcon from '../../assets/facilityiconadditionalpenthouse/LaundryIcon.png';
 
-import maxguests from '../assets/Icons/maxguests.png'; 
-import bedtype from '../assets/Icons/bedtype.png'; 
-import area from '../assets/Icons/area.png'; 
+import maxguests from '../../assets/Icons/maxguests.png'; 
+import bedtype from '../../assets/Icons/bedtype.png'; 
+import area from '../../assets/Icons/area.png'; 
 
 import ThePenthouseRoomRate from '../../components/RoomRateComponent/ThePenthouseRoomRate';
 import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Image from '../assets/contctimage/Image.jpg';
+import Image from '../../assets/contctimage/Image.jpg';
 
 const RatingComponent = () => {
   const [rating, setRating] = useState(0);

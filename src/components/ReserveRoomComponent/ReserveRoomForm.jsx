@@ -26,7 +26,7 @@ const ReserveRoomForm = ({ onSubmit }) => {
   const totalGuests = parseInt(formData.adults, 10) + parseInt(formData.children, 10);
 
   return (
-    <div className="max-w-md mx-auto p-6 border border-black">
+    <div className="max-w-md mx-10 p-6 border border-black">
       <h2 className="text-2xl font-bold mb-6">Reserve Room</h2>
       <form onSubmit={handleSubmit}>
         {/* Booking Period */}

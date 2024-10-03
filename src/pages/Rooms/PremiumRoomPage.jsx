@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Image1 from '../assets/Premiumroom/Image1.jpg'; 
-import Image2 from '../assets/Premiumroom/Image2.jpg'; 
-import Image3 from '../assets/Premiumroom/Image3.jpg'; 
+import Image1 from '../../assets/Premiumroom/Image1.jpg'; 
+import Image2 from '../../assets/Premiumroom/Image2.jpg'; 
+import Image3 from '../../assets/Premiumroom/Image3.jpg'; 
 
 // Importing Icon Images
-import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
-import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
-import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
-import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
-import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
-import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
-import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
-import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import WifiIcon from '../../assets/facilityicons/WifiIcon.png'; 
+import CleaningIcon from '../../assets/facilityicons/CleaningIcon.png';
+import AirConditionerIcon from '../../assets/facilityicons/AirConditionerIcon.png';
+import ShowerIcon from '../../assets/facilityicons/ShowerIcon.jpg';
+import MinibarIcon from '../../assets/facilityicons/MinibarIcon.png';
+import SafetyLockerIcon from '../../assets/facilityicons/SafetyLockerIcon.png';
+import BreakfastIcon from '../../assets/facilityicons/BreakfastIcon.png';
+import TowelsIcon from '../../assets/facilityicons/TowelsIcon.jpg';
 
-import maxguests from '../assets/Icons/maxguests.png'; 
-import bedtype from '../assets/Icons/bedtype.png'; 
-import area from '../assets/Icons/area.png'; 
+import maxguests from '../../assets/Icons/maxguests.png'; 
+import bedtype from '../../assets/Icons/bedtype.png'; 
+import area from '../../assets/Icons/area.png'; 
 
 import PremiumRoomRate from '../../components/RoomRateComponent/PremiumRoomRate';
 import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';

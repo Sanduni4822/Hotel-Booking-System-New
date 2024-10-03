@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Image1 from '../assets/Grandsuite/Image1.webp'; 
-import Image2 from '../assets/Grandsuite/Image2.webp'; 
-import Image3 from '../assets/Grandsuite/Image3.webp'; 
-import Image4 from '../assets/Grandsuite/Image4.webp';
+import Image1 from '../../assets/Grandsuite/Image1.webp'; 
+import Image2 from '../../assets/Grandsuite/Image2.webp'; 
+import Image3 from '../../assets/Grandsuite/Image3.webp'; 
+import Image4 from '../../assets/Grandsuite/Image4.webp';
 
 // Importing Icon Images
-import WifiIcon from '../assets/facilityicons/WifiIcon.png'; 
-import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
-import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
-import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
-import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
-import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
-import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
-import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import WifiIcon from '../../assets/facilityicons/WifiIcon.png'; 
+import CleaningIcon from '../../assets/facilityicons/CleaningIcon.png';
+import AirConditionerIcon from '../../assets/facilityicons/AirConditionerIcon.png';
+import ShowerIcon from '../../assets/facilityicons/ShowerIcon.jpg';
+import MinibarIcon from '../../assets/facilityicons/MinibarIcon.png';
+import SafetyLockerIcon from '../../assets/facilityicons/SafetyLockerIcon.png';
+import BreakfastIcon from '../../assets/facilityicons/BreakfastIcon.png';
+import TowelsIcon from '../../assets/facilityicons/TowelsIcon.jpg';
 
-import maxguests from '../assets/Icons/maxguests.png'; 
-import bedtype from '../assets/Icons/bedtype.png'; 
-import area from '../assets/Icons/area.png'; 
+import maxguests from '../../assets/Icons/maxguests.png'; 
+import bedtype from '../../assets/Icons/bedtype.png'; 
+import area from '../../assets/Icons/area.png'; 
 
 import GrandSuiteRoomRate from '../../components/RoomRateComponent/GrandSuiteRoomRate';
 import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';
@@ -91,7 +91,7 @@ const GrandSuitePage = () => {
               <img src={maxguests} alt="Max Guests" className="w-6 h-6" />
               <div>
                 <h3 className="text-sm font-semibold">Max. Guests</h3>
-                <p className="text-sm">2 Adults / 1 Child</p>
+                <p className="text-sm">3 Adults / 1 Child</p>
               </div>
             </div>
             

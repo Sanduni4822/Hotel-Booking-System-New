@@ -2,26 +2,26 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image1 from '../assets/Familyspecial/Image1.webp';
-import Image2 from '../assets/Familyspecial/Image2.webp';
-import Image3 from '../assets/Familyspecial/Image3.webp';
-import Image4 from '../assets/Familyspecial/Image4.webp';
+import Image1 from '../../assets/Familyspecial/Image1.webp';
+import Image2 from '../../assets/Familyspecial/Image2.webp';
+import Image3 from '../../assets/Familyspecial/Image3.webp';
+import Image4 from '../../assets/Familyspecial/Image4.webp';
 
 // Importing Icon Images
-import WifiIcon from '../assets/facilityicons/WifiIcon.png';
-import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
-import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
-import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
-import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
-import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
-import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
-import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
-import OpenterraceIcon from '../assets/facilityiconadditionalfamilyspecial/OpenterraceIcon.png';
-import PrivatebathroomIcon from '../assets/facilityiconadditionalfamilyspecial/PrivatebathroomIcon.png';
+import WifiIcon from '../../assets/facilityicons/WifiIcon.png';
+import CleaningIcon from '../../assets/facilityicons/CleaningIcon.png';
+import AirConditionerIcon from '../../assets/facilityicons/AirConditionerIcon.png';
+import ShowerIcon from '../../assets/facilityicons/ShowerIcon.jpg';
+import MinibarIcon from '../../assets/facilityicons/MinibarIcon.png';
+import SafetyLockerIcon from '../../assets/facilityicons/SafetyLockerIcon.png';
+import BreakfastIcon from '../../assets/facilityicons/BreakfastIcon.png';
+import TowelsIcon from '../../assets/facilityicons/TowelsIcon.jpg';
+import OpenterraceIcon from '../../assets/facilityiconadditionalfamilyspecial/OpenterraceIcon.png';
+import PrivatebathroomIcon from '../../assets/facilityiconadditionalfamilyspecial/PrivatebathroomIcon.png';
 
-import maxguests from '../assets/Icons/maxguests.png';
-import bedtype from '../assets/Icons/bedtype.png';
-import area from '../assets/Icons/area.png';
+import maxguests from '../../assets/Icons/maxguests.png';
+import bedtype from '../../assets/Icons/bedtype.png';
+import area from '../../assets/Icons/area.png';
 
 import FamilySpecialRoomRate from '../../components/RoomRateComponent/FamilySpecialRoomRate';
 import ReserveRoomForm from '../../components/ReserveRoomComponent/ReserveRoomForm';
@@ -95,7 +95,7 @@ const FamilySpecialPage = () => {
               <img src={maxguests} alt="Max Guests" className="w-6 h-6" />
               <div>
                 <h3 className="text-sm font-semibold">Max. Guests</h3>
-                <p className="text-sm">2 Adults / 1 Child</p>
+                <p className="text-sm">4 Adults / 2 Child</p>
               </div>
             </div>
             

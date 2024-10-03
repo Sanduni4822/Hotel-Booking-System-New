@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import backgroundImage from '../assets/login/cvimg1.jpg'; // Import your image file
+import backgroundImage from '../../assets/login/cvimg1.jpg'; // Import your image file
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');

@@ -1,24 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import LuxurySuite from '../assets/roomstypes/LuxurySuite.jpg';
-import Standard from '../assets/roomstypes/Standard.jpg';
-import Penthouse from '../assets/roomstypes/Penthouse.jpg';
-import GrandSuite from '../assets/roomstypes/GrandSuite.jpg';
-import JuniorSuite from '../assets/roomstypes/JuniorSuite.jpg';
-import FamilySpecial from '../assets/roomstypes/FamilySpecial.jpg';
-import PremiumRoom from '../assets/roomstypes/PremiumRoom.jpg';
-import DeluxeSuite from '../assets/roomstypes/DeluxeSuite.jpg';
+import LuxurySuite from '../../assets/roomstypes/LuxurySuite.jpg';
+import Standard from '../../assets/roomstypes/Standard.jpg';
+import Penthouse from '../../assets/roomstypes/Penthouse.jpg';
+import GrandSuite from '../../assets/roomstypes/GrandSuite.jpg';
+import JuniorSuite from '../../assets/roomstypes/JuniorSuite.jpg';
+import FamilySpecial from '../../assets/roomstypes/FamilySpecial.jpg';
+import PremiumRoom from '../../assets/roomstypes/PremiumRoom.jpg';
+import DeluxeSuite from '../../assets/roomstypes/DeluxeSuite.jpg';
 
-import WifiIcon from '../assets/facilityicons/WifiIcon.png';
-import CleaningIcon from '../assets/facilityicons/CleaningIcon.png';
-import AirConditionerIcon from '../assets/facilityicons/AirConditionerIcon.png';
-import ShowerIcon from '../assets/facilityicons/ShowerIcon.jpg';
-import MinibarIcon from '../assets/facilityicons/MinibarIcon.png';
-import SafetyLockerIcon from '../assets/facilityicons/SafetyLockerIcon.png';
-import BreakfastIcon from '../assets/facilityicons/BreakfastIcon.png';
-import TowelsIcon from '../assets/facilityicons/TowelsIcon.jpg';
+import WifiIcon from '../../assets/facilityicons/WifiIcon.png';
+import CleaningIcon from '../../assets/facilityicons/CleaningIcon.png';
+import AirConditionerIcon from '../../assets/facilityicons/AirConditionerIcon.png';
+import ShowerIcon from '../../assets/facilityicons/ShowerIcon.jpg';
+import MinibarIcon from '../../assets/facilityicons/MinibarIcon.png';
+import SafetyLockerIcon from '../../assets/facilityicons/SafetyLockerIcon.png';
+import BreakfastIcon from '../../assets/facilityicons/BreakfastIcon.png';
+import TowelsIcon from '../../assets/facilityicons/TowelsIcon.jpg';
 
-import RoomImage from '../assets/roompageimage/room.jpg'; // Additional image
+import RoomImage from '../../assets/roompageimage/room.jpg'; // Additional image
 import BookingComponent from '../../components/BookingComponent/BookingComponent'; // Correct import for BookingComponent
 
 const amenitiesWithIcons = {
