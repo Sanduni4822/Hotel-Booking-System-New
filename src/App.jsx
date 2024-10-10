@@ -32,6 +32,12 @@ import OtherPage from "./pages/Activity/OtherPage";
 import LoginPage from "./pages/LoginSignup/LoginPage";
 import SignUpPage from "./pages/LoginSignup/SignUpPage";
 import OffersPage from "./pages/Offers/OffersPage";
+import ReceptionistPage from "./pages/Receptionist/ReceptionistPage"; 
+import BookingDetailsPage from "./pages/Receptionist/BookingDetailsPage"; 
+import RoomsDetailsPage from "./pages/Receptionist/RoomsDetailsPage";
+import AddRoomPage from "./pages/Receptionist/AddRoomPage";
+import ReceptionistNavbar from "./components/ReceptionistNavbarComponent/ReceptionistNavbar";
+
 
 const router = createBrowserRouter([
   {
@@ -342,7 +348,50 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/receptionist",
+    element: <ReceptionistNavbar/>,
+    children: [
+      {
+        index: true,
+        element: <ReceptionistPage />,
+      },
+    ],
+  },
 
+  {
+    path: "/bookings",
+    element: <ReceptionistNavbar />,
+    children: [
+      {
+        index: true,
+        element: <BookingDetailsPage />,
+      },
+    ],
+  },
+
+  {
+    path: "/Roomsd",
+    element: <ReceptionistNavbar />,
+    children: [
+      {
+        index: true,
+        element: <RoomsDetailsPage />,
+      },
+    ],
+  },
+  {
+    path: "/add-room",
+    element: <ReceptionistNavbar />,
+    children: [
+      {
+        index: true,
+        element: <AddRoomPage />,
+      },
+    ],
+  },
+  
+ 
  
 ]);
 
