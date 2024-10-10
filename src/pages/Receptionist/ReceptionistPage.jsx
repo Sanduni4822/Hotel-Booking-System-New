@@ -1,6 +1,5 @@
 import React from 'react';
 import ReceptionistNavbar from '../../components/ReceptionistNavbarComponent/ReceptionistNavbar';
-//import ReceptionistNavbar from "../components/ReceptionistNavbarComponent/ReceptionistNavbar"; 
 
 const ReceptionistPage = () => {
   return (
