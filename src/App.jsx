@@ -350,49 +350,25 @@ const router = createBrowserRouter([
   },
   {
     path: "/receptionist",
-    element: <ReceptionistNavbar/>,
-    children: [
-      {
-        index: true,
-        element: <ReceptionistPage />,
-      },
-    ],
+    element: <ReceptionistPage/>,
   },
 
   {
     path: "/bookings",
-    element: <ReceptionistNavbar />,
-    children: [
-      {
-        index: true,
-        element: <BookingDetailsPage />,
-      },
-    ],
+    element: <BookingDetailsPage />,
+  },
+
+  { 
+    path: "/Roomsd",
+    element: <RoomsDetailsPage />,
+
   },
 
   {
-    path: "/Roomsd",
-    element: <ReceptionistNavbar />,
-    children: [
-      {
-        index: true,
-        element: <RoomsDetailsPage />,
-      },
-    ],
+      path: "/add-room",
+      element: <AddRoomPage />,
   },
-  {
-    path: "/add-room",
-    element: <ReceptionistNavbar />,
-    children: [
-      {
-        index: true,
-        element: <AddRoomPage />,
-      },
-    ],
-  },
-  
- 
- 
+
 ]);
 
 function App() {
