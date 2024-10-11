@@ -4,10 +4,9 @@ const AddRoomPage = () => {
   const [formData, setFormData] = useState({
     roomName: '',
     type: '',
-    rentPerDay: '',
+    feespernight: '',
     maxCount: '',
     description: '',
-    phoneNumber: '',
     imageUrl1: '',
     imageUrl2: '',
     imageUrl3: '',
@@ -48,9 +47,9 @@ const AddRoomPage = () => {
           />
           <input
             type="number"
-            name="rentPerDay"
-            placeholder="Rent per Day"
-            value={formData.rentPerDay}
+            name="fespernight"
+            placeholder="Fees per ngiht"
+            value={formData.feespernight}
             onChange={handleChange}
             className="border p-2 rounded w-full"
           />
@@ -67,14 +66,6 @@ const AddRoomPage = () => {
             name="description"
             placeholder="Description"
             value={formData.description}
-            onChange={handleChange}
-            className="border p-2 rounded w-full"
-          />
-          <input
-            type="text"
-            name="phoneNumber"
-            placeholder="Phone Number"
-            value={formData.phoneNumber}
             onChange={handleChange}
             className="border p-2 rounded w-full"
           />
