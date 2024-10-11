@@ -42,7 +42,7 @@ const DateFilter = () => {
   const days = [...Array(daysInMonth).keys()].map((i) => i + 1);
 
   return (
-    <div className="flex p-4 bg-white rounded-lg shadow-md">
+    <div className="flex p-4 bg-white rounded-lg ">
       {/* Sidebar Filters */}
       <div className="w-1/4">
         <h2 className="font-bold text-lg mb-4">Filter bookings by date</h2>

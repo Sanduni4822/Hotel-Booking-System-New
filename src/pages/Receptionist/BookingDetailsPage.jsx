@@ -4,13 +4,13 @@ import DateFilter from "../../components/ReceptionistBookingDetails/DateFilter";
 const BookingDetailsPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-      {/* Date Filter Section */}
-      <div className="w-full bg-white p-4 rounded-lg shadow-lg mb-4">
+      {/* Unified Date Filter and Booking Table Section */}
+      <div className="w-full bg-white p-4 rounded-lg shadow-lg">
         <DateFilter /> {/* Render DateFilter */}
       </div>
 
       {/* Booking Table Section */}
-      <div className="w-full bg-white rounded-lg shadow-lg">
+      <div className="w-full bg-white rounded-lg shadow-lg mt-4">
         <h2 className="text-2xl font-bold p-4 text-center">Bookings</h2>
         <table className="w-full table-auto border-collapse">
           <thead>
