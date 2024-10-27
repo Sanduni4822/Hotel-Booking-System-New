@@ -17,7 +17,29 @@ const RoomsDetailsPage = () => {
           <button className="bg-red-500 text-white px-4 py-2 rounded">Clear Filter</button>
         </div>
 
-        {/* Table Section (can add the table here) */}
+        {/* Table Section */}
+        <table className="w-full table-auto border-collapse">
+          <thead>
+            <tr className="bg-gray-200">
+              <th className="border px-4 py-2">ID</th>
+              <th className="border px-4 py-2">Room Type</th>
+              <th className="border px-4 py-2">Room Price</th>
+              <th className="border px-4 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Empty rows for visual structure */}
+            <tr className="bg-gray-100">
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2">
+                <button className="bg-blue-500 text-white px-3 py-1 rounded mr-2">View / Edit</button>
+                <button className="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );
