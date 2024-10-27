@@ -25,7 +25,7 @@ const BookingDetailsPage = () => {
               <th className="border px-4 py-2 text-left">Adults</th>
               <th className="border px-4 py-2 text-left">Children</th>
               <th className="border px-4 py-2 text-left">Total Guest</th>
-              <th className="border px-4 py-2 text-left">Confirmation Code</th>
+              <th className="border px-4 py-2 text-left">Confirmation</th>
               <th className="border px-4 py-2 text-left">Actions</th>
             </tr>
           </thead>
@@ -42,7 +42,9 @@ const BookingDetailsPage = () => {
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
-              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2">
+                <button className="bg-green-500 text-white px-2 py-1 rounded">Confirm</button>
+              </td>
               <td className="border px-4 py-2">
                 <button className="bg-red-500 text-white px-2 py-1 rounded">Cancel</button>
               </td>
@@ -58,7 +60,9 @@ const BookingDetailsPage = () => {
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
-              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2">
+                <button className="bg-green-500 text-white px-2 py-1 rounded">Confirm</button>
+              </td>
               <td className="border px-4 py-2">
                 <button className="bg-red-500 text-white px-2 py-1 rounded">Cancel</button>
               </td>
@@ -74,7 +78,9 @@ const BookingDetailsPage = () => {
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
-              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2">
+                <button className="bg-green-500 text-white px-2 py-1 rounded">Confirm</button>
+              </td>
               <td className="border px-4 py-2">
                 <button className="bg-red-500 text-white px-2 py-1 rounded">Cancel</button>
               </td>
