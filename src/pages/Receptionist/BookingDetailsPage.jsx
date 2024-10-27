@@ -43,7 +43,9 @@ const BookingDetailsPage = () => {
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
-              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2">
+                <button className="bg-red-500 text-white px-2 py-1 rounded">Cancel</button>
+              </td>
             </tr>
             <tr className="bg-gray-200">
               <td className="border px-4 py-2"></td>
@@ -57,7 +59,9 @@ const BookingDetailsPage = () => {
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
-              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2">
+                <button className="bg-red-500 text-white px-2 py-1 rounded">Cancel</button>
+              </td>
             </tr>
             <tr className="bg-gray-100">
               <td className="border px-4 py-2"></td>
@@ -71,7 +75,9 @@ const BookingDetailsPage = () => {
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
               <td className="border px-4 py-2"></td>
-              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2">
+                <button className="bg-red-500 text-white px-2 py-1 rounded">Cancel</button>
+              </td>
             </tr>
           </tbody>
         </table>
