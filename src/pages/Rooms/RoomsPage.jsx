@@ -92,10 +92,7 @@ const RoomsPage = () => {
                 </span>
                 <span className="ml-2 text-gray-600">{room.reviews} review{room.reviews > 1 ? 's' : ''}</span>
               </div>
-              <div className="flex items-center justify-between mt-4">
-                <span className="text-gray-600">1 King Bed</span>
-                <span className="text-gray-600">4 Guests</span>
-              </div>
+              
             </div>
             {/* "More" Button */}
             <div className="absolute bottom-4 right-4">
