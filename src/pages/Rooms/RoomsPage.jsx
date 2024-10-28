@@ -35,7 +35,7 @@ const amenitiesWithIcons = {
 const rooms = [
   { id: 1, name: 'Luxury Suite', imgSrc: LuxurySuite, rating: 5, reviews: 1, route: '/luxurysuite', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
   { id: 2, name: 'Standard', imgSrc: Standard, rating: 4, reviews: 1, route: '/standard', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
-  { id: 3, name: 'The Penthouse', imgSrc: Penthouse, rating: 5, reviews: 1, route: '/penthhouse', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
+  { id: 3, name: 'The Penthouse', imgSrc: Penthouse, rating: 5, reviews: 1, route: '/penthouse', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
   { id: 4, name: 'Grand Suite', imgSrc: GrandSuite, rating: 5, reviews: 1, route: '/grandsuite', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
   { id: 5, name: 'Junior Suite', imgSrc: JuniorSuite, rating: 4, reviews: 1, route: '/juniorsuite', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
   { id: 6, name: 'Family Special', imgSrc: FamilySpecial, rating: 5, reviews: 1, route: '/familyspecial', amenities: ['Free wifi', 'Cleaning', 'Air conditioner', 'Shower', 'Minibar', 'Safety locker', 'Breakfast', 'Towels'] },
@@ -92,10 +92,7 @@ const RoomsPage = () => {
                 </span>
                 <span className="ml-2 text-gray-600">{room.reviews} review{room.reviews > 1 ? 's' : ''}</span>
               </div>
-              <div className="flex items-center justify-between mt-4">
-                <span className="text-gray-600">1 King Bed</span>
-                <span className="text-gray-600">4 Guests</span>
-              </div>
+              
             </div>
             {/* "More" Button */}
             <div className="absolute bottom-4 right-4">
