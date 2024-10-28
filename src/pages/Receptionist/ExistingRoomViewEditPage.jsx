@@ -15,12 +15,21 @@ const EditRoom = () => {
         <h2 className="text-3xl font-bold text-center mb-6">Edit Room</h2>
 
         <label className="block text-gray-700 mb-2">Room Type</label>
-        <input
-          type="text"
+        <select
           className="w-full px-4 py-2 border rounded-lg mb-4"
           value={roomType}
           onChange={(e) => setRoomType(e.target.value)}
-        />
+        >
+          <option value="" disabled>Select room type</option>
+          <option value="Luxury Suite">Luxury Suite</option>
+          <option value="Standard">Standard</option>
+          <option value="The Penthouse">The Penthouse</option>
+          <option value="Grand Suite">Grand Suite</option>
+          <option value="Junior Suite">Junior Suite</option>
+          <option value="Family Special">Family Special</option>
+          <option value="Premium Room">Premium Room</option>
+          <option value="Deluxe Suite">Deluxe Suite</option>
+        </select>
 
         <label className="block text-gray-700 mb-2">Room Price</label>
         <input
