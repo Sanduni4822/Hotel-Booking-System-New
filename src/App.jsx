@@ -32,6 +32,7 @@ import OtherPage from "./pages/Activity/OtherPage";
 import LoginPage from "./pages/LoginSignup/LoginPage";
 import SignUpPage from "./pages/LoginSignup/SignUpPage";
 import OffersPage from "./pages/Offers/OffersPage";
+import AdminDashboardPage from "./pages/Admin/admindashboardpage";
 
 const router = createBrowserRouter([
   {
@@ -342,6 +343,11 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: "/admins",
+    element: <AdminDashboardPage />,
+  }
 
  
 ]);
