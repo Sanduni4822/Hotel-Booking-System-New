@@ -33,7 +33,7 @@ const EditRoom = () => {
 
         <label className="block text-gray-700 mb-2">Room Price</label>
         <input
-          type="number"
+          type="text" // Changed from "number" to "text"
           className="w-full px-4 py-2 border rounded-lg mb-4"
           value={roomPrice}
           onChange={(e) => setRoomPrice(e.target.value)}
