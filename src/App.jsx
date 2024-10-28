@@ -37,6 +37,7 @@ import BookingDetailsPage from "./pages/Receptionist/BookingDetailsPage";
 import RoomsDetailsPage from "./pages/Receptionist/RoomsDetailsPage";
 import AddRoomPage from "./pages/Receptionist/AddRoomPage";
 import ReceptionistNavbar from "./components/ReceptionistNavbarComponent/ReceptionistNavbar";
+import ExistingRoomViewEditPage from "./pages/Receptionist/ExistingRoomViewEditPage";
 
 
 const router = createBrowserRouter([
@@ -368,6 +369,11 @@ const router = createBrowserRouter([
       path: "/add-room",
       element: <AddRoomPage />,
   },
+  {
+    path: "/view-edit",
+    element: <ExistingRoomViewEditPage />,
+},
+
 
 ]);
 
